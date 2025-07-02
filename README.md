@@ -71,16 +71,18 @@ This loop encourages a mix of preparation, skill mastery, and gradual world prog
 ---
 
 ### Controls
-**Input Layout**: Joystick + 7 Action Buttons  
-- **Left Joystick** – Character Movement  
+**Input Layout**: Joystick + 9 Action Buttons  
+- **Right Joystick** – Character Movement  
 - **Buttons:**
-	1. **Basic Attack / Combo**
-	2. **Dodge / Evade / Sprint (Stamina-Consuming)**
-	3. **Skill 1**
-	4. **Skill 2**
-	5. **Magic Cast / Compound**
-	6. **Interact / Pickup**
-	7. **Quick Menu (Map / Inventory)**
+	1. **Sprint / Interact**
+	2. **Fire Cast -- Tap / Long press**
+	3. **Wind Cast -- Tap / Long press**
+	4. **Water Cast -- Tap / Long press**
+	5. **Earth Cast -- Tap / Long press**
+	6. **Action 1 -- Mainhand-based**
+	7. **Action 2 -- Mainhand-based**
+	8. **Action 3 -- Secondhand-based**
+ 	9. **Action 4 -- Secondhand-based**
 
 The control scheme prioritizes responsive real-time combat and fluid exploration with quick access to core mechanics.
 
@@ -88,7 +90,7 @@ The control scheme prioritizes responsive real-time combat and fluid exploration
 
 ## 3. Story & World
 ### Setting
-*Brief description of the world / universe.*
+Assyria, A vibrant fantasy world of magic and monsters governed by the world spirit.
 
 ### Narrative Summary
 *A short overview of the story or premise.*
@@ -96,7 +98,16 @@ The control scheme prioritizes responsive real-time combat and fluid exploration
 ### Characters
 - Main Protagonist(s):  
 - Antagonist(s):  
-- Key NPCs:  
+- Key NPCs:
+   - nim - the spirit of dusk [tutorial guide]
+   - townspeople:
+     > Marcy -- merchant [general store] (elf)
+     > Arnil -- armorsmith [armorshop] (dwarf brothers)
+     > Will -- weaponsmith [weaponshop] (dwarf brothers)
+     > Lillia -- mastersmith [blacksmith] (mother dwarf)
+     > Alice -- alchemist [potions] (sisters)
+     > Ally -- alchemist [accessories] (sisters)
+     > others to be added...
 
 ### Narrative Structure
 *Linear, branching, episodic, etc.*

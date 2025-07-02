@@ -166,7 +166,7 @@ Hub-based + unlockable procedural areas
 
 ---
 
-## 9. Monetization (if applicable)
+## 9. Monetization
 - Pricing:  Free
 - In-Game Purchases:   To be considered  
 - Ads / DLCs:  To be considered

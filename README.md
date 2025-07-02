@@ -8,10 +8,10 @@
 
 ## 1. Game Overview
 
-<table>
+<table align="center">
 	<tr>
 		<td width="200"><strong> title: </strong></td>
-		<td > Just Another Indie Adventure! </td>
+		<td> Just Another Indie Adventure! </td>
 	</tr>
 	<tr>
  		<td width="200"><strong> genres: </strong></td>

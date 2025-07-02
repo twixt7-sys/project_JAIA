@@ -11,7 +11,7 @@
 <table align="center">
 	<tr>
 		<td width="200"><strong> title: </strong></td>
-		<td> Just Another Indie Adventure! </td>
+		<td> <strong> Just Another Indie Adventure! </strong> </td>
 	</tr>
 	<tr>
  		<td width="200"><strong> genres: </strong></td>
@@ -31,25 +31,17 @@
 	</tr>
 </table>
 
-<hr>
-
-#
-**Platform(s): Android**
-**Target Audience: ages 12 and up**  
-**Elevator Pitch:**
-**
-
 ---
 
 ## 2. Gameplay Mechanics
 
 ### Core Loop
-    1. **Tutorial Phase**: Learn the core controls, combat system, and basic mechanics.
-    2. **Starting Town**: Acts as the central hub. Players can buy gear, accept quests, and interact with NPCs.
-    3. **Exploration Phase**: Navigate the open world map and access procedurally generated areas.
-    4. **Combat & Gathering**: Engage in real-time combat, fight monsters, gather loot, and collect resources.
-    5. **Return & Progress**: Go back to town to turn in quests, upgrade gear, unlock new locations, and train proficiencies.
-    6. **Repeat Loop**: With every cycle, new quests, zones, abilities, and story fragments are unlocked.
+    1. Tutorial: Learn the core controls, combat system, and basic mechanics.
+    2. Starting Town: Acts as the central hub. Players can buy gear, accept quests, and interact with NPCs.
+    3. Exploration: Navigate the open world map and access procedurally generated areas.
+    4. Combat & Gathering: Engage in real-time combat, fight monsters, gather loot, and collect resources.
+    5. Return & Progress: Go back to town to turn in quests, upgrade gear, unlock new locations, and train proficiencies.
+    6. Repeat: With every cycle, new quests, zones, abilities, and story fragments are unlocked.
 
 This loop encourages a mix of preparation, skill mastery, and gradual world progression.
 

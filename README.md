@@ -1,8 +1,8 @@
 <h1 align="center"> Project: JAIA </h1>
 
----
-
-  <img align="center" src="./assets/aseprite/title.png" width="300" />
+<p align="center">
+  <img src="./Assets/aseprite files/Title.png" width="500" />
+</p>
 
 ---
 

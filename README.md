@@ -1,12 +1,12 @@
 <h1 align="center"> Project: JAIA </h1>
 
-<p align="center">
-  <img src="./Assets/aseprite files/Title.png" width="500" />
-</p>
-
 ---
 
 ## 1. Game Overview
+
+<p align="center">
+  <img src="./Assets/aseprite files/Title.png" width="500" />
+</p>
 
 <table align="center">
 	<tr>

@@ -10,18 +10,18 @@
 
 <table>
 	<tr>
-		<th><strong> title: </strong></th>
-		<th><strong> genres: </strong></th>
-		<th><strong> synopsis: </strong></th>
-		<th><strong> platform: </strong></th>
-		<th><strong> audience: </strong></th>
+		<td><strong> title: </strong></td>
+		<td><strong> genres: </strong></td>
+		<td><strong> synopsis: </strong></td>
+		<td><strong> platform: </strong></td>
+		<td><strong> audience: </strong></td>
 	</tr>
 	<tr>
-		<th> Just Another Indie Adventure! </th>
-		<th> Fantasy, Adventure, Survival </th>
-		<th> Slay. Grow. Venture. In a world where freedom meets vibrance. </th>
-		<th> </th>
-		<th> </th>
+		<td> Just Another Indie Adventure! </td>
+		<td> Fantasy, Adventure, Survival </td>
+		<td> Slay. Grow. Venture. In a world where freedom meets vibrance. </td>
+		<td> </td>
+		<td> </td>
 	</tr>
 </table>
 

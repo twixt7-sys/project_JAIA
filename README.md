@@ -10,18 +10,24 @@
 
 <table>
 	<tr>
-		<td><strong> title: </strong></td>
-		<td><strong> genres: </strong></td>
-		<td><strong> synopsis: </strong></td>
-		<td><strong> platform: </strong></td>
-		<td><strong> audience: </strong></td>
+		<td align="center" width="200"><strong> title: </strong></td>
+		<td align="center"> Just Another Indie Adventure! </td>
 	</tr>
 	<tr>
-		<td> Just Another Indie Adventure! </td>
-		<td> Fantasy, Adventure, Survival </td>
-		<td> Slay. Grow. Venture. In a world where freedom meets vibrance. </td>
-		<td> </td>
-		<td> </td>
+ 		<td align="center" width="200"><strong> genres: </strong></td>
+		<td align="center"> Fantasy, Adventure, Survival </td>
+	</tr>
+	<tr>
+		<td align="center" width="200"><strong> synopsis: </strong></td>
+		<td align="center"> Slay. Grow. Venture. In a world where freedom meets vibrance. </td>
+	</tr>
+	<tr>
+		<td align="center" width="200"><strong> platform: </strong></td>
+		<td align="center"> Android </td>
+	</tr>
+	<tr>
+		<td align="center" width="200"><strong> audience: </strong></td>
+		<td align="center"> Ages 12 and up </td>
 	</tr>
 </table>
 

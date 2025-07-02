@@ -93,53 +93,60 @@ The control scheme prioritizes responsive real-time combat and fluid exploration
 Assyria, A vibrant fantasy world of magic and monsters governed by the world spirit.
 
 ### Narrative Summary
-*A short overview of the story or premise.*
+The player is guided to accept quests to unlock higher ones as he/she earns greater items and benefits.
 
 ### Characters
-- Main Protagonist(s):  
-- Antagonist(s):  
+- Main Character: Player 
+- Antagonist(s): Monsters & others to be added
 - Key NPCs:
-   - nim - the spirit of dusk [tutorial guide]
-   - townspeople:
-     > Marcy -- merchant [general store] (elf)
-     > Arnil -- armorsmith [armorshop] (dwarf brothers)
-     > Will -- weaponsmith [weaponshop] (dwarf brothers)
-     > Lillia -- mastersmith [blacksmith] (mother dwarf)
-     > Alice -- alchemist [potions] (sisters)
-     > Ally -- alchemist [accessories] (sisters)
-     > others to be added...
+- nim - the spirit of dusk [tutorial guide]
+- townspeople:
+	- Marcy -- merchant [general store] (elf)
+	- Arnil -- armorsmith [armorshop] (dwarf brothers)
+	- Will -- weaponsmith [weaponshop] (dwarf brothers)
+	- Lillia -- mastersmith [blacksmith] (mother dwarf)
+	- Alice -- alchemist [potions] (sisters)
+	- Ally -- alchemist [accessories] (sisters)
+- others to be added...
 
 ### Narrative Structure
-*Linear, branching, episodic, etc.*
+The game follows an optional branching narrative structure
 
 ---
 
 ## 4. Visuals & UI
 ### Art Style
-*Reference games, mood, and general direction.*
+- pixelated
+- simple
+- fun
+- vibrant
 
 ### UI/UX Elements
-*Menu layout, HUD, inventory, etc.*
+- Menu Layout
+- HUD
+- Inventory
 
 ---
 
 ## 5. Audio
 ### Music
-*Style, instruments, mood.*
+fun videogame adventure mood
 
 ### Sound Effects
-*Examples: footsteps, sword clashes, UI beeps.*
-
-### Voice Acting (if any)
+- footsteps
+- weapons and spell effects
+- environment ambience
+- UI soundeffects
 
 ---
 
 ## 6. Levels / World Design
 ### Structure
-*Linear / Open World / Hub-Based?*
+Hub-based + unlockable procedural areas
 
 ### Level Themes
-*Example: Forest Ruins, Underground Caverns, Sky Fortress.*
+- spring fields
+- others to be added
 
 ---
 
@@ -148,31 +155,30 @@ Assyria, A vibrant fantasy world of magic and monsters governed by the world spi
 - Crafting:  
 - Save System:  
 - Quests / Objectives:  
-- Multiplayer (if any):  
 
 ---
 
 ## 8. Technical Specs
-- Engine: (e.g. Godot, Unity, Unreal)  
-- Language(s):  
-- Target Frame Rate:  
-- Resolution / Assets Specs:  
+- Engine: Godot 
+- Languag:  GDScript
+- Target Frame Rate:  30-60fps
+- Resolution / Assets Specs:  Android Resolutions
 
 ---
 
 ## 9. Monetization (if applicable)
-- Pricing:  
-- In-Game Purchases:  
-- Ads / DLCs:  
+- Pricing:  Free
+- In-Game Purchases:   To be considered  
+- Ads / DLCs:  To be considered
 
 ---
 
 ## 10. Production Plan
-- Roles & Team (if any):  
-- Milestones:  
-- Tools Used (e.g. Trello, GitHub, Figma):  
+- Roles & Team:  To be considered
+- Milestones:  To be considered 
+- Tools Used:  Github, Figma  
 
 ---
 
 ## 11. Additional Notes
-*Anything else not covered above, including concept art links, inspirations, or design considerations.*
+--

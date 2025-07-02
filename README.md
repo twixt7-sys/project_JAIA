@@ -2,7 +2,7 @@
 
 ---
 
-*screenshots*
+  <img align="center" src="./assets/aseprite/title.png" width="300" />
 
 ---
 

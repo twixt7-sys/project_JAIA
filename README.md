@@ -180,5 +180,18 @@ Hub-based + unlockable procedural areas
 
 ---
 
-## 11. Additional Notes
+## 11. Prototype
+
+---
+
+<p align="center"> Title Screen </p>
+<p align="center">
+  <img align="center" src="./Assets/TitleScreen.png" width="500" />
+</p>
+
+<p align="center"> Loading Screen </p>
+<p align="center">
+  <img align="center" src="./Assets/LoadingScreen.png" width="500" />
+</p>
+
 --

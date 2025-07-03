@@ -185,9 +185,9 @@ Hub-based + unlockable procedural areas
 ---
 
 <p align="center"> Title Screen </p>
-<img src="./Assets/TitleScreen.png" width="500" />
+<img align="center" src="./Assets/TitleScreen.png" width="500" />
 
 <p align="center"> Loading Screen </p>
-<img src="./Assets/LoadingScreen.png" width="500" />
+<img align="center" src="./Assets/LoadingScreen.png" width="500" />
 
 --

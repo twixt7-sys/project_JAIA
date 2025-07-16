@@ -1,37 +1,120 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctd08mm35k5ge"]
+[gd_scene load_steps=7 format=3 uid="uid://ctd08mm35k5ge"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_u1kfa"]
+[ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="1_coop4"]
+[ext_resource type="Texture2D" uid="uid://bbif3ga6rp4of" path="res://Assets/World/Title.png" id="2_5whv5"]
+[ext_resource type="Texture2D" uid="uid://b1jjo7jifehya" path="res://Assets/Button.png" id="3_5whv5"]
+
+[sub_resource type="Animation" id="Animation_coop4"]
+resource_name = "bg animation"
+length = 60.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4541.95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 59.9667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/bg:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5whv5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_816ia"]
+_data = {
+&"RESET": SubResource("Animation_5whv5"),
+&"bg animation": SubResource("Animation_coop4")
+}
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_816ia")
+}
+autoplay = "bg animation"
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="bg" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_top = 1.5
+offset_right = 6462.0
+offset_bottom = 1078.5
+texture = ExtResource("1_coop4")
+
+[node name="title" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -367.0
+offset_right = 450.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5whv5")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VB"]
 layout_mode = 2
+size_flags_vertical = 6
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("3_5whv5")
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("3_5whv5")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("CanvasTexture_u1kfa")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="TextureButton3" type="TextureButton" parent="VB/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_5whv5")

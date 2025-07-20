@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl504bretlslr"]
+
+[ext_resource type="Texture2D" uid="uid://bhx8oha5m1iuf" path="res://Assets/World/props/props_BIG-0004.png" id="1_c3qo1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PropsBig-0004" type="Sprite2D" parent="."]
+position = Vector2(1, -6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_c3qo1")

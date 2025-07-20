@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7mmo07720v5"]
+
+[ext_resource type="Texture2D" uid="uid://y310cvorssib" path="res://Assets/World/props/props_BIG-0008.png" id="1_3thsj"]
+
+[node name="PropsBig-0008" type="Sprite2D"]
+position = Vector2(-5.96046e-08, -19)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3thsj")

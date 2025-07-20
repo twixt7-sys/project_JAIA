@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://y4a4823eq2b2"]
+
+[ext_resource type="Texture2D" uid="uid://bag2kt46550b7" path="res://Assets/World/props/props_BIG-0003.png" id="1_yayuc"]
+[ext_resource type="PackedScene" uid="uid://sknc2c42jvha" path="res://Scenes/Game/tree_b_0.tscn" id="2_1rjql"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PropsBig-0004" type="Sprite2D" parent="."]
+position = Vector2(-17, -19)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yayuc")
+
+[node name="PropsBig-0005" type="Sprite2D" parent="."]
+position = Vector2(18, -17)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yayuc")
+
+[node name="PropsBig-0003" parent="." instance=ExtResource("2_1rjql")]
+position = Vector2(0, -3)

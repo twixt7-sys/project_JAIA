@@ -4,12 +4,14 @@ extends CharacterBody2D
 signal attack_area_entered(enemy, attacker)
 
 #components
+@onready var magic_component: MagicComponent = $"Components/Magic Component"
 @onready var stamina_component: StaminaComponent = $"Components/Stamina Component"
 @onready var movement_component: MovementComponent = $"Components/Movement Component"
 @onready var attack_component: Attack = $"Components/Attack Component"
 @onready var action_component: Action = $"Components/Action Component"
 @onready var health_component: HealthComponent = $"Components/Health Component"
 @onready var mana_component: ManaComponent = $"Components/Mana Component"
+
 
 @onready var animation_tree: AnimationTree = $Animation/PlayerAnim
 @onready var animation_player: AnimationPlayer = $Animation/PlayerAP

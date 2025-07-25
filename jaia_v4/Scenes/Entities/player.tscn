@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://c2567q5dk8s7m"]
+[gd_scene load_steps=89 format=3 uid="uid://c2567q5dk8s7m"]
 
 [ext_resource type="Script" uid="uid://1y3fg2bcj2fm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cckcnuyuhm87n" path="res://Assets/Entities/player.png" id="2_6t5aa"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bjyw372aqpi18" path="res://Scenes/Components/action.tscn" id="9_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://ber3gxe0i2n7r" path="res://Assets/Effects/slash.png" id="10_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://bdqork24608p5" path="res://Assets/Effects/dust1.png" id="11_gymyn"]
+[ext_resource type="Script" uid="uid://d0hsf6x5r4obn" path="res://Scripts/magic_component.gd" id="11_udx2w"]
 [ext_resource type="Texture2D" uid="uid://cejeaipd4lxjp" path="res://Assets/Effects/fire_circle.png" id="12_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://4kw5xv7m51l8" path="res://Assets/Effects/shadow.png" id="13_ukyrk"]
 [ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://Assets/Fonts/PixelOperator8.ttf" id="14_h4iuc"]
@@ -954,6 +955,10 @@ knockback = 1.0
 
 [node name="Action Component" parent="Components" node_paths=PackedStringArray("player") instance=ExtResource("9_f1ek2")]
 player = NodePath("../..")
+
+[node name="Magic Component" type="Node2D" parent="Components" node_paths=PackedStringArray("mc")]
+script = ExtResource("11_udx2w")
+mc = NodePath("../Mana Component")
 
 [node name="Animation" type="Node2D" parent="."]
 

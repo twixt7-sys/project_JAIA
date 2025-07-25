@@ -61,6 +61,22 @@ text = "bloo"
 scroll_active = false
 structured_text_bidi_override = 6
 
+[node name="HealthBar" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.862745)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.182702
+anchor_top = 0.393268
+anchor_right = 0.780779
+anchor_bottom = 0.559467
+offset_right = 0.000244141
+offset_bottom = 0.540691
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.027451, 0.0156863, 1)
+metadata/_edit_use_anchors_ = true
+metadata/max_size = 400.0
+
 [node name="ManaBar" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.862745)
 layout_mode = 1
@@ -75,21 +91,6 @@ grow_vertical = 2
 color = Color(0.27451, 0.490196, 1, 1)
 metadata/_edit_use_anchors_ = true
 metadata/max_size = 402.0
-
-[node name="HealthBar" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.862745)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.184615
-anchor_top = 0.404762
-anchor_right = 0.782692
-anchor_bottom = 0.570961
-offset_bottom = 0.0392551
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.6, 0.027451, 0.0156863, 1)
-metadata/_edit_use_anchors_ = true
-metadata/max_size = 400.0
 
 [node name="StaminaBar" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.862745)

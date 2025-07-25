@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://c135j3pp0oklt"]
+
+[ext_resource type="Script" uid="uid://bq6incwrnsm37" path="res://Scripts/magic_bars.gd" id="1_drt5b"]
+[ext_resource type="PackedScene" uid="uid://c2567q5dk8s7m" path="res://Scenes/Entities/player.tscn" id="2_y2p3h"]
+
+[node name="Magic Bars" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_drt5b")
+
+[node name="flame bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_bottom = 10.0
+grow_horizontal = 0
+color = Color(0.69, 0.35673, 0.2139, 1)
+
+[node name="water bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 10.0
+offset_bottom = 20.0
+grow_horizontal = 0
+color = Color(0, 0.544667, 0.86, 1)
+
+[node name="wind bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 20.0
+offset_bottom = 30.0
+grow_horizontal = 0
+color = Color(0.2139, 0.69, 0.428145, 1)
+
+[node name="earth bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 30.0
+offset_bottom = 40.0
+grow_horizontal = 0
+color = Color(0.51, 0.31059, 0.1581, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_y2p3h")]
+visible = false

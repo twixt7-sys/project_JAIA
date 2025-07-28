@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	update_animation_parameters()
 
 func _physics_process(delta: float) -> void:
-	move(delta, Input.is_action_pressed("sprint")) 
+	move(delta, Input.is_action_pressed("sprint"))
 	attack(Input.is_action_just_pressed("slash"))
 	backstep(Input.is_action_just_pressed("backstep"))
 	roll(Input.is_action_just_pressed("roll"))
@@ -90,20 +90,37 @@ func update_animation_parameters():
 	var is_rolling = Input.is_action_just_pressed("roll")
 	var backstep = Input.is_action_just_pressed("backstep")
 
-	# Prioritize input
+	# Prioritize input (one-time actions)
 	animation_tree["parameters/conditions/backstep"] = backstep
 	animation_tree["parameters/conditions/attack"] = is_attacking and not backstep
 	animation_tree["parameters/conditions/is_rolling"] = is_rolling and not is_attacking and not backstep
 
 	if is_attacking or is_rolling or backstep:
-		for cond in ["is_running", "is_moving", "idle"]:
+		for cond in ["is_casting4", "is_casting3", "is_casting2", "is_casting1", "is_running", "is_moving", "idle"]:
 			animation_tree["parameters/conditions/%s" % cond] = false
 	else:
 		var velocity_threshold = 3
 		var moving = velocity.length() >= velocity_threshold
 		var sprinting = Input.is_action_pressed("sprint") and moving
-		animation_tree["parameters/conditions/is_running"] = sprinting
-		animation_tree["parameters/conditions/is_moving"] = moving and not sprinting
+		var casting = (
+		Input.is_action_pressed("flame magic") or
+		Input.is_action_pressed("water magic") or
+		Input.is_action_pressed("wind magic") or
+		Input.is_action_pressed("earth magic")
+		)
+		var mc_var = magic_component.flame_var + magic_component.water_var + magic_component.wind_var + magic_component.earth_var
+		
+		var casting1 = casting
+		var casting2 = casting1 and mc_var >= 50
+		var casting3 = casting2 and mc_var >= 100
+		var casting4 = casting3 and mc_var >= 150
+
+		animation_tree["parameters/conditions/is_casting4"] = casting4
+		animation_tree["parameters/conditions/is_casting3"] = casting3 and not casting4
+		animation_tree["parameters/conditions/is_casting2"] = casting2 and not casting3
+		animation_tree["parameters/conditions/is_casting1"] = casting1 and not casting2 
+		animation_tree["parameters/conditions/is_running"] = sprinting and not casting
+		animation_tree["parameters/conditions/is_moving"] = moving and not sprinting and not casting
 		animation_tree["parameters/conditions/idle"] = velocity.length() < velocity_threshold
 	
 	stamina_component.REGEN = 0.75 if velocity.length() < 3 else 0.25

@@ -51,7 +51,6 @@ radius = 14.0
 height = 42.0
 
 [node name="Evergreen Dire" type="CharacterBody2D"]
-scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vedrj")

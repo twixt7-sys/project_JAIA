@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	update_animation_parameters()
 
 func _physics_process(delta: float) -> void:
-	move(delta, Input.is_action_pressed("sprint"))
 	attack(Input.is_action_just_pressed("slash"))
 	backstep(Input.is_action_just_pressed("backstep"))
 	roll(Input.is_action_just_pressed("roll"))
@@ -33,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	wind(Input.is_action_pressed("wind magic"))
 	earth(Input.is_action_pressed("earth magic"))
 	if Input.is_action_just_pressed("magic reset"): magic_component.reset()
+	move(delta, Input.is_action_pressed("sprint"))
 	
 
 func move(delta: float, run: bool) -> void:
@@ -86,6 +86,14 @@ func earth(cond: bool) -> void:
 	if cond: magic_component.earth_increment(0.2)
 
 func update_animation_parameters():
+	var casting = (
+		Input.is_action_pressed("flame magic") or
+		Input.is_action_pressed("water magic") or
+		Input.is_action_pressed("wind magic") or
+		Input.is_action_pressed("earth magic")
+		)
+	movement_component.FRICTION = 0.8 if casting else 0.9
+
 	var is_attacking = Input.is_action_just_pressed("slash")
 	var is_rolling = Input.is_action_just_pressed("roll")
 	var backstep = Input.is_action_just_pressed("backstep")
@@ -102,33 +110,32 @@ func update_animation_parameters():
 		var velocity_threshold = 3
 		var moving = velocity.length() >= velocity_threshold
 		var sprinting = Input.is_action_pressed("sprint") and moving
-		var casting = (
-		Input.is_action_pressed("flame magic") or
-		Input.is_action_pressed("water magic") or
-		Input.is_action_pressed("wind magic") or
-		Input.is_action_pressed("earth magic")
-		)
 		var mc_var = magic_component.flame_var + magic_component.water_var + magic_component.wind_var + magic_component.earth_var
-		
+
 		var casting1 = casting
 		var casting2 = casting1 and mc_var >= 50
 		var casting3 = casting2 and mc_var >= 100
 		var casting4 = casting3 and mc_var >= 150
 
+		if not casting: magic_component.reset()
+
 		animation_tree["parameters/conditions/is_casting4"] = casting4
 		animation_tree["parameters/conditions/is_casting3"] = casting3 and not casting4
 		animation_tree["parameters/conditions/is_casting2"] = casting2 and not casting3
-		animation_tree["parameters/conditions/is_casting1"] = casting1 and not casting2 
+		animation_tree["parameters/conditions/is_casting1"] = casting1 and not casting2
 		animation_tree["parameters/conditions/is_running"] = sprinting and not casting
 		animation_tree["parameters/conditions/is_moving"] = moving and not sprinting and not casting
-		animation_tree["parameters/conditions/idle"] = velocity.length() < velocity_threshold
+		animation_tree["parameters/conditions/idle"] = velocity.length() < velocity_threshold and not casting
 	
 	stamina_component.REGEN = 0.75 if velocity.length() < 3 else 0.25
 	
 	if dir != Vector2.ZERO:
-		for x in ["idle", "walk", "run", "roll/BlendSpace2D", "attack/BlendSpace2D", "backstep/BlendSpace2D"]:
+		for x in [
+			"idle", "walk", "run",
+			"cast1", "cast2", "cast3", "cast4",
+			"roll/BlendSpace2D", "attack/BlendSpace2D", "backstep/BlendSpace2D"
+			]:
 			animation_tree["parameters/%s/blend_position" % x] = dir
-
 
 func _on_attack_area_area_entered(enemy: BlueSlime) -> void:
 	emit_signal("attack_area_entered", enemy, self)

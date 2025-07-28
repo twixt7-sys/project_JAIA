@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://c2567q5dk8s7m"]
+[gd_scene load_steps=120 format=3 uid="uid://c2567q5dk8s7m"]
 
 [ext_resource type="Script" uid="uid://1y3fg2bcj2fm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cckcnuyuhm87n" path="res://Assets/Entities/player.png" id="2_6t5aa"]
@@ -1212,6 +1212,14 @@ advance_condition = &"idle"
 advance_mode = 2
 advance_condition = &"idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_udx2w"]
+advance_mode = 2
+advance_condition = &"is_casting1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aqs8i"]
+advance_mode = 2
+advance_condition = &"is_casting1"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_36dho"]
 states/End/position = Vector2(509, 124)
 states/Start/position = Vector2(-57, 124)
@@ -1235,8 +1243,8 @@ states/run/node = SubResource("AnimationNodeBlendSpace2D_ukyrk")
 states/run/position = Vector2(235, 37)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_7dp3o")
 states/walk/position = Vector2(100, 37)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_h4iuc"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_fd4e3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_qqcod"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_7dp3o"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wpjfl"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_bi64h"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_2ijsl"), "walk", "roll", SubResource("AnimationNodeStateMachineTransition_p1odr"), "roll", "walk", SubResource("AnimationNodeStateMachineTransition_0gysh"), "run", "roll", SubResource("AnimationNodeStateMachineTransition_vfarp"), "roll", "run", SubResource("AnimationNodeStateMachineTransition_y6uwr"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_l6n3p"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_olqyp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_83xs0"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_ypfnu"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_tx1dd"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_gymyn"), "roll", "attack", SubResource("AnimationNodeStateMachineTransition_pu2lt"), "attack", "roll", SubResource("AnimationNodeStateMachineTransition_ukyrk"), "idle", "backstep", SubResource("AnimationNodeStateMachineTransition_xuaoq"), "backstep", "idle", SubResource("AnimationNodeStateMachineTransition_wohnl"), "walk", "backstep", SubResource("AnimationNodeStateMachineTransition_36dho"), "backstep", "walk", SubResource("AnimationNodeStateMachineTransition_yh6i2"), "backstep", "attack", SubResource("AnimationNodeStateMachineTransition_nv4vc"), "attack", "backstep", SubResource("AnimationNodeStateMachineTransition_8gxox"), "backstep", "roll", SubResource("AnimationNodeStateMachineTransition_11gg7"), "roll", "backstep", SubResource("AnimationNodeStateMachineTransition_qpa8y"), "backstep", "run", SubResource("AnimationNodeStateMachineTransition_sbwqj"), "run", "backstep", SubResource("AnimationNodeStateMachineTransition_xwi16"), "idle", "cast1", SubResource("AnimationNodeStateMachineTransition_2mdcc"), "cast1", "idle", SubResource("AnimationNodeStateMachineTransition_ol88v"), "cast1", "cast2", SubResource("AnimationNodeStateMachineTransition_gjndi"), "cast2", "idle", SubResource("AnimationNodeStateMachineTransition_cnm44"), "cast2", "cast3", SubResource("AnimationNodeStateMachineTransition_oiqwr"), "cast3", "idle", SubResource("AnimationNodeStateMachineTransition_r7dsx"), "cast3", "cast4", SubResource("AnimationNodeStateMachineTransition_6q8pc"), "cast4", "idle", SubResource("AnimationNodeStateMachineTransition_5emx0"), "roll", "idle", SubResource("AnimationNodeStateMachineTransition_04g10")]
-graph_offset = Vector2(-220.758, -66.6309)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_h4iuc"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_fd4e3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_qqcod"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_7dp3o"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wpjfl"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_bi64h"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_2ijsl"), "walk", "roll", SubResource("AnimationNodeStateMachineTransition_p1odr"), "roll", "walk", SubResource("AnimationNodeStateMachineTransition_0gysh"), "run", "roll", SubResource("AnimationNodeStateMachineTransition_vfarp"), "roll", "run", SubResource("AnimationNodeStateMachineTransition_y6uwr"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_l6n3p"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_olqyp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_83xs0"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_ypfnu"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_tx1dd"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_gymyn"), "roll", "attack", SubResource("AnimationNodeStateMachineTransition_pu2lt"), "attack", "roll", SubResource("AnimationNodeStateMachineTransition_ukyrk"), "idle", "backstep", SubResource("AnimationNodeStateMachineTransition_xuaoq"), "backstep", "idle", SubResource("AnimationNodeStateMachineTransition_wohnl"), "walk", "backstep", SubResource("AnimationNodeStateMachineTransition_36dho"), "backstep", "walk", SubResource("AnimationNodeStateMachineTransition_yh6i2"), "backstep", "attack", SubResource("AnimationNodeStateMachineTransition_nv4vc"), "attack", "backstep", SubResource("AnimationNodeStateMachineTransition_8gxox"), "backstep", "roll", SubResource("AnimationNodeStateMachineTransition_11gg7"), "roll", "backstep", SubResource("AnimationNodeStateMachineTransition_qpa8y"), "backstep", "run", SubResource("AnimationNodeStateMachineTransition_sbwqj"), "run", "backstep", SubResource("AnimationNodeStateMachineTransition_xwi16"), "idle", "cast1", SubResource("AnimationNodeStateMachineTransition_2mdcc"), "cast1", "idle", SubResource("AnimationNodeStateMachineTransition_ol88v"), "cast1", "cast2", SubResource("AnimationNodeStateMachineTransition_gjndi"), "cast2", "idle", SubResource("AnimationNodeStateMachineTransition_cnm44"), "cast2", "cast3", SubResource("AnimationNodeStateMachineTransition_oiqwr"), "cast3", "idle", SubResource("AnimationNodeStateMachineTransition_r7dsx"), "cast3", "cast4", SubResource("AnimationNodeStateMachineTransition_6q8pc"), "cast4", "idle", SubResource("AnimationNodeStateMachineTransition_5emx0"), "roll", "idle", SubResource("AnimationNodeStateMachineTransition_04g10"), "walk", "cast1", SubResource("AnimationNodeStateMachineTransition_udx2w"), "run", "cast1", SubResource("AnimationNodeStateMachineTransition_aqs8i")]
+graph_offset = Vector2(-238.359, -84.983)
 
 [sub_resource type="GDScript" id="GDScript_yh6i2"]
 
@@ -1352,9 +1360,8 @@ parameters/walk/blend_position = Vector2(0.0015949, 0.0769231)
 script = SubResource("GDScript_yh6i2")
 
 [node name="Dust" type="Sprite2D" parent="Animation"]
-position = Vector2(-20, 9)
+visible = false
 texture = ExtResource("11_gymyn")
-flip_h = true
 hframes = 9
 
 [node name="Magic" type="Node2D" parent="Animation"]
@@ -1370,9 +1377,7 @@ root_node = NodePath("../..")
 
 [node name="Slash" type="Sprite2D" parent="Animation/Slash"]
 visible = false
-position = Vector2(13, 8)
 texture = ExtResource("10_tx1dd")
-flip_h = true
 hframes = 7
 
 [node name="AttackArea" type="Area2D" parent="Animation/Slash"]

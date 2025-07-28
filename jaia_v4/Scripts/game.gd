@@ -28,7 +28,6 @@ func _on_blue_slime_patrol_area_entered(player: Player, slime: BlueSlime) -> voi
 func _on_patrol_area_exited(player: Player, slime: BlueSlime):
 	slime.patrol()
 
-
 func _on_blue_slime_body_attacked(attacker: Variant, entity: Variant) -> void:
 	blueslime.take_damage(player.attack_component)
 

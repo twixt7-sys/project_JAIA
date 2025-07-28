@@ -965,7 +965,7 @@ mc = NodePath("../Mana Component")
 [node name="Player" type="Sprite2D" parent="Animation"]
 texture = ExtResource("2_6t5aa")
 hframes = 9
-vframes = 5
+vframes = 7
 
 [node name="PlayerAP" type="AnimationPlayer" parent="Animation"]
 root_node = NodePath("../..")

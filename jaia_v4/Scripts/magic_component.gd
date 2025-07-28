@@ -9,10 +9,10 @@ const elems: Array[String] = ["FLAME", "WATER", "WIND", "EARTH"]
 @export var mana_consumption := 1
 @export var max_magic := 100
 
-var flame_var := 0
-var water_var := 0
-var wind_var := 0
-var earth_var := 0
+var flame_var := 0.0
+var water_var := 0.0
+var wind_var := 0.0
+var earth_var := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,19 +24,23 @@ func _process(delta: float) -> void:
 	pass
 
 # Increment Mana
-func regenerate(inc: int) -> void:
+func regenerate(inc: float) -> void:
 	mc.mana = min(mc.mana + inc, mc.MAX_MANA)
 
-func flame_increment(inc: int) -> void:
+func flame_increment(inc: float) -> void:
+	print(flame_var)
 	flame_var = min(flame_var + inc, max_magic)
 
-func water_increment(inc: int) -> void:
+func water_increment(inc: float) -> void:
+	print(water_var)
 	water_var = min(water_var + inc, max_magic)
 
-func wind_increment(inc: int) -> void:
+func wind_increment(inc: float) -> void:
+	print(wind_var)
 	wind_var = min(wind_var + inc, max_magic)
 
-func earth_increment(inc: int) -> void:
+func earth_increment(inc: float) -> void:
+	print(earth_var)
 	earth_var = min(earth_var + inc, max_magic)
 
 func reset() -> void:

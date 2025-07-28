@@ -12,7 +12,6 @@ signal attack_area_entered(enemy, attacker)
 @onready var health_component: HealthComponent = $"Components/Health Component"
 @onready var mana_component: ManaComponent = $"Components/Mana Component"
 
-
 @onready var animation_tree: AnimationTree = $Animation/PlayerAnim
 @onready var animation_player: AnimationPlayer = $Animation/PlayerAP
 
@@ -29,6 +28,12 @@ func _physics_process(delta: float) -> void:
 	attack(Input.is_action_just_pressed("slash"))
 	backstep(Input.is_action_just_pressed("backstep"))
 	roll(Input.is_action_just_pressed("roll"))
+	flame(Input.is_action_pressed("flame magic"))
+	water(Input.is_action_pressed("water magic"))
+	wind(Input.is_action_pressed("wind magic"))
+	earth(Input.is_action_pressed("earth magic"))
+	if Input.is_action_just_pressed("magic reset"): magic_component.reset()
+	
 
 func move(delta: float, run: bool) -> void:
 	action_component.action("move", 0.00001, true, func():
@@ -67,6 +72,18 @@ func backstep(cond: bool):
 	var on_end = func():
 		movement_component.can_flip = true
 	action_component.action("backstep", 0.5, true, on_start, on_end)
+
+func flame(cond: bool) -> void:
+	if cond: magic_component.flame_increment(0.2)
+
+func water(cond: bool) -> void:
+	if cond: magic_component.water_increment(0.2)
+
+func wind(cond: bool) -> void:
+	if cond: magic_component.wind_increment(0.2)
+
+func earth(cond: bool) -> void:
+	if cond: magic_component.earth_increment(0.2)
 
 func update_animation_parameters():
 	var is_attacking = Input.is_action_just_pressed("slash")

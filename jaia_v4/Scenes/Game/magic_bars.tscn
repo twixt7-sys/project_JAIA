@@ -54,5 +54,7 @@ offset_bottom = 40.0
 grow_horizontal = 0
 color = Color(0.51, 0.31059, 0.1581, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_y2p3h")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_y2p3h")]
 visible = false

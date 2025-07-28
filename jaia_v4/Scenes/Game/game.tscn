@@ -271,11 +271,12 @@ render_target_update_mode = 4
 
 [node name="GI" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("7_oejk7")]
 
-[node name="Magic Bars" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("16_2vowc")]
-offset_left = -59.0
-offset_top = 61.0
-offset_right = -59.0
-offset_bottom = 61.0
+[node name="Magic Bars" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("player") instance=ExtResource("16_2vowc")]
+offset_left = -64.0
+offset_top = 72.0
+offset_right = -64.0
+offset_bottom = 72.0
+player = NodePath("../../../../Entities/Player")
 
 [connection signal="attack_area_entered" from="Entities/Player" to="." method="_on_player_attack_area_entered"]
 [connection signal="body_attacked" from="Entities/Blue Slime" to="." method="_on_blue_slime_body_attacked"]

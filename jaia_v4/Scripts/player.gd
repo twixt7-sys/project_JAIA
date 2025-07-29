@@ -14,6 +14,7 @@ signal attack_area_entered(enemy, attacker)
 
 @onready var animation_tree: AnimationTree = $Animation/PlayerAnim
 @onready var animation_player: AnimationPlayer = $Animation/PlayerAP
+@onready var magic_circle_animation: AnimationPlayer = $"Animation/Magic Circle Animation"
 
 var dir: Vector2 = Vector2.ZERO
 
@@ -74,16 +75,32 @@ func backstep(cond: bool):
 	action_component.action("backstep", 0.5, true, on_start, on_end)
 
 func flame(cond: bool) -> void:
-	if cond: magic_component.flame_increment(0.2)
+	if cond: 
+		magic_component.flame_increment(0.2)
+		mana_component.consume_mana(0.2)
+		if not magic_circle_animation.is_playing():
+			magic_circle_animation.play("Fire Circle")
 
 func water(cond: bool) -> void:
-	if cond: magic_component.water_increment(0.2)
+	if cond:
+		magic_component.water_increment(0.2)
+		mana_component.consume_mana(0.2)
+		if not magic_circle_animation.is_playing():
+			magic_circle_animation.play("Water Circle")
 
 func wind(cond: bool) -> void:
-	if cond: magic_component.wind_increment(0.2)
+	if cond:
+		magic_component.wind_increment(0.2)
+		mana_component.consume_mana(0.2)
+		if not magic_circle_animation.is_playing():
+			magic_circle_animation.play("Wind Circle")
 
 func earth(cond: bool) -> void:
-	if cond: magic_component.earth_increment(0.2)
+	if cond:
+		magic_component.earth_increment(0.2)
+		mana_component.consume_mana(0.2)
+		if not magic_circle_animation.is_playing():
+			magic_circle_animation.play("Earth Circle")
 
 func update_animation_parameters():
 	var casting = (
@@ -113,11 +130,13 @@ func update_animation_parameters():
 		var mc_var = magic_component.flame_var + magic_component.water_var + magic_component.wind_var + magic_component.earth_var
 
 		var casting1 = casting
-		var casting2 = casting1 and mc_var >= 50
-		var casting3 = casting2 and mc_var >= 100
-		var casting4 = casting3 and mc_var >= 150
+		var casting2 = casting1 and mc_var >= 25
+		var casting3 = casting2 and mc_var >= 50
+		var casting4 = casting3 and mc_var >= 75
 
-		if not casting: magic_component.reset()
+		if not casting:
+			magic_component.reset()
+			magic_circle_animation.play("RESET")
 
 		animation_tree["parameters/conditions/is_casting4"] = casting4
 		animation_tree["parameters/conditions/is_casting3"] = casting3 and not casting4

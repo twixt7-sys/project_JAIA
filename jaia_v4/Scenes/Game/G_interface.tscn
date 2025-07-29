@@ -88,7 +88,7 @@ anchor_bottom = 0.761905
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.27451, 0.490196, 1, 1)
+color = Color(0.44, 0.757333, 1, 1)
 metadata/_edit_use_anchors_ = true
 metadata/max_size = 402.0
 

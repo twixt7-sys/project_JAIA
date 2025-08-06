@@ -81,152 +81,6 @@ occlusion_enabled = false
 tile_map_data = PackedByteArray("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AAAMAPj/AAAFAAAAAAAKAPn/AAAFAAAAAAAMAPT/AAADAAAAAAAKAPD/AAAEAAAAAAAOAPj/AAAEAAAAAAANAPn/AAAEAAAAAAASAAYAAAAFAAAAAAATAAYAAAAFAAAAAAATAAUAAAAFAAAAAAAQAAUAAAADAAAAAAAQAAYAAAAEAAAAAAATAAkAAAABAAAAAAANAA8AAAABAAAAAAARAA0AAAABAAAAAAASAAwAAAABAAAAAAATAAoAAAABAAAAAAANAA0AAAABAAAAAAANAAwAAAAEAAAAAAAMAA0AAAAEAAAAAAASAA0AAAAEAAAAAAATAAsAAAAEAAAAAAALAA8AAAAFAAAAAAAKAA8AAAAEAAAAAAAOAPv/AAABAAAAAAD5////AAAFAAAAAAD5/wAAAAAFAAAAAAD6/wAAAAAFAAAAAAD6////AAAFAAAAAAD7////AAAFAAAAAAD7/wAAAAAFAAAAAAD8/wAAAAAFAAAAAAD8////AAAFAAAAAAD9/wAAAAAFAAAAAAD9////AAAFAAAAAAD+/wAAAAAFAAAAAAD+////AAAFAAAAAAD//wAAAAAFAAAAAAD/////AAAFAAAAAAAAAP//AAAFAAAAAAAAAAAAAAAFAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAD5//7/AAABAAAAAAD4////AAABAAAAAAD4/wAAAAABAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAABAAAAAAABAP//AAAFAAAAAAABAAAAAAAFAAAAAAACAAAAAAAFAAAAAAACAP//AAAFAAAAAAABAAEAAAAAAAAAAAACAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAACAP7/AAABAAAAAAABAP7/AAAAAAAAAAD4//7/AAADAAAAAAD4/wEAAAADAAAAAAADAP7/AAADAAAAAAADAAEAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_lemb1")
 
-[node name="props" type="Node" parent="World"]
-
-[node name="treecluster3" parent="World/props" instance=ExtResource("4_qtymf")]
-position = Vector2(44, -13)
-
-[node name="treecluster2" parent="World/props" instance=ExtResource("4_qtymf")]
-position = Vector2(143, 325)
-
-[node name="treecluster1" parent="World/props" instance=ExtResource("4_qtymf")]
-position = Vector2(507, 61)
-
-[node name="treecluster4" parent="World/props" instance=ExtResource("4_qtymf")]
-position = Vector2(645, 448)
-
-[node name="treecluster5" parent="World/props" instance=ExtResource("4_qtymf")]
-position = Vector2(-228, 560)
-
-[node name="Node2D" parent="World/props" instance=ExtResource("7_upfqs")]
-position = Vector2(-35, 244)
-
-[node name="Node2D2" parent="World/props" instance=ExtResource("7_upfqs")]
-position = Vector2(649, 260)
-
-[node name="Node2D3" parent="World/props" instance=ExtResource("7_upfqs")]
-position = Vector2(15, 629)
-
-[node name="Node2D4" parent="World/props" instance=ExtResource("7_upfqs")]
-position = Vector2(-30, -264)
-
-[node name="Node2D5" parent="World/props" instance=ExtResource("15_yox4t")]
-position = Vector2(227, 384)
-
-[node name="Node2D6" parent="World/props" instance=ExtResource("15_yox4t")]
-position = Vector2(-259, -192)
-
-[node name="Node2D7" parent="World/props" instance=ExtResource("15_yox4t")]
-position = Vector2(206, 415)
-
-[node name="PropsBig-0003" parent="World/props" instance=ExtResource("5_ypmwd")]
-position = Vector2(-14, -65)
-
-[node name="PropsBig-0006" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(7, -51)
-
-[node name="PropsBig-0008" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(477, 82)
-
-[node name="PropsBig-0013" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(54, 372)
-
-[node name="PropsBig-0014" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(589, 106)
-
-[node name="PropsBig-0016" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(-188, 585)
-
-[node name="PropsBig-0018" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(-282, 61)
-
-[node name="PropsBig-0019" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(468, 343)
-
-[node name="PropsBig-0020" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(-340, -353)
-
-[node name="PropsBig-0004" parent="World/props" instance=ExtResource("5_ypmwd")]
-position = Vector2(-249, 201)
-
-[node name="PropsBig-0005" parent="World/props" instance=ExtResource("5_ypmwd")]
-position = Vector2(739, -181)
-
-[node name="PropsBig-0007" parent="World/props" instance=ExtResource("6_oejk7")]
-position = Vector2(-34, -20)
-
-[node name="PropsBig-0009" parent="World/props" instance=ExtResource("6_oejk7")]
-position = Vector2(444, -260)
-
-[node name="PropsBig-0010" parent="World/props" instance=ExtResource("6_oejk7")]
-position = Vector2(360, 551)
-
-[node name="PropsBig-0011" parent="World/props" instance=ExtResource("5_ypmwd")]
-position = Vector2(96, 360)
-
-[node name="Node2D8" parent="World/props" instance=ExtResource("7_upfqs")]
-position = Vector2(125, 379)
-
-[node name="PropsBig-0012" parent="World/props" instance=ExtResource("6_oejk7")]
-position = Vector2(195, 348)
-
-[node name="PropsBig-0015" parent="World/props" instance=ExtResource("5_ypmwd")]
-position = Vector2(181, 380)
-
-[node name="PropsBig-0017" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(-9, 3)
-
-[node name="PropsBig-0021" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(75, -54)
-
-[node name="PropsBig-0022" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(151, 400)
-
-[node name="PropsBig-0023" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(474, 45)
-
-[node name="PropsBig-0024" parent="World/props" instance=ExtResource("8_8e3kh")]
-position = Vector2(-58, -287)
-
-[node name="PropsBig-0025" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(93, -32)
-
-[node name="PropsBig-0026" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(30, -103)
-
-[node name="PropsBig-0027" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(77, -112)
-
-[node name="PropsBig-0028" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(45, -92)
-
-[node name="PropsBig-0029" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(-256, 539)
-
-[node name="PropsBig-0030" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(301, -87)
-
-[node name="PropsBig-0031" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(206, -230)
-
-[node name="PropsBig-0032" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(253, -270)
-
-[node name="PropsBig-0033" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(820, -18)
-
-[node name="PropsBig-0034" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(872, 29)
-
-[node name="PropsBig-0035" parent="World/props" instance=ExtResource("9_56qi8")]
-position = Vector2(-66, 265)
-
-[node name="PropsBig-0036" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(40, 639)
-
-[node name="PropsBig-0037" parent="World/props" instance=ExtResource("10_2vowc")]
-position = Vector2(58, 644)
-
 [node name="Entities" type="Node2D" parent="."]
 position = Vector2(283, 162)
 
@@ -240,10 +94,156 @@ position_smoothing_enabled = true
 [node name="Blue Slime" parent="Entities" instance=ExtResource("5_qtymf")]
 position = Vector2(182, 8)
 
+[node name="treecluster3" parent="Entities" instance=ExtResource("4_qtymf")]
+position = Vector2(-239, -175)
+
 [node name="Evergreen Dire" parent="Entities" instance=ExtResource("6_ypmwd")]
 position = Vector2(-177, -10)
 rotation = 3.14159
 scale = Vector2(2, -2)
+
+[node name="props" type="Node2D" parent="."]
+
+[node name="treecluster2" parent="props" instance=ExtResource("4_qtymf")]
+position = Vector2(143, 325)
+
+[node name="treecluster1" parent="props" instance=ExtResource("4_qtymf")]
+position = Vector2(507, 61)
+
+[node name="treecluster4" parent="props" instance=ExtResource("4_qtymf")]
+position = Vector2(645, 448)
+
+[node name="treecluster5" parent="props" instance=ExtResource("4_qtymf")]
+position = Vector2(-228, 560)
+
+[node name="Node2D" parent="props" instance=ExtResource("7_upfqs")]
+position = Vector2(-35, 244)
+
+[node name="Node2D2" parent="props" instance=ExtResource("7_upfqs")]
+position = Vector2(649, 260)
+
+[node name="Node2D3" parent="props" instance=ExtResource("7_upfqs")]
+position = Vector2(15, 629)
+
+[node name="Node2D4" parent="props" instance=ExtResource("7_upfqs")]
+position = Vector2(-30, -264)
+
+[node name="Node2D5" parent="props" instance=ExtResource("15_yox4t")]
+position = Vector2(227, 384)
+
+[node name="Node2D6" parent="props" instance=ExtResource("15_yox4t")]
+position = Vector2(-259, -192)
+
+[node name="Node2D7" parent="props" instance=ExtResource("15_yox4t")]
+position = Vector2(206, 415)
+
+[node name="PropsBig-0003" parent="props" instance=ExtResource("5_ypmwd")]
+position = Vector2(-14, -65)
+
+[node name="PropsBig-0006" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(7, -51)
+
+[node name="PropsBig-0008" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(477, 82)
+
+[node name="PropsBig-0013" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(54, 372)
+
+[node name="PropsBig-0014" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(589, 106)
+
+[node name="PropsBig-0016" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(-188, 585)
+
+[node name="PropsBig-0018" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(-282, 61)
+
+[node name="PropsBig-0019" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(468, 343)
+
+[node name="PropsBig-0020" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(-340, -353)
+
+[node name="PropsBig-0004" parent="props" instance=ExtResource("5_ypmwd")]
+position = Vector2(-249, 201)
+
+[node name="PropsBig-0005" parent="props" instance=ExtResource("5_ypmwd")]
+position = Vector2(739, -181)
+
+[node name="PropsBig-0007" parent="props" instance=ExtResource("6_oejk7")]
+position = Vector2(-34, -20)
+
+[node name="PropsBig-0009" parent="props" instance=ExtResource("6_oejk7")]
+position = Vector2(444, -260)
+
+[node name="PropsBig-0010" parent="props" instance=ExtResource("6_oejk7")]
+position = Vector2(360, 551)
+
+[node name="PropsBig-0011" parent="props" instance=ExtResource("5_ypmwd")]
+position = Vector2(96, 360)
+
+[node name="Node2D8" parent="props" instance=ExtResource("7_upfqs")]
+position = Vector2(125, 379)
+
+[node name="PropsBig-0012" parent="props" instance=ExtResource("6_oejk7")]
+position = Vector2(195, 348)
+
+[node name="PropsBig-0015" parent="props" instance=ExtResource("5_ypmwd")]
+position = Vector2(181, 380)
+
+[node name="PropsBig-0017" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(-9, 3)
+
+[node name="PropsBig-0021" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(75, -54)
+
+[node name="PropsBig-0022" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(151, 400)
+
+[node name="PropsBig-0023" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(474, 45)
+
+[node name="PropsBig-0024" parent="props" instance=ExtResource("8_8e3kh")]
+position = Vector2(-58, -287)
+
+[node name="PropsBig-0025" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(93, -32)
+
+[node name="PropsBig-0026" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(30, -103)
+
+[node name="PropsBig-0027" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(77, -112)
+
+[node name="PropsBig-0028" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(45, -92)
+
+[node name="PropsBig-0029" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(-256, 539)
+
+[node name="PropsBig-0030" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(301, -87)
+
+[node name="PropsBig-0031" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(206, -230)
+
+[node name="PropsBig-0032" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(253, -270)
+
+[node name="PropsBig-0033" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(820, -18)
+
+[node name="PropsBig-0034" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(872, 29)
+
+[node name="PropsBig-0035" parent="props" instance=ExtResource("9_56qi8")]
+position = Vector2(-66, 265)
+
+[node name="PropsBig-0036" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(40, 639)
+
+[node name="PropsBig-0037" parent="props" instance=ExtResource("10_2vowc")]
+position = Vector2(58, 644)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwqtcivq7d5gx"]
+[gd_scene load_steps=4 format=3 uid="uid://bwqtcivq7d5gx"]
 
 [ext_resource type="Texture2D" uid="uid://ckf0i30nju6oi" path="res://Assets/World/props/props_BIG-0005.png" id="1_arolc"]
+[ext_resource type="PackedScene" uid="uid://ctficwi0w2fi4" path="res://Scenes/Game/tree_e_0.tscn" id="2_4csk8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqml6"]
+radius = 12.0
+height = 24.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="PropsBig-0005" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="PropsBig-0005" type="Sprite2D" parent="Area2D"]
 position = Vector2(-1, -11)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_arolc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_pqml6")
+
+[node name="PropsBig-00063" parent="Area2D/CollisionShape2D" instance=ExtResource("2_4csk8")]

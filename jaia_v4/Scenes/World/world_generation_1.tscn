@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5wojl11nfhld"]
+
+[ext_resource type="Script" uid="uid://d4feanreabm81" path="res://addons/gaea/nodes/generator.gd" id="1_dtbhb"]
+[ext_resource type="Script" uid="uid://3qsmwhn2sk47" path="res://addons/gaea/resources/gaea_layer.gd" id="2_fuomr"]
+[ext_resource type="Script" uid="uid://dae6umbqb872e" path="res://addons/gaea/resources/gaea_graph.gd" id="3_jjiq8"]
+[ext_resource type="Script" uid="uid://b4x16tyyfihmb" path="res://addons/gaea/nodes/renderers/tilemap_renderer.gd" id="4_mnhxh"]
+[ext_resource type="PackedScene" uid="uid://di7u4f3idjdd" path="res://addons/gaea/scenes/walker_demo/walker_demo.tscn" id="5_a8ewl"]
+
+[sub_resource type="Resource" id="Resource_7xtrp"]
+script = ExtResource("2_fuomr")
+enabled = true
+
+[sub_resource type="Resource" id="Resource_5mx1p"]
+resource_local_to_scene = true
+script = ExtResource("3_jjiq8")
+layers = Array[ExtResource("2_fuomr")]([SubResource("Resource_7xtrp")])
+logging = 0
+connections = Array[Dictionary]([])
+resource_uids = Array[String]([])
+node_data = Array[Dictionary]([])
+parameters = Dictionary[StringName, Variant]({})
+other = {
+&"save_version": 3
+}
+metadata/_custom_type_script = "uid://dae6umbqb872e"
+
+[node name="World Generation 1" type="Node2D"]
+
+[node name="GaeaGenerator" type="Node" parent="."]
+script = ExtResource("1_dtbhb")
+data = SubResource("Resource_5mx1p")
+seed = 1774030556
+metadata/_custom_type_script = "uid://d4feanreabm81"
+
+[node name="TileMapGaeaRenderer" type="Node" parent="." node_paths=PackedStringArray("generator")]
+script = ExtResource("4_mnhxh")
+generator = NodePath("../GaeaGenerator")
+metadata/_custom_type_script = "uid://b4x16tyyfihmb"
+
+[node name="TestScene" parent="." instance=ExtResource("5_a8ewl")]

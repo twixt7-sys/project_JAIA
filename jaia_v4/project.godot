@@ -15,6 +15,10 @@ run/main_scene="uid://b5g7h683yls2b"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gaea/plugin.cfg", "res://addons/gdUnit4/plugin.cfg")
+
 [input]
 
 move_up={

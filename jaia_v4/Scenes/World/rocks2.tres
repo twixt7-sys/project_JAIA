@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileMapGaeaMaterial" load_steps=2 format=3 uid="uid://cylh3yyh4u53d"]
+
+[ext_resource type="Script" uid="uid://e45byecr4gi6" path="res://addons/gaea/resources/materials/data/tilemap_material.gd" id="1_3im0q"]
+
+[resource]
+script = ExtResource("1_3im0q")
+type = 0
+source_id = 1
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+preview_color = Color(0.125976, 0.388631, 0.405901, 1)
+metadata/_custom_type_script = "uid://e45byecr4gi6"

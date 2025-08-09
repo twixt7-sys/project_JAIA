@@ -1,22 +1,14 @@
-[gd_scene load_steps=22 format=4 uid="uid://c5wojl11nfhld"]
+[gd_scene load_steps=19 format=4 uid="uid://c5wojl11nfhld"]
 
 [ext_resource type="Script" uid="uid://v4rmakx32s15" path="res://Scripts/world_generation_1.gd" id="1_5fahe"]
 [ext_resource type="Script" uid="uid://d4feanreabm81" path="res://addons/gaea/nodes/generator.gd" id="1_dtbhb"]
 [ext_resource type="Script" uid="uid://3qsmwhn2sk47" path="res://addons/gaea/resources/gaea_layer.gd" id="2_fuomr"]
-[ext_resource type="Resource" path="floor" id="3_7xtrp"]
 [ext_resource type="Script" uid="uid://dae6umbqb872e" path="res://addons/gaea/resources/gaea_graph.gd" id="3_jjiq8"]
-[ext_resource type="Resource" path="rocks" id="4_5mx1p"]
 [ext_resource type="Texture2D" uid="uid://b28oqkwwttuae" path="res://Assets/Tiles/grass_tile.png" id="4_jjiq8"]
 [ext_resource type="Script" uid="uid://b4x16tyyfihmb" path="res://addons/gaea/nodes/renderers/tilemap_renderer.gd" id="4_mnhxh"]
 [ext_resource type="Script" uid="uid://e45byecr4gi6" path="res://addons/gaea/resources/materials/data/tilemap_material.gd" id="5_5fahe"]
 [ext_resource type="Texture2D" uid="uid://bx8jm7nagtif6" path="res://Assets/World/pebbles/pebbles.png" id="5_mnhxh"]
-
-[sub_resource type="Resource" id="Resource_5fahe"]
-resource_local_to_scene = true
-resource_name = "rocks2"
-script = ExtResource("2_fuomr")
-enabled = true
-metadata/_custom_type_script = "uid://3qsmwhn2sk47"
+[ext_resource type="Resource" uid="uid://cylh3yyh4u53d" path="res://Scenes/World/rocks2.tres" id="8_5fahe"]
 
 [sub_resource type="Resource" id="Resource_igqii"]
 script = ExtResource("5_5fahe")
@@ -31,24 +23,16 @@ metadata/_custom_type_script = "uid://e45byecr4gi6"
 script = ExtResource("5_5fahe")
 type = 0
 source_id = 0
-atlas_coord = Vector2i(3, 0)
+atlas_coord = Vector2i(4, 0)
 alternative_tile = 0
 preview_color = Color(0.898321, 0.237474, 0.34532, 1)
 metadata/_custom_type_script = "uid://e45byecr4gi6"
 
-[sub_resource type="Resource" id="Resource_7xtrp"]
-script = ExtResource("5_5fahe")
-type = 0
-source_id = 0
-atlas_coord = Vector2i(1, 0)
-alternative_tile = 0
-preview_color = Color(0.307047, 0.681815, 0.987733, 1)
-metadata/_custom_type_script = "uid://e45byecr4gi6"
-
 [sub_resource type="Resource" id="Resource_5mx1p"]
+resource_local_to_scene = true
 resource_name = " "
 script = ExtResource("3_jjiq8")
-layers = Array[ExtResource("2_fuomr")]([ExtResource("3_7xtrp"), ExtResource("4_5mx1p"), SubResource("Resource_5fahe")])
+layers = Array[ExtResource("2_fuomr")]([])
 logging = 0
 connections = Array[Dictionary]([{
 "from_node": 1,
@@ -63,12 +47,6 @@ connections = Array[Dictionary]([{
 "to_node": 2,
 "to_port": 1
 }, {
-"from_node": 2,
-"from_port": 0,
-"keep_alive": false,
-"to_node": 0,
-"to_port": 0
-}, {
 "from_node": 5,
 "from_port": 0,
 "keep_alive": false,
@@ -81,12 +59,6 @@ connections = Array[Dictionary]([{
 "to_node": 6,
 "to_port": 0
 }, {
-"from_node": 6,
-"from_port": 0,
-"keep_alive": false,
-"to_node": 0,
-"to_port": 1
-}, {
 "from_node": 7,
 "from_port": 0,
 "keep_alive": false,
@@ -98,12 +70,6 @@ connections = Array[Dictionary]([{
 "keep_alive": false,
 "to_node": 8,
 "to_port": 1
-}, {
-"from_node": 8,
-"from_port": 0,
-"keep_alive": false,
-"to_node": 0,
-"to_port": 2
 }])
 resource_uids = Array[String](["uid://dol7xviglksx4", "uid://cgjyi804j05dy", "uid://djjvx650evm0n", "uid://cqs1w714pbfql", "uid://cgjyi804j05dy", "uid://cqs1w714pbfql", "uid://djjvx650evm0n", "uid://cgjyi804j05dy", "uid://djjvx650evm0n", "uid://cqs1w714pbfql"])
 node_data = Array[Dictionary]([{
@@ -134,7 +100,7 @@ node_data = Array[Dictionary]([{
 },
 &"enums": [],
 "name": &"_GraphNode_78712",
-"position": Vector2(-180, -180),
+"position": Vector2(-400, -220),
 "salt": 366066309
 }, {
 &"arguments": {
@@ -151,7 +117,7 @@ node_data = Array[Dictionary]([{
 },
 &"enums": [],
 "name": &"_GraphNode_80317",
-"position": Vector2(-380, 220),
+"position": Vector2(-400, 220),
 "salt": 1552257832
 }, {
 &"arguments": {
@@ -178,7 +144,7 @@ node_data = Array[Dictionary]([{
 &"arguments": {
 &"range": {
 "max": 0.53,
-"min": 0.18
+"min": 0.48
 }
 },
 &"enums": [],
@@ -217,7 +183,7 @@ parameters = Dictionary[StringName, Variant]({
 "name": "MaterialParameter3",
 "type": 24,
 "usage": 4,
-"value": SubResource("Resource_7xtrp")
+"value": ExtResource("8_5fahe")
 }
 })
 other = {
@@ -225,8 +191,8 @@ other = {
 &"attached": Array[StringName]([&"BaseNode", &"_GraphNode_64747", &"_GraphNode_77503", &"_GraphNode_78712", &"_GraphNode_80205", &"_GraphNode_80317", &"_GraphNode_80619", &"_GraphNode_106178", &"_GraphNode_108404", &"_GraphNode_126023"]),
 &"autoshrink": true,
 &"name": &"_GraphFrame_65347",
-&"position": Vector2(-420, -521),
-&"size": Vector2(892, 1434),
+&"position": Vector2(-440, -521),
+&"size": Vector2(912, 1434),
 &"tint_color": Color(0.3, 0.3, 0.3, 0.75),
 &"tint_color_enabled": false,
 &"title": "basic PG"
@@ -310,7 +276,7 @@ script = ExtResource("1_5fahe")
 [node name="GaeaGenerator" type="Node" parent="."]
 script = ExtResource("1_dtbhb")
 data = SubResource("Resource_5mx1p")
-seed = 2589216574
+seed = 2404400652
 world_size = Vector3i(36, 21, 1)
 cell_size = Vector3i(32, 32, 1)
 metadata/_custom_type_script = "uid://d4feanreabm81"
@@ -322,7 +288,6 @@ rendering_quadrant_size = 32
 navigation_enabled = false
 
 [node name="rocks" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACABEAAAADAAAAAAADAA4AAAADAAAAAAAGAAAAAAADAAAAAAAIAAoAAAADAAAAAAAJAAsAAAADAAAAAAAKAA0AAAADAAAAAAALABAAAAADAAAAAAAOAAMAAAADAAAAAAAOABAAAAADAAAAAAARAAUAAAADAAAAAAARAAwAAAADAAAAAAARAA8AAAADAAAAAAASAAIAAAADAAAAAAASAAMAAAADAAAAAAASAAcAAAADAAAAAAASAA4AAAADAAAAAAATAA4AAAADAAAAAAAUAA4AAAADAAAAAAAVAA4AAAADAAAAAAAVABAAAAADAAAAAAAcAAwAAAADAAAAAAAdAAMAAAADAAAAAAAdAAYAAAADAAAAAAAeAAQAAAADAAAAAAAfAAgAAAADAAAAAAAfAAoAAAADAAAAAAAgAAkAAAADAAAAAAAhAAQAAAADAAAAAAAiAAMAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_5fahe")
 
 [node name="rocks2" type="TileMapLayer" parent="."]

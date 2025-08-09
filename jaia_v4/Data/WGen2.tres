@@ -1,0 +1,329 @@
+[gd_resource type="Resource" script_class="GaeaGraph" load_steps=12 format=3 uid="uid://bbi0hcot3sjym"]
+
+[ext_resource type="Script" uid="uid://3qsmwhn2sk47" path="res://addons/gaea/resources/gaea_layer.gd" id="1_aar5d"]
+[ext_resource type="Script" uid="uid://dae6umbqb872e" path="res://addons/gaea/resources/gaea_graph.gd" id="2_mivps"]
+[ext_resource type="Script" uid="uid://e45byecr4gi6" path="res://addons/gaea/resources/materials/data/tilemap_material.gd" id="2_trqkn"]
+
+[sub_resource type="Resource" id="Resource_trqkn"]
+resource_name = "floor"
+script = ExtResource("1_aar5d")
+enabled = true
+
+[sub_resource type="Resource" id="Resource_tp6ik"]
+resource_name = "rocks1"
+script = ExtResource("1_aar5d")
+enabled = true
+metadata/_custom_type_script = "uid://3qsmwhn2sk47"
+
+[sub_resource type="Resource" id="Resource_83k8j"]
+resource_name = "rocks2"
+script = ExtResource("1_aar5d")
+enabled = true
+metadata/_custom_type_script = "uid://3qsmwhn2sk47"
+
+[sub_resource type="Resource" id="Resource_mivps"]
+resource_name = "water"
+script = ExtResource("1_aar5d")
+enabled = true
+metadata/_custom_type_script = "uid://3qsmwhn2sk47"
+
+[sub_resource type="Resource" id="Resource_26ql0"]
+script = ExtResource("2_trqkn")
+type = 0
+source_id = 0
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+preview_color = Color(0.783514, 0.407767, 0.0246075, 1)
+metadata/_custom_type_script = "uid://e45byecr4gi6"
+
+[sub_resource type="Resource" id="Resource_2g2el"]
+script = ExtResource("2_trqkn")
+type = 0
+source_id = 0
+atlas_coord = Vector2i(4, 0)
+alternative_tile = 0
+preview_color = Color(0.851661, 0.677042, 0.612118, 1)
+metadata/_custom_type_script = "uid://e45byecr4gi6"
+
+[sub_resource type="Resource" id="Resource_lwxxt"]
+script = ExtResource("2_trqkn")
+type = 0
+source_id = 0
+atlas_coord = Vector2i(1, 0)
+alternative_tile = 0
+preview_color = Color(0.246134, 0.517628, 0.00678998, 1)
+metadata/_custom_type_script = "uid://e45byecr4gi6"
+
+[sub_resource type="Resource" id="Resource_abq5p"]
+script = ExtResource("2_trqkn")
+type = 0
+source_id = 0
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+preview_color = Color(0.803973, 0.423113, 0.122922, 1)
+metadata/_custom_type_script = "uid://e45byecr4gi6"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_mivps")
+layers = Array[ExtResource("1_aar5d")]([SubResource("Resource_trqkn"), SubResource("Resource_tp6ik"), SubResource("Resource_83k8j"), SubResource("Resource_mivps")])
+logging = 0
+connections = Array[Dictionary]([{
+"from_node": 1,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 5,
+"to_port": 1
+}, {
+"from_node": 4,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 5,
+"to_port": 0
+}, {
+"from_node": 2,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 6,
+"to_port": 1
+}, {
+"from_node": 3,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 7,
+"to_port": 1
+}, {
+"from_node": 5,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 0,
+"to_port": 0
+}, {
+"from_node": 6,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 0,
+"to_port": 1
+}, {
+"from_node": 7,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 0,
+"to_port": 2
+}, {
+"from_node": 8,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 6,
+"to_port": 0
+}, {
+"from_node": 9,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 7,
+"to_port": 0
+}, {
+"from_node": 11,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 12,
+"to_port": 1
+}, {
+"from_node": 10,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 12,
+"to_port": 0
+}, {
+"from_node": 12,
+"from_port": 0,
+"keep_alive": false,
+"to_node": 0,
+"to_port": 3
+}])
+resource_uids = Array[String](["uid://dol7xviglksx4", "uid://cqs1w714pbfql", "uid://cqs1w714pbfql", "uid://cqs1w714pbfql", "uid://cgjyi804j05dy", "uid://djjvx650evm0n", "uid://djjvx650evm0n", "uid://djjvx650evm0n", "uid://cgjyi804j05dy", "uid://cgjyi804j05dy", "uid://cgjyi804j05dy", "uid://cqs1w714pbfql", "uid://djjvx650evm0n"])
+node_data = Array[Dictionary]([{
+&"arguments": {},
+&"enums": [],
+"name": &"BaseNode",
+"position": Vector2(1700, -500),
+"salt": 2432574234
+}, {
+&"arguments": {
+&"name": "MaterialParameter"
+},
+&"enums": [],
+"name": &"_GraphNode_32641",
+"position": Vector2(-1260, -420),
+"salt": 3964421292
+}, {
+&"arguments": {
+&"name": "MaterialParameter2"
+},
+&"enums": [],
+"name": &"_GraphNode_32865",
+"position": Vector2(40, -420),
+"salt": 1999944723
+}, {
+&"arguments": {
+&"name": "MaterialParameter3"
+},
+&"enums": [],
+"name": &"_GraphNode_33041",
+"position": Vector2(-620, -400),
+"salt": 4030944212
+}, {
+&"arguments": {},
+&"enums": [1],
+"name": &"_GraphNode_33225",
+"position": Vector2(-1260, -320),
+"salt": 3969559770
+}, {
+&"arguments": {},
+&"enums": [],
+"name": &"_GraphNode_33329",
+"position": Vector2(-1020, -420),
+"salt": 3239979923
+}, {
+&"arguments": {
+&"range": {
+"max": 0.27,
+"min": 0.25
+}
+},
+&"enums": [],
+"name": &"_GraphNode_33408",
+"position": Vector2(280, -420),
+"salt": 683399054
+}, {
+&"arguments": {
+&"range": {
+"max": 0.49,
+"min": 0.48
+}
+},
+&"enums": [],
+"name": &"_GraphNode_33482",
+"position": Vector2(-380, -400),
+"salt": 1864916516
+}, {
+&"arguments": {
+&"frequency": 0.16,
+&"lacunarity": 3.0
+},
+&"enums": [1],
+"name": &"_GraphNode_33561",
+"position": Vector2(60, -320),
+"salt": 1514223861
+}, {
+&"arguments": {
+&"frequency": 0.02
+},
+&"enums": [1],
+"name": &"_GraphNode_33662",
+"position": Vector2(-620, -300),
+"salt": 3112451801
+}, {
+&"arguments": {
+&"lacunarity": 3.1,
+&"octaves": 2
+},
+&"enums": [1],
+"name": &"_GraphNode_57683",
+"position": Vector2(780, -320),
+"salt": 821548309
+}, {
+&"arguments": {
+&"name": "MaterialParameter4"
+},
+&"enums": [],
+"name": &"_GraphNode_57784",
+"position": Vector2(760, -420),
+"salt": 4013893302
+}, {
+&"arguments": {
+&"range": {
+"max": 0.43,
+"min": 0.4
+}
+},
+&"enums": [],
+"name": &"_GraphNode_58137",
+"position": Vector2(1000, -420),
+"salt": 3957301486
+}])
+parameters = Dictionary[StringName, Variant]({
+&"MaterialParameter": {
+"hint": 17,
+"hint_string": "GaeaMaterial",
+"name": "MaterialParameter",
+"type": 24,
+"usage": 4,
+"value": SubResource("Resource_26ql0")
+},
+&"MaterialParameter2": {
+"hint": 17,
+"hint_string": "GaeaMaterial",
+"name": "MaterialParameter2",
+"type": 24,
+"usage": 4,
+"value": SubResource("Resource_2g2el")
+},
+&"MaterialParameter3": {
+"hint": 17,
+"hint_string": "GaeaMaterial",
+"name": "MaterialParameter3",
+"type": 24,
+"usage": 4,
+"value": SubResource("Resource_lwxxt")
+},
+&"MaterialParameter4": {
+"hint": 17,
+"hint_string": "GaeaMaterial",
+"name": "MaterialParameter4",
+"type": 24,
+"usage": 4,
+"value": SubResource("Resource_abq5p")
+}
+})
+other = {
+&"frames": [{
+&"attached": Array[StringName]([&"_GraphNode_32641", &"_GraphNode_33225", &"_GraphNode_33329"]),
+&"autoshrink": true,
+&"name": &"_GraphFrame_32630",
+&"position": Vector2(-1300, -461),
+&"size": Vector2(593, 593),
+&"tint_color": Color(0.3, 0.3, 0.3, 0.75),
+&"tint_color_enabled": false,
+&"title": "floor"
+}, {
+&"attached": Array[StringName]([&"_GraphNode_32865", &"_GraphNode_33408", &"_GraphNode_33561"]),
+&"autoshrink": true,
+&"name": &"_GraphFrame_32634",
+&"position": Vector2(0, -461),
+&"size": Vector2(593, 593),
+&"tint_color": Color(0.3, 0.3, 0.3, 0.75),
+&"tint_color_enabled": false,
+&"title": "rocks1"
+}, {
+&"attached": Array[StringName]([&"_GraphNode_33041", &"_GraphNode_33482", &"_GraphNode_33662"]),
+&"autoshrink": true,
+&"name": &"_GraphFrame_32638",
+&"position": Vector2(-660, -441),
+&"size": Vector2(593, 593),
+&"tint_color": Color(0.3, 0.3, 0.3, 0.75),
+&"tint_color_enabled": false,
+&"title": "rocks2"
+}, {
+&"attached": Array[StringName]([&"_GraphNode_57784", &"_GraphNode_57683", &"_GraphNode_58137"]),
+&"autoshrink": true,
+&"name": &"_GraphFrame_58211",
+&"position": Vector2(720, -461),
+&"size": Vector2(593, 593),
+&"tint_color": Color(0.3, 0.3, 0.3, 0.75),
+&"tint_color_enabled": false,
+&"title": "water"
+}],
+&"save_version": 3
+}
+metadata/_custom_type_script = "uid://dae6umbqb872e"

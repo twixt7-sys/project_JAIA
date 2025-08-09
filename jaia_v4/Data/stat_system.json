@@ -1,0 +1,62 @@
+{
+	"player" : {
+		"name": "String",
+		"job": {
+			"adventurer": { "rank": "Rank", },
+			"knight": { "rank": "Rank", },
+			"bandit": { "rank": "Rank" },
+		},
+		"titles": [],
+		"inventory": {
+			"equipment": {
+				"main_hand": "Item",
+				"secondary": "Item",
+				"Accessory": {
+					"slot_1": [],
+					"slot_2": [],
+					"slot_3": [],
+					"slot_4": [],
+				}
+			},
+			"storage": {}
+		},
+		"stats": {
+			"health": {
+				"max_health": "float",
+				"regen": "float",
+			},
+			"mana": {
+				"max_mana": "float",
+				"regen": "float",
+			},
+			"stamina": {
+				"max_stamina": "float",
+				"regen": "float",
+			},
+			"movement": {
+				"weight": "float",
+				"agility": "float",
+				"friction": "float",
+			},
+			"attack": {
+				"weapon_weight": "float",
+				"strength": "float",
+				"speed": "float"
+			}
+		},
+		"conditions": []
+	},
+	"enemy": {
+		"stats": {
+			"health": {
+				"max_health": "float",
+				"regen": "float",
+			},
+			"movement": {
+				"weight": "float",
+				"agility": "float",
+				"friction": "float",
+			}
+		}
+	}
+}

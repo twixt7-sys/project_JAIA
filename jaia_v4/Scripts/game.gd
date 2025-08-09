@@ -6,6 +6,7 @@ extends Node
 @onready var camera: Camera2D = $Entities/Player/Camera2D
 
 @onready var blueslime: BlueSlime = $"Entities/Blue Slime"
+@onready var world_generation_2: Node2D = $Map2/CenterContainer/Map/world_generation_2
 
 func _ready() -> void:
 	for entity in $Entities.get_children():
@@ -14,7 +15,8 @@ func _ready() -> void:
 			entity.connect("patrol_area_exited", _on_patrol_area_exited)
 
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("generate"):
+		world_generation_2.get_child(1).generate()
 		
 func _physics_process(delta: float) -> void:
 	for slime in slimes:

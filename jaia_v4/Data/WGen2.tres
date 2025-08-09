@@ -292,7 +292,7 @@ other = {
 &"autoshrink": true,
 &"name": &"_GraphFrame_32630",
 &"position": Vector2(-1300, -461),
-&"size": Vector2(593, 593),
+&"size": Vector2(593, 399),
 &"tint_color": Color(0.3, 0.3, 0.3, 0.75),
 &"tint_color_enabled": false,
 &"title": "floor"
@@ -301,7 +301,7 @@ other = {
 &"autoshrink": true,
 &"name": &"_GraphFrame_32634",
 &"position": Vector2(0, -461),
-&"size": Vector2(593, 593),
+&"size": Vector2(593, 399),
 &"tint_color": Color(0.3, 0.3, 0.3, 0.75),
 &"tint_color_enabled": false,
 &"title": "rocks1"
@@ -310,7 +310,7 @@ other = {
 &"autoshrink": true,
 &"name": &"_GraphFrame_32638",
 &"position": Vector2(-660, -441),
-&"size": Vector2(593, 593),
+&"size": Vector2(593, 399),
 &"tint_color": Color(0.3, 0.3, 0.3, 0.75),
 &"tint_color_enabled": false,
 &"title": "rocks2"
@@ -319,7 +319,7 @@ other = {
 &"autoshrink": true,
 &"name": &"_GraphFrame_58211",
 &"position": Vector2(720, -461),
-&"size": Vector2(593, 593),
+&"size": Vector2(593, 399),
 &"tint_color": Color(0.3, 0.3, 0.3, 0.75),
 &"tint_color_enabled": false,
 &"title": "water"

@@ -1,68 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctd08mm35k5ge"]
+[gd_scene load_steps=18 format=3 uid="uid://ctd08mm35k5ge"]
 
 [ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="1_coop4"]
 [ext_resource type="Script" uid="uid://btbb2p25e3d0d" path="res://Scripts/title_screen.gd" id="1_tuktx"]
 [ext_resource type="Texture2D" uid="uid://bbif3ga6rp4of" path="res://Assets/World/Title.png" id="2_5whv5"]
-[ext_resource type="Texture2D" uid="uid://b1jjo7jifehya" path="res://Assets/Button.png" id="3_5whv5"]
 [ext_resource type="AudioStream" uid="uid://bwn5naw5m7yce" path="res://Assets/All Will Settle - Bloo.mp3" id="4_816ia"]
+[ext_resource type="Texture2D" uid="uid://cyjojbvkavb8p" path="res://Assets/UI/Buttons/Button1.png" id="4_n82rj"]
+[ext_resource type="Texture2D" uid="uid://c3cfyqteaewu" path="res://Assets/UI/Buttons/Button2.png" id="5_0061g"]
 [ext_resource type="Script" uid="uid://byj6iut7l61ut" path="res://Scripts/audio_stream_player_2d.gd" id="5_udsnl"]
+[ext_resource type="Texture2D" uid="uid://12rjybk07iwl" path="res://Assets/UI/Buttons/Button3.png" id="6_8mikk"]
 
-[sub_resource type="Animation" id="Animation_5whv5"]
+[sub_resource type="Animation" id="Animation_ywbsv"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/path = NodePath("ColorRect:show_behind_parent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_coop4"]
-resource_name = "bg animation"
-length = 60.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4541.95, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 59.9667)
-}
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/bg:position:y")
+tracks/1/path = NodePath("ColorRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_816ia"]
-_data = {
-&"RESET": SubResource("Animation_5whv5"),
-&"bg animation": SubResource("Animation_coop4")
-}
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_tuktx"]
-diffuse_texture = ExtResource("3_5whv5")
-specular_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_nmnw7"]
-font_size = 64
-font_color = Color(0.835294, 0.835294, 0.835294, 1)
-outline_size = 16
-outline_color = Color(0.560784, 0.560784, 0.560784, 1)
 
 [sub_resource type="Animation" id="Animation_nmnw7"]
 resource_name = "fade_out"
@@ -92,38 +64,62 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ywbsv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:show_behind_parent")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5olrl"]
 _data = {
 &"RESET": SubResource("Animation_ywbsv"),
 &"fade_out": SubResource("Animation_nmnw7")
 }
+
+[sub_resource type="Animation" id="Animation_5whv5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_coop4"]
+resource_name = "bg animation"
+length = 60.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4541.95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 60)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_816ia"]
+_data = {
+&"RESET": SubResource("Animation_5whv5"),
+&"bg animation": SubResource("Animation_coop4")
+}
+
+[sub_resource type="InputEventKey" id="InputEventKey_12m1t"]
+device = -1
+pressed = true
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_6vd4x"]
+events = [SubResource("InputEventKey_12m1t")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmnw7"]
+font_size = 64
+font_color = Color(0.835294, 0.835294, 0.835294, 1)
+outline_size = 16
+outline_color = Color(0.560784, 0.560784, 0.560784, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -132,6 +128,11 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_tuktx")
 
+[node name="fade out" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5olrl")
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_816ia")
@@ -139,6 +140,7 @@ libraries = {
 autoplay = "bg animation"
 
 [node name="Control" type="Control" parent="."]
+clip_contents = true
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 15
@@ -149,9 +151,8 @@ grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="Control"]
 layout_mode = 1
-offset_left = -274.87
 offset_top = 1.5
-offset_right = 6187.13
+offset_right = 6462.0
 offset_bottom = 1078.5
 texture = ExtResource("1_coop4")
 
@@ -198,46 +199,57 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -700.0
-offset_top = -160.0
+offset_top = -320.0
 offset_right = 700.0
-offset_bottom = 160.0
+offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(700, 540)
+scale = Vector2(0.500873, 0.5)
+pivot_offset = Vector2(700, 600)
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="VBoxContainer" type="HBoxContainer" parent="VB"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 120
+alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="VB/VBoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_5whv5")
-texture_pressed = SubResource("CanvasTexture_tuktx")
+size_flags_horizontal = 4
+action_mode = 0
+shortcut = SubResource("Shortcut_6vd4x")
+texture_normal = ExtResource("4_n82rj")
+texture_pressed = ExtResource("5_0061g")
+texture_hover = ExtResource("6_8mikk")
+stretch_mode = 3
 
-[node name="Play Label" type="Label" parent="VB/VBoxContainer/TextureButton2"]
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/TextureButton3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -8.0
-offset_right = 20.0
-offset_bottom = 8.0
+offset_left = -112.0
+offset_top = -32.0
+offset_right = 112.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(216, 32)
 text = "PLAY"
 label_settings = SubResource("LabelSettings_nmnw7")
 
-[node name="TextureButton3" type="TextureButton" parent="VB/VBoxContainer"]
+[node name="TextureButton4" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_5whv5")
+texture_normal = ExtResource("4_n82rj")
+texture_pressed = ExtResource("5_0061g")
+texture_hover = ExtResource("6_8mikk")
 
-[node name="Settings Label" type="Label" parent="VB/VBoxContainer/TextureButton3"]
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/TextureButton4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -261,12 +273,8 @@ volume_db = 10.0
 parameters/looping = true
 script = ExtResource("5_udsnl")
 
-[node name="fade out" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5olrl")
-}
-
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 layout_mode = 1

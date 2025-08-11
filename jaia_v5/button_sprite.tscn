@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bki8110ilwnf2"]
+
+[ext_resource type="Texture2D" uid="uid://dy6hhtsu1ocig" path="res://Assets/UI/ButtonSheet.png" id="1_22typ"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_22typ")
+hframes = 4
+vframes = 3

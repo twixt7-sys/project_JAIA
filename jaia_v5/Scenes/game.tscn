@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3wuhbnwlys3a"]
 
-[ext_resource type="PackedScene" uid="uid://ctd08mm35k5ge" path="res://UI/title_screen.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://dem86lf2k4sjg" path="res://Scenes/game.gd" id="1_ebmjs"]
 
 [node name="Game" type="Node2D"]
-
-[node name="TitleScreen" parent="." instance=ExtResource("1_ebmjs")]
+script = ExtResource("1_ebmjs")

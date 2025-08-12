@@ -1,6 +1,5 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctd08mm35k5ge"]
+[gd_scene load_steps=11 format=3 uid="uid://ctd08mm35k5ge"]
 
-[ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="1_coop4"]
 [ext_resource type="Script" uid="uid://btbb2p25e3d0d" path="res://Scripts/title_screen.gd" id="1_tuktx"]
 [ext_resource type="Texture2D" uid="uid://bbif3ga6rp4of" path="res://Assets/World/Title.png" id="2_5whv5"]
 [ext_resource type="AudioStream" uid="uid://bwn5naw5m7yce" path="res://Assets/All Will Settle - Bloo.mp3" id="4_816ia"]
@@ -8,115 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c3cfyqteaewu" path="res://Assets/UI/Buttons/Button2.png" id="5_0061g"]
 [ext_resource type="Script" uid="uid://byj6iut7l61ut" path="res://Scripts/audio_stream_player_2d.gd" id="5_udsnl"]
 [ext_resource type="Texture2D" uid="uid://12rjybk07iwl" path="res://Assets/UI/Buttons/Button3.png" id="6_8mikk"]
-
-[sub_resource type="Animation" id="Animation_ywbsv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:show_behind_parent")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_nmnw7"]
-resource_name = "fade_out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:show_behind_parent")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5olrl"]
-_data = {
-&"RESET": SubResource("Animation_ywbsv"),
-&"fade_out": SubResource("Animation_nmnw7")
-}
-
-[sub_resource type="Animation" id="Animation_5whv5"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_coop4"]
-resource_name = "bg animation"
-length = 60.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4541.95, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 60)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_816ia"]
-_data = {
-&"RESET": SubResource("Animation_5whv5"),
-&"bg animation": SubResource("Animation_coop4")
-}
 
 [sub_resource type="InputEventKey" id="InputEventKey_12m1t"]
 device = -1
@@ -140,17 +30,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_tuktx")
 
-[node name="fade out" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5olrl")
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_816ia")
-}
-autoplay = "bg animation"
-
 [node name="Control" type="Control" parent="."]
 clip_contents = true
 layout_direction = 1
@@ -160,13 +39,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="bg" type="TextureRect" parent="Control"]
-layout_mode = 1
-offset_top = 1.5
-offset_right = 6462.0
-offset_bottom = 1078.5
-texture = ExtResource("1_coop4")
 
 [node name="shadow" type="TextureRect" parent="Control"]
 modulate = Color(0, 0, 0, 0.392157)
@@ -284,16 +156,6 @@ stream = ExtResource("4_816ia")
 volume_db = 10.0
 parameters/looping = true
 script = ExtResource("5_udsnl")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0, 0, 0, 1)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="VB/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VB/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

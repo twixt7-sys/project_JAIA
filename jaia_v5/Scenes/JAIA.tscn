@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3wuhbnwlys3a"]
 
-[ext_resource type="Script" uid="uid://dem86lf2k4sjg" path="res://Scenes/game.gd" id="1_ebmjs"]
-[ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="2_qxrlw"]
+[ext_resource type="Script" uid="uid://dem86lf2k4sjg" path="res://Scenes/game.gd" id="1_puisd"]
+[ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="2_h8o6d"]
 
 [sub_resource type="Animation" id="Animation_5whv5"]
 length = 0.001
@@ -112,8 +112,8 @@ _data = {
 &"fade_out": SubResource("Animation_nmnw7")
 }
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_ebmjs")
+[node name="JAIA" type="Node2D"]
+script = ExtResource("1_puisd")
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -135,9 +135,10 @@ autoplay = "bg animation"
 
 [node name="bg" type="TextureRect" parent="Control"]
 clip_contents = true
+layout_mode = 0
 offset_right = 6462.0
 offset_bottom = 1077.0
-texture = ExtResource("2_qxrlw")
+texture = ExtResource("2_h8o6d")
 
 [node name="Contents" type="Node2D" parent="Control"]
 

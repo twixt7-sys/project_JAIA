@@ -63,6 +63,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5olrl"]
 _data = {
@@ -216,7 +228,7 @@ size_flags_vertical = 6
 theme_override_constants/separation = 120
 alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="VB/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
@@ -226,7 +238,7 @@ texture_pressed = ExtResource("5_0061g")
 texture_hover = ExtResource("6_8mikk")
 stretch_mode = 3
 
-[node name="Settings Label" type="Label" parent="VB/VBoxContainer/TextureButton3"]
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/Play"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -243,13 +255,13 @@ pivot_offset = Vector2(216, 32)
 text = "PLAY"
 label_settings = SubResource("LabelSettings_nmnw7")
 
-[node name="TextureButton4" type="TextureButton" parent="VB/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="VB/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_n82rj")
 texture_pressed = ExtResource("5_0061g")
 texture_hover = ExtResource("6_8mikk")
 
-[node name="Settings Label" type="Label" parent="VB/VBoxContainer/TextureButton4"]
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -274,7 +286,6 @@ parameters/looping = true
 script = ExtResource("5_udsnl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -283,3 +294,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="VB/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VB/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

@@ -1,14 +1,14 @@
 extends Node2D
 
 @onready var title_screen: TitleScreen = preload("res://Scenes/title_screen.tscn").instantiate()
-@onready var animation_player: AnimationPlayer = $Control/AnimationPlayer
-@onready var fade_out: AnimationPlayer = $"Control/fade out"
+@onready var bg_anim: AnimationPlayer = $Control/bg_anim
+@onready var fadeout_anim: AnimationPlayer = $Control/fadeout_anim
 @onready var contents: Node2D = $Control/Contents
 
 func _ready() -> void:
-	animation_player.play("bg animation")
+	bg_anim.play("bg animation")
 	add_title_screen()
-	fade_out.play("fade_out")
+	fadeout_anim.play("fade_out")
 	
 func start_game() -> void: 
 	print("game starts")

@@ -44,7 +44,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/ColorRect:show_behind_parent")
+tracks/0/path = NodePath("Control/fadeout:show_behind_parent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,7 +56,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/ColorRect:color")
+tracks/1/path = NodePath("Control/fadeout:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -72,7 +72,7 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/ColorRect:show_behind_parent")
+tracks/0/path = NodePath("Control/fadeout:show_behind_parent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,7 +84,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/ColorRect:color")
+tracks/1/path = NodePath("Control/fadeout:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -96,7 +96,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/ColorRect:visible")
+tracks/2/path = NodePath("Control/fadeout:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -126,7 +126,7 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+[node name="bg_anim" type="AnimationPlayer" parent="Control"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_816ia")
@@ -141,14 +141,13 @@ texture = ExtResource("2_qxrlw")
 
 [node name="Contents" type="Node2D" parent="Control"]
 
-[node name="fade out" type="AnimationPlayer" parent="Control"]
+[node name="fadeout_anim" type="AnimationPlayer" parent="Control"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_5olrl")
 }
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-visible = false
+[node name="fadeout" type="ColorRect" parent="Control"]
 modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 clip_contents = true

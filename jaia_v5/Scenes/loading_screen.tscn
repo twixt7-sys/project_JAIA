@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://cs64ls37fkgca"]
+[gd_scene load_steps=7 format=4 uid="uid://cs64ls37fkgca"]
 
 [ext_resource type="Texture2D" uid="uid://b28oqkwwttuae" path="res://Assets/Tiles/grass_tile.png" id="1_0t5xw"]
+[ext_resource type="Script" uid="uid://dlrn7l2rk2nhx" path="res://Scripts/loading_screen.gd" id="1_nfm0g"]
 [ext_resource type="PackedScene" uid="uid://bqsaif8cbklyr" path="res://Scenes/slime.tscn" id="2_nfm0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fayou"]
@@ -29,6 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(960, 540)
+script = ExtResource("1_nfm0g")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(10, 10)
@@ -69,3 +71,10 @@ layout_mode = 2
 text = "loading"
 label_settings = SubResource("LabelSettings_fayou")
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

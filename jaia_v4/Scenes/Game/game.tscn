@@ -271,7 +271,6 @@ position = Vector2(40, 639)
 position = Vector2(58, 644)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("17_lemb1")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
@@ -294,7 +293,7 @@ canvas_item_default_texture_repeat = 1
 gui_snap_controls_to_pixels = false
 size = Vector2i(1152, 160)
 size_2d_override_stretch = true
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="GI" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("7_oejk7")]
 

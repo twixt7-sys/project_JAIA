@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3wuhbnwlys3a"]
+[gd_scene load_steps=11 format=3 uid="uid://d3wuhbnwlys3a"]
 
 [ext_resource type="Script" uid="uid://dem86lf2k4sjg" path="res://Scenes/game.gd" id="1_puisd"]
 [ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="2_h8o6d"]
+[ext_resource type="AudioStream" uid="uid://bwn5naw5m7yce" path="res://Assets/All Will Settle - Bloo.mp3" id="3_lu7bm"]
+[ext_resource type="Script" uid="uid://byj6iut7l61ut" path="res://Scripts/audio_stream_player_2d.gd" id="4_q2fv5"]
 
 [sub_resource type="Animation" id="Animation_5whv5"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/path = NodePath("Start/bg:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +26,7 @@ loop_mode = 2
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/path = NodePath("Start/bg:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +46,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/fadeout:show_behind_parent")
+tracks/0/path = NodePath("Start/fadeout:show_behind_parent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/fadeout:color")
+tracks/1/path = NodePath("Start/fadeout:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -72,7 +74,7 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/fadeout:show_behind_parent")
+tracks/0/path = NodePath("Start/fadeout:show_behind_parent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,7 +86,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/fadeout:color")
+tracks/1/path = NodePath("Start/fadeout:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -96,7 +98,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/fadeout:visible")
+tracks/2/path = NodePath("Start/fadeout:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -115,7 +117,7 @@ _data = {
 [node name="JAIA" type="Node2D"]
 script = ExtResource("1_puisd")
 
-[node name="Control" type="Control" parent="."]
+[node name="Start" type="Control" parent="."]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -126,29 +128,35 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bg_anim" type="AnimationPlayer" parent="Control"]
+[node name="bg_anim" type="AnimationPlayer" parent="Start"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_816ia")
 }
 autoplay = "bg animation"
 
-[node name="bg" type="TextureRect" parent="Control"]
+[node name="bg" type="TextureRect" parent="Start"]
 clip_contents = true
 layout_mode = 0
 offset_right = 6462.0
 offset_bottom = 1077.0
 texture = ExtResource("2_h8o6d")
 
-[node name="Contents" type="Node2D" parent="Control"]
+[node name="Contents" type="Control" parent="Start"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="fadeout_anim" type="AnimationPlayer" parent="Control"]
+[node name="fadeout_anim" type="AnimationPlayer" parent="Start"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_5olrl")
 }
 
-[node name="fadeout" type="ColorRect" parent="Control"]
+[node name="fadeout" type="ColorRect" parent="Start"]
 modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 clip_contents = true
@@ -158,3 +166,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="all_will_settle" type="AudioStreamPlayer2D" parent="Start"]
+stream = ExtResource("3_lu7bm")
+volume_db = 10.0
+parameters/looping = true
+script = ExtResource("4_q2fv5")

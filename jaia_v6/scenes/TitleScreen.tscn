@@ -1,0 +1,239 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkf4you84e0df"]
+
+[ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/TitleScreen.gd" id="1_ch40n"]
+[ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="1_qyuap"]
+
+[node name="TitleScreen" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ch40n")
+
+[node name="Center" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+
+[node name="space2" type="AspectRatioContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Title" type="AspectRatioContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+ratio = 2.0
+stretch_mode = 1
+
+[node name="TitleTexture" type="TextureRect" parent="Center/VBoxContainer/Title"]
+layout_mode = 2
+texture = ExtResource("1_qyuap")
+
+[node name="Buttons" type="AspectRatioContainer" parent="Center/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "PLAY"
+
+[node name="space" type="BoxContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Options" type="Button" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="space" type="BoxContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="B1" type="Button" parent="Center/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "fb"
+
+[node name="B2" type="Button" parent="Center/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "gm"
+
+[node name="B3" type="Button" parent="Center/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "ig"
+
+[node name="B4" type="Button" parent="Center/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "x"
+
+[node name="UpperRight" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpperRight"]
+layout_mode = 2
+
+[node name="BoxContainer3" type="BoxContainer" parent="UpperRight/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpperRight/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="BoxContainer3" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sound" type="Button" parent="UpperRight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+text = "S"
+
+[node name="BoxContainer" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Music" type="Button" parent="UpperRight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+text = "M"
+
+[node name="BoxContainer2" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="UpperLeft" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpperLeft"]
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="UpperLeft/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpperLeft/VBoxContainer"]
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="UpperLeft/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpperLeft/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LinkGP" type="Button" parent="UpperLeft/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "P"
+
+[node name="BottomRIght" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomRIght"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomRIght/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="About" type="Button" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Ab"
+
+[node name="space2" type="BoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="BottomRIght/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BottomLeft" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomLeft"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeft/VBoxContainer"]
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="BottomLeft/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeft/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Announcements" type="Button" parent="BottomLeft/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "An"
+
+[node name="space" type="BoxContainer" parent="BottomLeft/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B1" to="." method="_on_b_1_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B2" to="." method="_on_b_2_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B3" to="." method="_on_b_3_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B4" to="." method="_on_b_4_pressed"]
+[connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Sound" to="." method="_on_sound_toggled"]
+[connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Music" to="." method="_on_music_toggled"]
+[connection signal="pressed" from="UpperLeft/VBoxContainer/HBoxContainer/HBoxContainer/LinkGP" to="." method="_on_link_gp_pressed"]
+[connection signal="pressed" from="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="BottomLeft/VBoxContainer/HBoxContainer/HBoxContainer/Announcements" to="." method="_on_announcements_pressed"]

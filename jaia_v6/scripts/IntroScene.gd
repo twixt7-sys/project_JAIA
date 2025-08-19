@@ -1,0 +1,53 @@
+extends Control
+
+@onready var intro_bgm: AudioStreamPlayer2D = $intro_bgm
+@onready var TITLE_SCREEN_SCENE: PackedScene = preload("res://scenes/TitleScreen.tscn")
+@onready var ABOUT_SCREEN_SCENE: PackedScene = preload("res://scenes/AboutScreen.tscn")
+@onready var contents: Control = $contents
+
+func _ready() -> void:
+	intro_bgm.play(10.0)
+	show_screen(TITLE_SCREEN_SCENE)
+
+func _process(delta: float) -> void:
+	pass
+
+# utility: swap out the current screen
+func show_screen(scene: PackedScene):
+	# clear existing children
+	for child in contents.get_children():
+		child.queue_free()
+	
+	# add new one
+	var inst = scene.instantiate()
+	contents.add_child(inst)
+	connect_signals(inst)
+
+# connects signals to functions by same name
+func connect_signals(node: Node): 
+	for sig in node.get_signal_list():
+		var name = sig.name
+		if has_method(name):
+			node.connect(name, Callable(self, name))
+
+# === TitleScreen signal handlers ===
+func play(): print("play")
+func options(): print("options")
+func link_gp(): print("link_gp")
+func announcements(): print("announcements")
+
+func about():
+	print("about")
+	show_screen(ABOUT_SCREEN_SCENE)
+
+func sound(toggled_on: bool): print("sound toggled:", toggled_on)
+func music(toggled_on: bool): print("music toggled:", toggled_on)
+
+# === AboutScreen signal handlers ===
+func go_back():
+	show_screen(TITLE_SCREEN_SCENE)
+
+func b1(): print("b1")
+func b2(): print("b2")
+func b3(): print("b3")
+func b4(): print("b4")

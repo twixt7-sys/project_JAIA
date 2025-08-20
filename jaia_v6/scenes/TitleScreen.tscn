@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkf4you84e0df"]
+[gd_scene load_steps=14 format=3 uid="uid://dkf4you84e0df"]
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/TitleScreen.gd" id="1_ch40n"]
 [ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="1_qyuap"]
@@ -6,18 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="4_85feu"]
 [ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/images/B0/B2.png" id="5_66w26"]
 [ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="6_3ej01"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="6_hjcsb"]
+[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="7_2ktle"]
 [ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="7_w20ru"]
 [ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="8_1vfo2"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="8_l7b4h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3ej01"]
 font_size = 24
 outline_size = 8
 outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hjcsb"]
 font_size = 48
-outline_size = 24
+outline_size = 12
 outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
 
 [node name="TitleScreen" type="Control"]
 clip_contents = true
@@ -146,67 +153,90 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UpperRight"]
+[node name="MarginContainer" type="MarginContainer" parent="UpperRight"]
 layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
 
-[node name="BoxContainer3" type="BoxContainer" parent="UpperRight/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Audio" type="HBoxContainer" parent="UpperRight/MarginContainer"]
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UpperRight/VBoxContainer"]
-layout_mode = 2
+theme_override_constants/separation = 25
 alignment = 2
 
-[node name="BoxContainer3" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+[node name="Sound" type="AspectRatioContainer" parent="UpperRight/MarginContainer/Audio"]
 layout_mode = 2
 
-[node name="Sound" type="Button" parent="UpperRight/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+[node name="Sound" type="TextureButton" parent="UpperRight/MarginContainer/Audio/Sound"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 toggle_mode = true
+texture_normal = ExtResource("6_hjcsb")
+texture_pressed = ExtResource("7_2ktle")
+texture_hover = ExtResource("8_l7b4h")
+stretch_mode = 0
+
+[node name="SoundLabel" type="Label" parent="UpperRight/MarginContainer/Audio/Sound"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_vertical = 1
 text = "S"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
-[node name="BoxContainer" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(25, 0)
+[node name="Music" type="AspectRatioContainer" parent="UpperRight/MarginContainer/Audio"]
 layout_mode = 2
 
-[node name="Music" type="Button" parent="UpperRight/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+[node name="Music" type="TextureButton" parent="UpperRight/MarginContainer/Audio/Music"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 toggle_mode = true
-text = "M"
+texture_normal = ExtResource("6_hjcsb")
+texture_pressed = ExtResource("7_2ktle")
+texture_hover = ExtResource("8_l7b4h")
+stretch_mode = 0
 
-[node name="BoxContainer2" type="BoxContainer" parent="UpperRight/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+[node name="MusicLabel" type="Label" parent="UpperRight/MarginContainer/Audio/Music"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+size_flags_vertical = 1
+text = "M"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="UpperLeft" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UpperLeft"]
+[node name="MarginContainer" type="MarginContainer" parent="UpperLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Link" type="AspectRatioContainer" parent="UpperLeft/MarginContainer"]
 layout_mode = 2
 
-[node name="space" type="BoxContainer" parent="UpperLeft/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+[node name="LinkGP" type="TextureButton" parent="UpperLeft/MarginContainer/Link"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+texture_normal = ExtResource("6_hjcsb")
+texture_pressed = ExtResource("7_2ktle")
+texture_hover = ExtResource("8_l7b4h")
+stretch_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UpperLeft/VBoxContainer"]
+[node name="LinkLabel" type="Label" parent="UpperLeft/MarginContainer/Link"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-
-[node name="space" type="BoxContainer" parent="UpperLeft/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UpperLeft/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="LinkGP" type="Button" parent="UpperLeft/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-text = "P"
+size_flags_vertical = 1
+text = "L"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="BottomRIght" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -220,19 +250,15 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BottomRIght"]
+[node name="MarginContainer" type="MarginContainer" parent="BottomRIght"]
+layout_mode = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="About" type="AspectRatioContainer" parent="BottomRIght/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomRIght/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="About" type="TextureButton" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer"]
+[node name="About" type="TextureButton" parent="BottomRIght/MarginContainer/About"]
 custom_minimum_size = Vector2(112, 112)
 layout_mode = 2
 texture_normal = ExtResource("6_3ej01")
@@ -240,7 +266,7 @@ texture_pressed = ExtResource("7_w20ru")
 texture_hover = ExtResource("8_1vfo2")
 stretch_mode = 0
 
-[node name="PlayLabel" type="Label" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer"]
+[node name="AboutLabel" type="Label" parent="BottomRIght/MarginContainer/About"]
 custom_minimum_size = Vector2(112, 112)
 layout_mode = 2
 size_flags_vertical = 1
@@ -249,14 +275,6 @@ label_settings = SubResource("LabelSettings_hjcsb")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
-
-[node name="space2" type="BoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="space" type="BoxContainer" parent="BottomRIght/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
 
 [node name="BottomLeft" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -267,27 +285,31 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BottomLeft"]
+[node name="MarginContainer" type="MarginContainer" parent="BottomLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Announcement" type="AspectRatioContainer" parent="BottomLeft/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeft/VBoxContainer"]
+[node name="Announcements" type="TextureButton" parent="BottomLeft/MarginContainer/Announcement"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+texture_normal = ExtResource("6_hjcsb")
+texture_pressed = ExtResource("7_2ktle")
+texture_hover = ExtResource("8_l7b4h")
+stretch_mode = 0
 
-[node name="space" type="BoxContainer" parent="BottomLeft/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+[node name="Ann-Label" type="Label" parent="BottomLeft/MarginContainer/Announcement"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeft/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Announcements" type="Button" parent="BottomLeft/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-text = "An"
-
-[node name="space" type="BoxContainer" parent="BottomLeft/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+size_flags_vertical = 1
+text = "A"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]
@@ -295,8 +317,8 @@ layout_mode = 2
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B2" to="." method="_on_b_2_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B3" to="." method="_on_b_3_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B4" to="." method="_on_b_4_pressed"]
-[connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Sound" to="." method="_on_sound_toggled"]
-[connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Music" to="." method="_on_music_toggled"]
-[connection signal="pressed" from="UpperLeft/VBoxContainer/HBoxContainer/HBoxContainer/LinkGP" to="." method="_on_link_gp_pressed"]
-[connection signal="pressed" from="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer/About" to="." method="_on_about_pressed"]
-[connection signal="pressed" from="BottomLeft/VBoxContainer/HBoxContainer/HBoxContainer/Announcements" to="." method="_on_announcements_pressed"]
+[connection signal="toggled" from="UpperRight/MarginContainer/Audio/Sound/Sound" to="." method="_on_sound_toggled"]
+[connection signal="toggled" from="UpperRight/MarginContainer/Audio/Music/Music" to="." method="_on_music_toggled"]
+[connection signal="pressed" from="UpperLeft/MarginContainer/Link/LinkGP" to="." method="_on_link_gp_pressed"]
+[connection signal="pressed" from="BottomRIght/MarginContainer/About/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="BottomLeft/MarginContainer/Announcement/Announcements" to="." method="_on_announcements_pressed"]

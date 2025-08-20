@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkf4you84e0df"]
+[gd_scene load_steps=11 format=3 uid="uid://dkf4you84e0df"]
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/TitleScreen.gd" id="1_ch40n"]
 [ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="1_qyuap"]
+[ext_resource type="Texture2D" uid="uid://b4x2h08v7qbjc" path="res://assets/images/B0/B0.png" id="3_4l16e"]
+[ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="4_85feu"]
+[ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/images/B0/B2.png" id="5_66w26"]
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="6_3ej01"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="7_w20ru"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="8_1vfo2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ej01"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjcsb"]
+font_size = 48
+outline_size = 24
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [node name="TitleScreen" type="Control"]
 clip_contents = true
@@ -31,7 +47,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Title" type="AspectRatioContainer" parent="Center/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 ratio = 2.0
 stretch_mode = 1
@@ -44,25 +60,56 @@ texture = ExtResource("1_qyuap")
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer/Buttons"]
-custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Play" type="AspectRatioContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(296, 112)
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
-custom_minimum_size = Vector2(200, 80)
+[node name="Play" type="TextureButton" parent="Center/VBoxContainer/Buttons/HBoxContainer/Play"]
+custom_minimum_size = Vector2(296, 112)
 layout_mode = 2
-text = "PLAY"
+texture_normal = ExtResource("3_4l16e")
+texture_pressed = ExtResource("4_85feu")
+texture_hover = ExtResource("5_66w26")
+stretch_mode = 4
 
-[node name="space" type="BoxContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+[node name="PlayLabel" type="Label" parent="Center/VBoxContainer/Buttons/HBoxContainer/Play"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Play"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Options" type="AspectRatioContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(296, 112)
 layout_mode = 2
 
-[node name="Options" type="Button" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
-custom_minimum_size = Vector2(200, 80)
+[node name="Options" type="TextureButton" parent="Center/VBoxContainer/Buttons/HBoxContainer/Options"]
+custom_minimum_size = Vector2(296, 112)
 layout_mode = 2
-text = "OPTIONS"
+texture_normal = ExtResource("3_4l16e")
+texture_pressed = ExtResource("4_85feu")
+texture_hover = ExtResource("5_66w26")
+stretch_mode = 4
+
+[node name="OptionsLabel" type="Label" parent="Center/VBoxContainer/Buttons/HBoxContainer/Options"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Options"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="space" type="BoxContainer" parent="Center/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer"]
@@ -182,10 +229,26 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="About" type="Button" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Ab"
+
+[node name="About" type="TextureButton" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("6_3ej01")
+texture_pressed = ExtResource("7_w20ru")
+texture_hover = ExtResource("8_1vfo2")
+stretch_mode = 0
+
+[node name="PlayLabel" type="Label" parent="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "!"
+label_settings = SubResource("LabelSettings_hjcsb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="space2" type="BoxContainer" parent="BottomRIght/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
@@ -226,8 +289,8 @@ text = "An"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B1" to="." method="_on_b_1_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B2" to="." method="_on_b_2_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/HBoxContainer/B3" to="." method="_on_b_3_pressed"]
@@ -235,5 +298,5 @@ layout_mode = 2
 [connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Sound" to="." method="_on_sound_toggled"]
 [connection signal="toggled" from="UpperRight/VBoxContainer/HBoxContainer/Music" to="." method="_on_music_toggled"]
 [connection signal="pressed" from="UpperLeft/VBoxContainer/HBoxContainer/HBoxContainer/LinkGP" to="." method="_on_link_gp_pressed"]
-[connection signal="pressed" from="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="BottomRIght/VBoxContainer/HBoxContainer/HBoxContainer/AspectRatioContainer/About" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="BottomLeft/VBoxContainer/HBoxContainer/HBoxContainer/Announcements" to="." method="_on_announcements_pressed"]

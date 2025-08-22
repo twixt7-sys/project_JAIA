@@ -1,6 +1,6 @@
 extends Node
 
-@onready var INTRO_SCENE = preload("res://scenes/IntroScene.tscn").instantiate()
+@onready var INTRO_SCENE = preload("res://scenes/menus/IntroScene.tscn").instantiate()
 
 func _ready() -> void:
 	add_child(INTRO_SCENE)

@@ -15,10 +15,17 @@ run/main_scene="uid://d056tqo1x0shm"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MainSettings="*res://managers/settings.gd"
+
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=2340
 window/size/viewport_height=1080
+window/size/mode=3
+window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
 
 [gui]
 
@@ -28,3 +35,4 @@ theme/custom_font="uid://bsuhtppl0kvcd"
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

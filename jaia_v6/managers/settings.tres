@@ -1,0 +1,30 @@
+[gd_resource type="JSON" format=3 uid="uid://c3y8x38wd1jau"]
+
+[resource]
+data = {
+"audio": {
+"master_volume": 0.8,
+"music_volume": 0.6,
+"mute_all": false,
+"sfx_volume": 0.75
+},
+"controls": {
+"attack": "SPACE",
+"interact": "E",
+"move_down": "S",
+"move_left": "A",
+"move_right": "D",
+"move_up": "W"
+},
+"gameplay": {
+"difficulty": "normal",
+"language": "en",
+"show_tutorials": true
+},
+"video": {
+"fps_limit": 60.0,
+"fullscreen": true,
+"resolution": "1920x1080",
+"vsync": true
+}
+}

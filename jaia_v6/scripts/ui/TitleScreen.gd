@@ -52,6 +52,7 @@ func _on_b_4_pressed() -> void:
 
 
 func _on_sound_toggled(toggled_on: bool) -> void:
+	
 	emit_signal("sound", true if toggled_on else false)
 
 

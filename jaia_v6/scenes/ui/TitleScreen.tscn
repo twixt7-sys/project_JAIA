@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkf4you84e0df"]
+[gd_scene load_steps=24 format=3 uid="uid://dkf4you84e0df"]
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/ui/TitleScreen.gd" id="1_pf4x2"]
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_7dj7h"]
 [ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="2_c5wx3"]
 [ext_resource type="Texture2D" uid="uid://b4x2h08v7qbjc" path="res://assets/images/B0/B0.png" id="3_8i67m"]
 [ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="4_7h331"]
@@ -16,12 +17,71 @@
 [ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="11_xjjob"]
 [ext_resource type="Texture2D" uid="uid://b6hrj5xjfagr5" path="res://assets/icons/announcements.png" id="15_vc41d"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0v8ca"]
+font = ExtResource("2_7dj7h")
+font_size = 48
+outline_size = 16
+outline_color = Color(0.517647, 0.494118, 0.529412, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.188235)
+
+[sub_resource type="Animation" id="Animation_7dj7h"]
+resource_name = "pulse"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("SubTitle:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [74, 80]
+}
+
+[sub_resource type="Animation" id="Animation_0v8ca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubTitle:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [48]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc41d"]
+_data = {
+&"RESET": SubResource("Animation_0v8ca"),
+&"pulse": SubResource("Animation_7dj7h")
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_3ej01"]
 font_size = 24
 outline_size = 8
 outline_color = Color(0.34902, 0.34902, 0.34902, 1)
 shadow_size = 12
 shadow_color = Color(0, 0, 0, 0.196078)
+
+[sub_resource type="GDScript" id="GDScript_tqc2b"]
+script/source = "extends TextureRect
+
+@onready var music_icon: TextureRect = $\".\"
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_hjcsb"]
 font_size = 48
@@ -50,6 +110,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 0
+
+[node name="SubTitle" type="Label" parent="Center/MarginContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+text = "BETA!"
+label_settings = SubResource("LabelSettings_0v8ca")
+horizontal_alignment = 1
+
+[node name="SubTitle Animation" type="AnimationPlayer" parent="Center/MarginContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_vc41d")
+}
+autoplay = "pulse"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Center"]
 layout_mode = 2
 
@@ -72,6 +154,9 @@ texture = ExtResource("2_c5wx3")
 [node name="TitleTexture" type="TextureRect" parent="Center/VBoxContainer/Title"]
 layout_mode = 2
 texture = ExtResource("2_c5wx3")
+
+[node name="space3" type="BoxContainer" parent="Center/VBoxContainer"]
+layout_mode = 2
 
 [node name="Buttons" type="AspectRatioContainer" parent="Center/VBoxContainer"]
 layout_mode = 2
@@ -131,6 +216,7 @@ layout_mode = 2
 
 [node name="Accounts" type="HBoxContainer" parent="Center/VBoxContainer"]
 visible = false
+modulate = Color(1, 1, 1, 0.470588)
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 25
@@ -186,7 +272,7 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Sound"]
+[node name="SoundIcon" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Sound"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("9_tqc2b")
@@ -203,10 +289,11 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Music"]
+[node name="MusicIcon" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Music"]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("10_7dj7h")
+script = SubResource("GDScript_tqc2b")
 
 [node name="UpperLeft" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -231,6 +318,7 @@ stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="UpperLeft/MarginContainer/Link"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="UpperLeft/MarginContainer/Link/CenterContainer"]
 layout_mode = 2
@@ -305,6 +393,24 @@ stretch_mode = 0
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("15_vc41d")
+
+[node name="CenterTop" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="CenterTop"]
+modulate = Color(1, 1, 1, 0.470588)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7dj7h")
+theme_override_font_sizes/font_size = 28
+text = "v0.0.5"
 
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]

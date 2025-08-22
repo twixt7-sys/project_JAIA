@@ -6,6 +6,7 @@ extends Control
 @onready var TITLE_SCREEN = preload("res://scenes/ui/TitleScreen.tscn")
 @onready var contents: Control = $contents
 
+
 func _ready() -> void:
 	intro_bgm.play(10.0)
 	intro_bgm.volume_linear
@@ -40,10 +41,22 @@ func sfx(toggled_on: bool):
 	var sfx_idx = AudioServer.get_bus_index("SFX")
 	AudioServer.set_bus_mute(sfx_idx, toggled_on)
 	MainSettings.set_setting("audio", "mute_sfx", toggled_on)
+	
+		#var sound_icon: TextureRect = TITLE_SCREEN.instantiate().get_node("$UpperRight/MarginContainer/Audio/Sound/SoundIcon")
+	#var SOUND_ON = preload("res://assets/icons/sound0.png")
+	#var SOUND_OFF = preload("res://assets/icons/sound3.png")
+	#sound_icon.texture = SOUND_ON if toggled_on else SOUND_OFF
+	
+	
 func music(toggled_on: bool):
 	var music_idx = AudioServer.get_bus_index("Music")
 	AudioServer.set_bus_mute(music_idx, toggled_on)
 	MainSettings.set_setting("audio", "mute_music", toggled_on)
+	
+	#var music_icon: TextureRect = TITLE_SCREEN.instantiate().get_node("$UpperRight/MarginContainer/Audio/Music/MusicIcon")
+	#var SOUND_ON = preload("res://assets/icons/music3.png")
+	#var SOUND_OFF = preload("res://assets/icons/music0.png")
+	#music_icon.texture = SOUND_ON if toggled_on else SOUND_OFF
 
 func b1(): print("b1")
 func b2(): print("b2")

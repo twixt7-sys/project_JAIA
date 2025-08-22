@@ -36,13 +36,14 @@ func announcements(): print("announcements")
 
 func about(): show_screen(ABOUT_SCREEN)
 
-func sound(toggled_on: bool): print("sound toggled:", toggled_on)
+func sfx(toggled_on: bool):
+	var sfx_idx = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_mute(sfx_idx, toggled_on)
+	MainSettings.set_setting("audio", "mute_sfx", toggled_on)
 func music(toggled_on: bool):
 	var music_idx = AudioServer.get_bus_index("Music")
 	AudioServer.set_bus_mute(music_idx, toggled_on)
-
 	MainSettings.set_setting("audio", "mute_music", toggled_on)
-	print("mute_music: ", toggled_on)
 
 func b1(): print("b1")
 func b2(): print("b2")

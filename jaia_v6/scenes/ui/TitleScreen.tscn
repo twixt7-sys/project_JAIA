@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkf4you84e0df"]
+[gd_scene load_steps=18 format=3 uid="uid://dkf4you84e0df"]
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/ui/TitleScreen.gd" id="1_pf4x2"]
 [ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="2_c5wx3"]
@@ -9,8 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="7_0v8ca"]
 [ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="8_vc41d"]
 [ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="9_i1i48"]
+[ext_resource type="Texture2D" uid="uid://rptb58mvmw6y" path="res://assets/icons/sound3.png" id="9_tqc2b"]
+[ext_resource type="Texture2D" uid="uid://d2xhjixb3slf" path="res://assets/icons/music3.png" id="10_7dj7h"]
 [ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="10_etanf"]
+[ext_resource type="Texture2D" uid="uid://b4wd6csxxvb7h" path="res://assets/icons/game.png" id="11_0v8ca"]
 [ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="11_xjjob"]
+[ext_resource type="Texture2D" uid="uid://b6hrj5xjfagr5" path="res://assets/icons/announcements.png" id="15_vc41d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3ej01"]
 font_size = 24
@@ -176,15 +180,10 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="SoundLabel" type="Label" parent="UpperRight/MarginContainer/Audio/Sound"]
-custom_minimum_size = Vector2(96, 96)
+[node name="TextureRect" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Sound"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "S"
-label_settings = SubResource("LabelSettings_3ej01")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+mouse_filter = 2
+texture = ExtResource("9_tqc2b")
 
 [node name="Music" type="AspectRatioContainer" parent="UpperRight/MarginContainer/Audio"]
 layout_mode = 2
@@ -198,15 +197,10 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="MusicLabel" type="Label" parent="UpperRight/MarginContainer/Audio/Music"]
-custom_minimum_size = Vector2(96, 96)
+[node name="TextureRect" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Music"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "M"
-label_settings = SubResource("LabelSettings_3ej01")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+mouse_filter = 2
+texture = ExtResource("10_7dj7h")
 
 [node name="UpperLeft" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -229,15 +223,14 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="LinkLabel" type="Label" parent="UpperLeft/MarginContainer/Link"]
-custom_minimum_size = Vector2(96, 96)
+[node name="CenterContainer" type="CenterContainer" parent="UpperLeft/MarginContainer/Link"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "L"
-label_settings = SubResource("LabelSettings_3ej01")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="UpperLeft/MarginContainer/Link/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("11_0v8ca")
+stretch_mode = 2
 
 [node name="BottomRIght" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -302,15 +295,10 @@ texture_pressed = ExtResource("7_0v8ca")
 texture_hover = ExtResource("8_vc41d")
 stretch_mode = 0
 
-[node name="Ann-Label" type="Label" parent="BottomLeft/MarginContainer/Announcement"]
-custom_minimum_size = Vector2(96, 96)
+[node name="TextureRect" type="TextureRect" parent="BottomLeft/MarginContainer/Announcement"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "A"
-label_settings = SubResource("LabelSettings_3ej01")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+mouse_filter = 2
+texture = ExtResource("15_vc41d")
 
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]

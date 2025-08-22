@@ -10,7 +10,7 @@ static var data := {
 		"master_volume": 0.8,
 		"music_volume": 0.6,
 		"sfx_volume": 0.75,
-		"mute_sound": false,
+		"mute_sfx": false,
 		"mute_music": false,
 		
 	},
@@ -78,8 +78,8 @@ func apply_settings() -> void:
 	)
 	
 	AudioServer.set_bus_mute(
-		AudioServer.get_bus_index("Sound"),
-		data["audio"]["mute_sound"]
+		AudioServer.get_bus_index("SFX"),
+		data["audio"]["mute_sfx"]
 	)
 	
 	AudioServer.set_bus_volume_db(

@@ -113,7 +113,7 @@ position = Vector2(283, 162)
 disable_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="Entities/Player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Blue Slime" parent="Entities" instance=ExtResource("5_qtymf")]

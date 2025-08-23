@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bymsnishsrd4l"]
+
+[ext_resource type="PackedScene" uid="uid://c1b4fs5wgt6xb" path="res://scenes/ui/GUI.tscn" id="1_bo1hi"]
+
+[node name="GameScreen" type="Control"]
+custom_minimum_size = Vector2(2340, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GUI" parent="." instance=ExtResource("1_bo1hi")]
+layout_mode = 1
+
+[node name="GameContent" type="Node2D" parent="."]

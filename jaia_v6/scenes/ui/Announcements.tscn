@@ -1,0 +1,284 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvfni10l5kcwq"]
+
+[ext_resource type="Script" uid="uid://c7nb5j4dg8jqy" path="res://scripts/ui/Announcements.gd" id="1_d22a8"]
+[ext_resource type="Texture2D" uid="uid://c35hn0t3q0x5t" path="res://assets/images/UI.png" id="1_n85es"]
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_d22a8"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="3_o16rx"]
+[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="4_geyjb"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="5_5r6c1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oy8b6"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0.1386, 0.42, 0.16674, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpk3n"]
+font = ExtResource("2_d22a8")
+font_size = 32
+outline_size = 8
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3yx8"]
+font = ExtResource("2_d22a8")
+font_size = 28
+outline_size = 4
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1fpf"]
+font_size = 55
+outline_size = 8
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
+
+[node name="Announcements" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d22a8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(2340, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_n85es")
+expand_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Announcements" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Announcements"
+label_settings = SubResource("LabelSettings_oy8b6")
+horizontal_alignment = 1
+
+[node name="space2" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="space3" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(1400, 575)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Updates" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Udate0" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+layout_mode = 2
+text = "August 23, 2025"
+label_settings = SubResource("LabelSettings_qpk3n")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
+layout_mode = 2
+text = "Update 1:"
+label_settings = SubResource("LabelSettings_c3yx8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("2_d22a8")
+theme_override_font_sizes/normal_font_size = 28
+text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
+
+The quick brown fox jumped over the lazydog near the bank of the river."
+fit_content = true
+
+[node name="Udate1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+layout_mode = 2
+text = "August 23, 2025"
+label_settings = SubResource("LabelSettings_qpk3n")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
+layout_mode = 2
+text = "Update 2:"
+label_settings = SubResource("LabelSettings_c3yx8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("2_d22a8")
+theme_override_font_sizes/normal_font_size = 28
+text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
+
+The quick brown fox jumped over the lazydog near the bank of the river."
+fit_content = true
+
+[node name="Udate2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+text = "August 23, 2025"
+label_settings = SubResource("LabelSettings_qpk3n")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
+layout_mode = 2
+text = "Update 3:"
+label_settings = SubResource("LabelSettings_c3yx8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("2_d22a8")
+theme_override_font_sizes/normal_font_size = 28
+text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
+
+The quick brown fox jumped over the lazydog near the bank of the river."
+fit_content = true
+
+[node name="space4" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 0
+
+[node name="Back" type="AspectRatioContainer" parent="MarginContainer/Panel/MarginContainer"]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+
+[node name="Back" type="TextureButton" parent="MarginContainer/Panel/MarginContainer/Back"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_o16rx")
+texture_pressed = ExtResource("4_geyjb")
+texture_hover = ExtResource("5_5r6c1")
+stretch_mode = 0
+
+[node name="SoundLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/Back"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 1
+text = "X"
+label_settings = SubResource("LabelSettings_h1fpf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/Back/Back" to="." method="_on_back_pressed"]

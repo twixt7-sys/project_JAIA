@@ -1,0 +1,287 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgxhawulb3veq"]
+
+[ext_resource type="Script" uid="uid://bi5ai2kde1c8x" path="res://scripts/ui/OptionsScreen.gd" id="1_86m5h"]
+[ext_resource type="Texture2D" uid="uid://c35hn0t3q0x5t" path="res://assets/images/UI.png" id="1_wby6m"]
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_pykmj"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="3_gdfy8"]
+[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="4_b0jeg"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="5_epl0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_shnbx"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0.1386, 0.42, 0.16674, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7yhf"]
+font = ExtResource("2_pykmj")
+font_size = 32
+outline_size = 8
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ghja5"]
+font = ExtResource("2_pykmj")
+font_size = 28
+outline_size = 4
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cikbk"]
+font_size = 55
+outline_size = 8
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86m5h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(2340, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_wby6m")
+expand_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
+layout_mode = 2
+
+[node name="space" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="About Us" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_shnbx")
+horizontal_alignment = 1
+
+[node name="space2" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="space3" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(1400, 575)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio"]
+layout_mode = 2
+text = "Audio"
+label_settings = SubResource("LabelSettings_h7yhf")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="sliders" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MusicVolume" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Music" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders/MusicVolume"]
+layout_mode = 2
+text = "music volume:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFX" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders/MusicVolume"]
+layout_mode = 2
+text = "sfx volume:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFXVolume2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Audio/sliders/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Video" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="VideoLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video"]
+layout_mode = 2
+text = "Video"
+label_settings = SubResource("LabelSettings_h7yhf")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MusicVolume" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Music" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "settings 1:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFX" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "settings 2:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFXVolume2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video/VBoxContainer/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Video2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="VideoLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2"]
+layout_mode = 2
+text = "Setting A"
+label_settings = SubResource("LabelSettings_h7yhf")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MusicVolume" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Music" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "settings 1:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFX" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "settings 2:"
+label_settings = SubResource("LabelSettings_ghja5")
+
+[node name="SFXVolume2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Settings/Video2/VBoxContainer/SFXVolume2"]
+custom_minimum_size = Vector2(900, 30)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="space4" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 0
+
+[node name="Back" type="AspectRatioContainer" parent="MarginContainer/Panel/MarginContainer"]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+
+[node name="Back" type="TextureButton" parent="MarginContainer/Panel/MarginContainer/Back"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_gdfy8")
+texture_pressed = ExtResource("4_b0jeg")
+texture_hover = ExtResource("5_epl0h")
+stretch_mode = 0
+
+[node name="SoundLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/Back"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 1
+text = "X"
+label_settings = SubResource("LabelSettings_cikbk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/Back/Back" to="." method="_on_back_pressed"]

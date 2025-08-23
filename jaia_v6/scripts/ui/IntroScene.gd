@@ -3,6 +3,8 @@ extends Control
 @onready var intro_bgm: AudioStreamPlayer2D = $intro_bgm
 
 @onready var ABOUT_SCREEN = preload("res://scenes/ui/AboutScreen.tscn")
+@onready var OPTIONS_SCREEN = preload("res://scenes/ui/OptionsScreen.tscn")
+@onready var ANNOUNCEMENTS_SCREEN = preload("res://scenes/ui/Announcements.tscn")
 @onready var TITLE_SCREEN = preload("res://scenes/ui/TitleScreen.tscn")
 @onready var contents: Control = $contents
 
@@ -31,9 +33,9 @@ func connect_signals(node: Node):
 
 # === TitleScreen signal handlers ===
 func play(): print("play")
-func options(): print("options")
+func options(): show_screen(OPTIONS_SCREEN)
 func link_gp(): print("link_gp")
-func announcements(): print("announcements")
+func announcements(): show_screen(ANNOUNCEMENTS_SCREEN)
 
 func about(): show_screen(ABOUT_SCREEN)
 

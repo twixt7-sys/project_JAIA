@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1b4fs5wgt6xb"]
 
 [node name="GUI" type="Control"]
+clip_contents = true
 custom_minimum_size = Vector2(2340, 1080)
 layout_mode = 3
 anchors_preset = 15
@@ -13,3 +14,306 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopLeft"]
+layout_mode = 2
+
+[node name="PlayerStatus panel" type="Panel" parent="TopLeft/HBoxContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TopLeft/HBoxContainer/PlayerStatus panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character
+Icon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeft/HBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerStatus panel2" type="Panel" parent="TopLeft/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TopLeft/HBoxContainer/VBoxContainer/PlayerStatus panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLeft/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 100
+
+[node name="Panel" type="Panel" parent="TopLeft/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TopLeft/HBoxContainer/VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "combat bar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="movement" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="Joystick" type="Panel" parent="movement"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="movement/Joystick"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Joystick"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_bottom = 75
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Joystick"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 75
+
+[node name="Panel" type="Panel" parent="MarginContainer4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer5/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 1

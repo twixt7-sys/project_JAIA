@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlxfpvgjgot34"]
+
+[ext_resource type="Script" uid="uid://coaknrwtogxwo" path="res://scenes/components/attack_component.gd" id="1_vbvb0"]
+
+[node name="Attack Component" type="Node2D"]
+script = ExtResource("1_vbvb0")
+
+[node name="Attack Timer" type="Timer" parent="."]

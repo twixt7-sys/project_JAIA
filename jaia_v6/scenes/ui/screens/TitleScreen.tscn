@@ -1,0 +1,425 @@
+[gd_scene load_steps=24 format=3 uid="uid://dkf4you84e0df"]
+
+[ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/ui/TitleScreen.gd" id="1_50bhr"]
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_26dtv"]
+[ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/Title.png" id="3_64a6e"]
+[ext_resource type="Texture2D" uid="uid://b4x2h08v7qbjc" path="res://assets/images/B0/B0.png" id="4_w5u7w"]
+[ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="5_ul0q2"]
+[ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/images/B0/B2.png" id="6_dkyyf"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="7_f2vxk"]
+[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="8_74nyn"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="9_4h274"]
+[ext_resource type="Texture2D" uid="uid://rptb58mvmw6y" path="res://assets/icons/sound3.png" id="10_hkado"]
+[ext_resource type="Texture2D" uid="uid://d2xhjixb3slf" path="res://assets/icons/music3.png" id="11_dqvf5"]
+[ext_resource type="Texture2D" uid="uid://b4wd6csxxvb7h" path="res://assets/icons/game.png" id="12_x48op"]
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="13_iskvp"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="14_j1n6w"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="15_vmq5q"]
+[ext_resource type="Texture2D" uid="uid://b6hrj5xjfagr5" path="res://assets/icons/announcements.png" id="16_jdae1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0v8ca"]
+font = ExtResource("2_26dtv")
+font_size = 48
+outline_size = 16
+outline_color = Color(0.517647, 0.494118, 0.529412, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.188235)
+
+[sub_resource type="Animation" id="Animation_0v8ca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubTitle:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [48]
+}
+
+[sub_resource type="Animation" id="Animation_7dj7h"]
+resource_name = "pulse"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("SubTitle:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [74, 80]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc41d"]
+_data = {
+&"RESET": SubResource("Animation_0v8ca"),
+&"pulse": SubResource("Animation_7dj7h")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ej01"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
+
+[sub_resource type="GDScript" id="GDScript_tqc2b"]
+script/source = "extends TextureRect
+
+@onready var music_icon: TextureRect = $\".\"
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjcsb"]
+font_size = 48
+outline_size = 12
+outline_color = Color(0.34902, 0.34902, 0.34902, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.196078)
+
+[node name="TitleScreen" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50bhr")
+
+[node name="Center" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 0
+
+[node name="SubTitle" type="Label" parent="Center/MarginContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+text = "BETA!"
+label_settings = SubResource("LabelSettings_0v8ca")
+horizontal_alignment = 1
+
+[node name="SubTitle Animation" type="AnimationPlayer" parent="Center/MarginContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_vc41d")
+}
+autoplay = "pulse"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+
+[node name="space2" type="BoxContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Title" type="AspectRatioContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+ratio = 2.0
+stretch_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Center/VBoxContainer/Title"]
+modulate = Color(0, 0, 0, 0.392157)
+texture_filter = 2
+layout_mode = 2
+texture = ExtResource("3_64a6e")
+
+[node name="TitleTexture" type="TextureRect" parent="Center/VBoxContainer/Title"]
+layout_mode = 2
+texture = ExtResource("3_64a6e")
+
+[node name="space3" type="BoxContainer" parent="Center/VBoxContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="AspectRatioContainer" parent="Center/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Play" type="AspectRatioContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="Center/VBoxContainer/Buttons/HBoxContainer/Play"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_w5u7w")
+texture_pressed = ExtResource("5_ul0q2")
+texture_hover = ExtResource("6_dkyyf")
+stretch_mode = 4
+
+[node name="PlayLabel" type="Label" parent="Center/VBoxContainer/Buttons/HBoxContainer/Play"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Play"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Options" type="AspectRatioContainer" parent="Center/VBoxContainer/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+
+[node name="Options" type="TextureButton" parent="Center/VBoxContainer/Buttons/HBoxContainer/Options"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_w5u7w")
+texture_pressed = ExtResource("5_ul0q2")
+texture_hover = ExtResource("6_dkyyf")
+stretch_mode = 4
+
+[node name="OptionsLabel" type="Label" parent="Center/VBoxContainer/Buttons/HBoxContainer/Options"]
+custom_minimum_size = Vector2(296, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Options"
+label_settings = SubResource("LabelSettings_3ej01")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="space" type="BoxContainer" parent="Center/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Accounts" type="HBoxContainer" parent="Center/VBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0.470588)
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="B1" type="Button" parent="Center/VBoxContainer/Accounts"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "fb"
+
+[node name="B2" type="Button" parent="Center/VBoxContainer/Accounts"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "gm"
+
+[node name="B3" type="Button" parent="Center/VBoxContainer/Accounts"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "ig"
+
+[node name="B4" type="Button" parent="Center/VBoxContainer/Accounts"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "x"
+
+[node name="UpperRight" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UpperRight"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="Audio" type="HBoxContainer" parent="UpperRight/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Sound" type="AspectRatioContainer" parent="UpperRight/MarginContainer/Audio"]
+layout_mode = 2
+
+[node name="Sound" type="TextureButton" parent="UpperRight/MarginContainer/Audio/Sound"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_f2vxk")
+texture_pressed = ExtResource("8_74nyn")
+texture_hover = ExtResource("9_4h274")
+stretch_mode = 0
+
+[node name="SoundIcon" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Sound"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("10_hkado")
+
+[node name="Music" type="AspectRatioContainer" parent="UpperRight/MarginContainer/Audio"]
+layout_mode = 2
+
+[node name="Music" type="TextureButton" parent="UpperRight/MarginContainer/Audio/Music"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_f2vxk")
+texture_pressed = ExtResource("8_74nyn")
+texture_hover = ExtResource("9_4h274")
+stretch_mode = 0
+
+[node name="MusicIcon" type="TextureRect" parent="UpperRight/MarginContainer/Audio/Music"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("11_dqvf5")
+script = SubResource("GDScript_tqc2b")
+
+[node name="UpperLeft" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UpperLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="Link" type="AspectRatioContainer" parent="UpperLeft/MarginContainer"]
+layout_mode = 2
+
+[node name="LinkGP" type="TextureButton" parent="UpperLeft/MarginContainer/Link"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("7_f2vxk")
+texture_pressed = ExtResource("8_74nyn")
+texture_hover = ExtResource("9_4h274")
+stretch_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="UpperLeft/MarginContainer/Link"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="UpperLeft/MarginContainer/Link/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("12_x48op")
+stretch_mode = 2
+
+[node name="BottomRIght" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomRIght"]
+layout_mode = 2
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="About" type="AspectRatioContainer" parent="BottomRIght/MarginContainer"]
+layout_mode = 2
+
+[node name="About" type="TextureButton" parent="BottomRIght/MarginContainer/About"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("13_iskvp")
+texture_pressed = ExtResource("14_j1n6w")
+texture_hover = ExtResource("15_vmq5q")
+stretch_mode = 0
+
+[node name="AboutLabel" type="Label" parent="BottomRIght/MarginContainer/About"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+size_flags_vertical = 1
+text = "!"
+label_settings = SubResource("LabelSettings_hjcsb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="BottomLeft" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Announcement" type="AspectRatioContainer" parent="BottomLeft/MarginContainer"]
+layout_mode = 2
+
+[node name="Announcements" type="TextureButton" parent="BottomLeft/MarginContainer/Announcement"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("7_f2vxk")
+texture_pressed = ExtResource("8_74nyn")
+texture_hover = ExtResource("9_4h274")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="BottomLeft/MarginContainer/Announcement"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("16_jdae1")
+
+[node name="CenterTop" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="CenterTop"]
+modulate = Color(1, 1, 1, 0.470588)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_26dtv")
+theme_override_font_sizes/font_size = 28
+text = "v0.0.6"
+
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Accounts/B1" to="." method="_on_b_1_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Accounts/B2" to="." method="_on_b_2_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Accounts/B3" to="." method="_on_b_3_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/Accounts/B4" to="." method="_on_b_4_pressed"]
+[connection signal="toggled" from="UpperRight/MarginContainer/Audio/Sound/Sound" to="." method="_on_sound_toggled"]
+[connection signal="toggled" from="UpperRight/MarginContainer/Audio/Music/Music" to="." method="_on_music_toggled"]
+[connection signal="pressed" from="UpperLeft/MarginContainer/Link/LinkGP" to="." method="_on_link_gp_pressed"]
+[connection signal="pressed" from="BottomRIght/MarginContainer/About/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="BottomLeft/MarginContainer/Announcement/Announcements" to="." method="_on_announcements_pressed"]

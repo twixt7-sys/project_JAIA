@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=3 uid="uid://ctd08mm35k5ge"]
+
+[ext_resource type="Texture2D" uid="uid://dxo06h1nipxyy" path="res://Assets/World/title page bg.png" id="1_coop4"]
+[ext_resource type="Script" uid="uid://btbb2p25e3d0d" path="res://Scripts/title_screen.gd" id="1_tuktx"]
+[ext_resource type="Texture2D" uid="uid://bbif3ga6rp4of" path="res://Assets/World/Title.png" id="2_5whv5"]
+[ext_resource type="Texture2D" uid="uid://b1jjo7jifehya" path="res://Assets/Button.png" id="3_5whv5"]
+[ext_resource type="AudioStream" uid="uid://bwn5naw5m7yce" path="res://Assets/All Will Settle - Bloo.mp3" id="4_816ia"]
+[ext_resource type="Script" uid="uid://byj6iut7l61ut" path="res://Scripts/audio_stream_player_2d.gd" id="5_udsnl"]
+
+[sub_resource type="Animation" id="Animation_5whv5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_coop4"]
+resource_name = "bg animation"
+length = 60.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/bg:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4541.95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 59.9667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/bg:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tuktx"]
+resource_name = "start"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_816ia"]
+_data = {
+&"RESET": SubResource("Animation_5whv5"),
+&"bg animation": SubResource("Animation_coop4"),
+&"start": SubResource("Animation_tuktx")
+}
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_tuktx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_816ia")
+}
+autoplay = "bg animation"
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_top = 1.5
+offset_right = 6462.0
+offset_bottom = 1078.5
+texture = ExtResource("1_coop4")
+
+[node name="shadow" type="TextureRect" parent="Control"]
+modulate = Color(0, 0, 0, 0.392157)
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -367.0
+offset_right = 450.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02, 1.02)
+pivot_offset = Vector2(450, 225)
+texture = ExtResource("2_5whv5")
+
+[node name="title" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -367.0
+offset_right = 450.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 225)
+texture = ExtResource("2_5whv5")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -160.0
+offset_right = 700.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(700, 540)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 120
+
+[node name="TextureButton2" type="TextureButton" parent="VB/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_5whv5")
+
+[node name="TextureButton3" type="TextureButton" parent="VB/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_5whv5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_816ia")
+volume_db = 5.0
+parameters/looping = true
+script = ExtResource("5_udsnl")

@@ -2,10 +2,10 @@ extends Control
 
 @onready var intro_bgm: AudioStreamPlayer2D = $intro_bgm
 
-@onready var ABOUT_SCREEN = preload("res://scenes/ui/AboutScreen.tscn")
-@onready var OPTIONS_SCREEN = preload("res://scenes/ui/OptionsScreen.tscn")
-@onready var ANNOUNCEMENTS_SCREEN = preload("res://scenes/ui/Announcements.tscn")
-@onready var TITLE_SCREEN = preload("res://scenes/ui/TitleScreen.tscn")
+@onready var ABOUT_SCREEN = preload("res://scenes/ui/screens/AboutScreen.tscn")
+@onready var OPTIONS_SCREEN = preload("res://scenes/ui/screens/OptionsScreen.tscn")
+@onready var ANNOUNCEMENTS_SCREEN = preload("res://scenes/ui/screens/Announcements.tscn")
+@onready var TITLE_SCREEN = preload("res://scenes/ui/screens/TitleScreen.tscn")
 @onready var contents: Control = $contents
 
 

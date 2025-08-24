@@ -1,0 +1,196 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctd08mm35k5ge"]
+
+[ext_resource type="Script" uid="uid://btbb2p25e3d0d" path="res://Scripts/title_screen.gd" id="1_tuktx"]
+[ext_resource type="Texture2D" uid="uid://bbif3ga6rp4of" path="res://Assets/World/Title.png" id="2_5whv5"]
+[ext_resource type="Texture2D" uid="uid://cyjojbvkavb8p" path="res://Assets/UI/Buttons/Button1.png" id="4_n82rj"]
+[ext_resource type="Texture2D" uid="uid://c3cfyqteaewu" path="res://Assets/UI/Buttons/Button2.png" id="5_0061g"]
+[ext_resource type="Texture2D" uid="uid://12rjybk07iwl" path="res://Assets/UI/Buttons/Button3.png" id="6_8mikk"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_12m1t"]
+device = -1
+pressed = true
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_6vd4x"]
+events = [SubResource("InputEventKey_12m1t")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmnw7"]
+font_size = 64
+font_color = Color(0.835294, 0.835294, 0.835294, 1)
+outline_size = 16
+outline_color = Color(0.560784, 0.560784, 0.560784, 1)
+
+[sub_resource type="Animation" id="Animation_55kwv"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_12m1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vd4x"]
+_data = {
+&"RESET": SubResource("Animation_12m1t"),
+&"fade_in": SubResource("Animation_55kwv")
+}
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_tuktx")
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shadow" type="TextureRect" parent="Control"]
+modulate = Color(0, 0, 0, 0.392157)
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -367.0
+offset_right = 450.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02, 1.02)
+pivot_offset = Vector2(450, 225)
+texture = ExtResource("2_5whv5")
+
+[node name="title" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -367.0
+offset_right = 450.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 225)
+texture = ExtResource("2_5whv5")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -320.0
+offset_right = 700.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.500873, 0.5)
+pivot_offset = Vector2(700, 600)
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="VB/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 0
+shortcut = SubResource("Shortcut_6vd4x")
+texture_normal = ExtResource("4_n82rj")
+texture_pressed = ExtResource("5_0061g")
+texture_hover = ExtResource("6_8mikk")
+stretch_mode = 3
+
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -32.0
+offset_right = 112.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(216, 32)
+text = "PLAY"
+label_settings = SubResource("LabelSettings_nmnw7")
+
+[node name="Settings" type="TextureButton" parent="VB/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_n82rj")
+texture_pressed = ExtResource("5_0061g")
+texture_hover = ExtResource("6_8mikk")
+
+[node name="Settings Label" type="Label" parent="VB/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(216, 32)
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_nmnw7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6vd4x")
+}
+autoplay = "fade_in"
+
+[connection signal="pressed" from="VB/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VB/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

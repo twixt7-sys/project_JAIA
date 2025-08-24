@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://2gcgqqf477fb"]
+
+[ext_resource type="Texture2D" uid="uid://dylmrpv0j7b5n" path="res://assets/images/player.png" id="1_k5kvl"]
+
+[node name="Character" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_k5kvl")
+hframes = 9
+vframes = 7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true

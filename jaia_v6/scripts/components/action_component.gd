@@ -1,10 +1,13 @@
-class_name Action
+class_name ActionComponent
 extends Node2D
 
 var cooldowns = {}
 
 # dynamically names, calls and sets a cooldown for a Callable. 
-func action(action_name: String, cooldown: float, is_active: bool, logic: Callable, at_end: Callable = func(): null):
+func action(
+	action_name: String, cooldown: float, logic: Callable,
+	is_active: bool = true, at_end: Callable = func(): null
+	):
 	if cooldowns.has(action_name) or not is_active:
 		return func(): print(action_name, " failed.")
 	logic.call()

@@ -1,4 +1,4 @@
-class_name Player
+class_name Playerr
 extends CharacterBody2D
 
 signal attack_area_entered(enemy, attacker)

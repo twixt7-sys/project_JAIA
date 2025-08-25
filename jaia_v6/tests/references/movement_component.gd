@@ -1,4 +1,4 @@
-class_name MovementComponent
+class_name MovementComponentClass
 
 extends Node2D
 

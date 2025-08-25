@@ -2,7 +2,6 @@ class_name Attack
 
 extends Node
 
-
 var damage: float
 var knockback: float
 

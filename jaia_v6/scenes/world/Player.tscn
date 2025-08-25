@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://2gcgqqf477fb"]
+
+[ext_resource type="Script" uid="uid://gvpv4wapkxdi" path="res://entities/player/player.gd" id="1_l6olw"]
+[ext_resource type="Texture2D" uid="uid://dylmrpv0j7b5n" path="res://assets/images/player.png" id="2_ucuqk"]
+[ext_resource type="PackedScene" uid="uid://bqjtumkunqwr0" path="res://scenes/components/action_component.tscn" id="3_4lb2g"]
+[ext_resource type="PackedScene" uid="uid://dlxfpvgjgot34" path="res://scenes/components/attack_component.tscn" id="4_7ogec"]
+[ext_resource type="PackedScene" uid="uid://bpj3r1xt416xq" path="res://scenes/components/movement_component.tscn" id="5_eokli"]
+[ext_resource type="PackedScene" uid="uid://k3352ykt1653" path="res://scenes/components/stamina_component.tscn" id="6_a5blu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6olw"]
+radius = 35.0
+height = 108.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_l6olw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_ucuqk")
+hframes = 9
+vframes = 7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="Action Component" parent="Components" instance=ExtResource("3_4lb2g")]
+
+[node name="Attack Component" parent="Components" instance=ExtResource("4_7ogec")]
+
+[node name="Movement Component" parent="Components" node_paths=PackedStringArray("BODY") instance=ExtResource("5_eokli")]
+BODY = NodePath("../..")
+
+[node name="Stamina Component" parent="Components" instance=ExtResource("6_a5blu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l6olw")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1b4fs5wgt6xb"]
+[gd_scene load_steps=3 format=3 uid="uid://c1b4fs5wgt6xb"]
 
 [ext_resource type="Script" uid="uid://crqi4ho0ds3m5" path="res://scripts/ui/GUI.gd" id="1_6gfri"]
+[ext_resource type="PackedScene" uid="uid://ddo47f38ulwyw" path="res://addons/joystick_addon/joystick.tscn" id="2_7hruu"]
 
 [node name="GUI" type="Control"]
 custom_minimum_size = Vector2(2340, 1080)
@@ -103,6 +104,13 @@ grow_vertical = 2
 text = "Joystick"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Joystick2" parent="." instance=ExtResource("2_7hruu")]
+position = Vector2(2115, 854)
+up_input = "move_up"
+down_input = "move_down"
+left_input = "move_left"
+right_input = "move_right"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

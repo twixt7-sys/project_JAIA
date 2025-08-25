@@ -4,10 +4,12 @@ extends Control
 
 @onready var ABOUT_SCREEN = preload("res://scenes/ui/screens/AboutScreen.tscn")
 @onready var OPTIONS_SCREEN = preload("res://scenes/ui/screens/OptionsScreen.tscn")
+@onready var GAME_SCREEN = preload("res://scenes/world/GameScreen.tscn")
 @onready var ANNOUNCEMENTS_SCREEN = preload("res://scenes/ui/screens/Announcements.tscn")
 @onready var TITLE_SCREEN = preload("res://scenes/ui/screens/TitleScreen.tscn")
 @onready var contents: Control = $contents
 
+signal play_game
 
 func _ready() -> void:
 	intro_bgm.play(10.0)
@@ -32,7 +34,7 @@ func connect_signals(node: Node):
 			node.connect(name, Callable(self, name))
 
 # === TitleScreen signal handlers ===
-func play(): print("play")
+func play(): emit_signal("play_game")
 func options(): show_screen(OPTIONS_SCREEN)
 func link_gp(): print("link_gp")
 func announcements(): show_screen(ANNOUNCEMENTS_SCREEN)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bymsnishsrd4l"]
+[gd_scene load_steps=4 format=3 uid="uid://bymsnishsrd4l"]
 
 [ext_resource type="PackedScene" uid="uid://c1b4fs5wgt6xb" path="res://scenes/ui/GUI.tscn" id="1_bo1hi"]
 [ext_resource type="PackedScene" uid="uid://be15cty2h1q21" path="res://scenes/world/GameContent.tscn" id="1_luian"]
+[ext_resource type="Script" uid="uid://gd64pf0aowrq" path="res://scripts/ui/GameScreen.gd" id="1_n0hxb"]
 
 [node name="GameScreen" type="Control"]
 custom_minimum_size = Vector2(2340, 1080)
@@ -11,9 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n0hxb")
 
 [node name="GameContent" parent="." instance=ExtResource("1_luian")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("1_bo1hi")]
+
+[connection signal="back_to_title_screen" from="CanvasLayer/GUI" to="." method="_on_gui_back_to_title_screen"]

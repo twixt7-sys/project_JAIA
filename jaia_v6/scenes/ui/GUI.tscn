@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://c1b4fs5wgt6xb"]
+[gd_scene load_steps=2 format=3 uid="uid://c1b4fs5wgt6xb"]
+
+[ext_resource type="Script" uid="uid://crqi4ho0ds3m5" path="res://scripts/ui/GUI.gd" id="1_6gfri"]
 
 [node name="GUI" type="Control"]
-clip_contents = true
 custom_minimum_size = Vector2(2340, 1080)
 layout_mode = 3
 anchors_preset = 15
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6gfri")
 
 [node name="TopLeft" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -303,17 +305,19 @@ offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 25
 
-[node name="Panel" type="Panel" parent="MarginContainer5"]
+[node name="Exit" type="Button" parent="MarginContainer5"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer5/Panel"]
+[node name="Label" type="Label" parent="MarginContainer5/Exit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "A1"
+text = "exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer5/Exit" to="." method="_on_exit_pressed"]

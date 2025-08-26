@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://be15cty2h1q21"]
+[gd_scene load_steps=5 format=3 uid="uid://be15cty2h1q21"]
 
 [ext_resource type="PackedScene" uid="uid://3x0c661r6tt7" path="res://scenes/world/map0.tscn" id="1_t8qwp"]
 [ext_resource type="PackedScene" uid="uid://2gcgqqf477fb" path="res://scenes/world/Player.tscn" id="2_y4f5v"]
+[ext_resource type="AudioStream" uid="uid://bxq0hichxkhm7" path="res://assets/audio/music/Gallops - Bloo.mp3" id="3_y4f5v"]
+
+[sub_resource type="GDScript" id="GDScript_y4f5v"]
 
 [node name="GameContent" type="Node2D"]
+script = SubResource("GDScript_y4f5v")
 
 [node name="Map0" parent="." instance=ExtResource("1_t8qwp")]
 
 [node name="Player" parent="." instance=ExtResource("2_y4f5v")]
 position = Vector2(1184, 545)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y4f5v")
+volume_db = 5.0
+autoplay = true
+parameters/looping = true

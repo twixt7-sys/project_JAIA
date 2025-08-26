@@ -2,6 +2,7 @@ extends Control
 
 signal back_to_title_screen
 
+@onready var game_content: Node2D = $GameContent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

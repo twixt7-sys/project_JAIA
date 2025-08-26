@@ -1,3 +1,5 @@
+class_name StaminaComponent
+
 extends Node2D
 
 @export var MAX_STAMINA := 100.00

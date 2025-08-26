@@ -69,182 +69,142 @@ theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
+[node name="Announcements" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
 layout_mode = 2
 
-[node name="space" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 layout_mode = 2
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_bottom = 25
 
-[node name="Announcements" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="Announcements" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/MarginContainer"]
 layout_mode = 2
 text = "Announcements"
 label_settings = SubResource("LabelSettings_oy8b6")
 horizontal_alignment = 1
 
-[node name="space2" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 custom_minimum_size = Vector2(1000, 3)
 layout_mode = 2
 color = Color(0.5, 0.5, 0.5, 1)
 
-[node name="space3" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="space3" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 custom_minimum_size = Vector2(100, 500)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2"]
 custom_minimum_size = Vector2(1400, 575)
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="Updates" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer"]
+[node name="Updates" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Udate0" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
+[node name="Udate1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates"]
 custom_minimum_size = Vector2(1400, 0)
 layout_mode = 2
 
-[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1"]
 layout_mode = 2
-text = "August 23, 2025"
+text = "August 26, 2025"
 label_settings = SubResource("LabelSettings_qpk3n")
 
-[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1"]
 layout_mode = 2
 theme_override_constants/margin_top = 35
 
-[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0"]
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1"]
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1"]
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1"]
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
 layout_mode = 2
-text = "Update 1:"
+text = "Update 0.0.10:"
 label_settings = SubResource("LabelSettings_c3yx8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
 theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/line_separation = 12
 theme_override_fonts/normal_font = ExtResource("2_d22a8")
 theme_override_font_sizes/normal_font_size = 28
-text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
+text = "Massive user interface progress!
 
-The quick brown fox jumped over the lazydog near the bank of the river."
+JAIA's game user interface now showcases both the player's main and combat parameters.
+
+Along with the Health, Mana, and Stamina systems. The new GUI highlights the combat bars for magic abilities. A gateway to JAIA's unique magic system.
+
+As of now, elemental magic attributes [Fire, Water, Wind, Earth] are now displayed directly under the status bars."
 fit_content = true
 
-[node name="Udate1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
+[node name="Udate0" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates"]
 custom_minimum_size = Vector2(1400, 0)
 layout_mode = 2
 
-[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0"]
 layout_mode = 2
-text = "August 23, 2025"
+text = "August 26, 2025"
 label_settings = SubResource("LabelSettings_qpk3n")
 
-[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0"]
 layout_mode = 2
 theme_override_constants/margin_top = 35
 
-[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1"]
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1"]
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1"]
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1"]
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
 layout_mode = 2
-text = "Update 2:"
+text = "Update 0.0.9:"
 label_settings = SubResource("LabelSettings_c3yx8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate1/Update 1/Update 1/Update 1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate0/Update 1/Update 1/Update 1"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
 theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/line_separation = 12
 theme_override_fonts/normal_font = ExtResource("2_d22a8")
 theme_override_font_sizes/normal_font_size = 28
-text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
+text = "For a more consistent aesthetic, I added a custom joystick for catering directional movement for Nim (name of the character).
 
-The quick brown fox jumped over the lazydog near the bank of the river."
+In this patch, the features from the previous prototype version were refactored and are made cleaner, more concise, and more systematic for peak scalability.
+
+Animations for idle and walking are now added with code cleaner and expandable as ever before."
 fit_content = true
 
-[node name="Udate2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates"]
-custom_minimum_size = Vector2(1400, 0)
-layout_mode = 2
-
-[node name="AudioLabel" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
-layout_mode = 2
-text = "August 23, 2025"
-label_settings = SubResource("LabelSettings_qpk3n")
-
-[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
-layout_mode = 2
-theme_override_constants/margin_top = 35
-
-[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2"]
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1"]
-custom_minimum_size = Vector2(1200, 0)
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
-layout_mode = 2
-text = "Update 3:"
-label_settings = SubResource("LabelSettings_c3yx8")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
-theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
-theme_override_constants/outline_size = 4
-theme_override_constants/line_separation = 12
-theme_override_fonts/normal_font = ExtResource("2_d22a8")
-theme_override_font_sizes/normal_font_size = 28
-text = "The quick brown fox jumped over the lazydog near the bank of the river. The quick brown fox jumped over the lazydog near the bank of the river. 
-
-The quick brown fox jumped over the lazydog near the bank of the river."
-fit_content = true
-
-[node name="space4" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="space4" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 

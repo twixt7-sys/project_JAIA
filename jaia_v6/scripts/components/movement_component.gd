@@ -1,16 +1,17 @@
 class_name MovementComponent
+extends Node
 
-extends Node2D
+@export var speed := 500.0
+@export var friction := 0.95
 
-@export var BODY: CharacterBody2D
+var sprint := 0.0
 
-@export var MOVEMENT_SPEED := 10.0
+func calculate_velocity(current_velocity: Vector2, direction: Vector2, delta: float) -> Vector2:
+	# normalize direction unless zero
+	if direction.length() > 0:
+		direction = direction.normalized()
 
-var friction := 0.9
-
-func move(delta: float, direction: Vector2) -> void:
-	direction = direction.normalized() if direction.length() > 1 else direction
-	BODY.velocity += direction * MOVEMENT_SPEED
-	BODY.velocity *= friction
-	BODY.position += BODY.velocity * delta
-	BODY.move_and_slide()
+	var new_velocity = current_velocity
+	new_velocity += direction * (speed + sprint) * delta
+	new_velocity *= friction
+	return new_velocity

@@ -2,15 +2,10 @@ extends Control
 
 signal back_to_title_screen
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+
+func _on_exit_pressed() -> void: emit_signal("back_to_title_screen")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_exit_pressed() -> void:
-	emit_signal("back_to_title_screen")
+# sprint button
+func _on_sprint_button_button_down() -> void: ControlsManager.is_sprinting = true
+func _on_sprint_button_button_up() -> void: ControlsManager.is_sprinting = false

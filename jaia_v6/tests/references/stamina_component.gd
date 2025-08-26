@@ -1,4 +1,4 @@
-class_name StaminaComponent
+class_name StaminaComponentClass
 
 extends Node2D
 

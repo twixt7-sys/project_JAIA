@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://v4apnft7xm7h"]
+
+[ext_resource type="Texture2D" uid="uid://7pmn10rn248x" path="res://assets/images/joystick2/joystick1.png" id="1_gqtmi"]
+[ext_resource type="Texture2D" uid="uid://yoyn5mlnnrm" path="res://assets/images/joystick2/joystick2.png" id="2_gwwbo"]
+
+[sub_resource type="GDScript" id="GDScript_8wkc1"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_button_up() -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_scwsa"]
+script/source = "class_name MovementJoystick
+
+extends Sprite2D
+
+
+@onready var parent: Node2D = $\"..\"
+
+@export var max_length: float = 50.0
+@export var deadzone: float = 15.0
+
+var _pressing: bool = false
+var output_vector: Vector2 = Vector2.ZERO
+
+func _process(delta: float) -> void:
+	if _pressing:
+		var raw_dir: Vector2 = get_global_mouse_position() - parent.global_position
+		var clamped_dir: Vector2 = raw_dir.limit_length(max_length)
+		global_position = parent.global_position + clamped_dir
+
+		# normalize for output
+		output_vector = clamped_dir / max_length
+
+		# apply deadzone
+		if output_vector.length() < deadzone / max_length:
+			output_vector = Vector2.ZERO
+	else:
+		global_position = global_position.lerp(parent.global_position, delta * 50.0)
+		output_vector = Vector2.ZERO
+
+
+func _on_button_down() -> void:
+	_pressing = true
+
+func _on_button_up() -> void:
+	_pressing = false
+	output_vector = Vector2.ZERO
+"
+
+[node name="Joystick" type="Node2D"]
+script = SubResource("GDScript_8wkc1")
+
+[node name="Joyring" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_gqtmi")
+offset = Vector2(0.5, 0.5)
+
+[node name="JoyKnob" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_gwwbo")
+offset = Vector2(0.5, 0.5)
+script = SubResource("GDScript_scwsa")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Button" to="JoyKnob" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="JoyKnob" method="_on_button_up"]

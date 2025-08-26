@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxq0hichxkhm7"
+path="res://.godot/imported/Gallops - Bloo.mp3-d155e3733e3ed820063ad1c50b42df82.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Gallops - Bloo.mp3"
+dest_files=["res://.godot/imported/Gallops - Bloo.mp3-d155e3733e3ed820063ad1c50b42df82.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

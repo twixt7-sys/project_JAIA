@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1b4fs5wgt6xb"]
+[gd_scene load_steps=23 format=3 uid="uid://c1b4fs5wgt6xb"]
 
 [ext_resource type="Script" uid="uid://crqi4ho0ds3m5" path="res://scripts/ui/GUI.gd" id="1_6gfri"]
 [ext_resource type="Texture2D" uid="uid://c8dd4tisg3kqh" path="res://assets/images/CharacterFrame.png" id="2_5f1j6"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://ceevic2bmnpjo" path="res://assets/images/elements/elements3.png" id="8_c8hko"]
 [ext_resource type="Texture2D" uid="uid://byrj74wym5ny8" path="res://assets/images/elements/elements4.png" id="9_b5v7v"]
 [ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/touchscreen_button.tscn" id="13_gw7b5"]
+[ext_resource type="Texture2D" uid="uid://tq0edblx41qq" path="res://assets/icons/GUI_toolbar4.png" id="14_c8hko"]
+[ext_resource type="Texture2D" uid="uid://uqu5wqihomj3" path="res://assets/icons/GUI_toolbar3.png" id="15_b5v7v"]
+[ext_resource type="Texture2D" uid="uid://de33kdtuly14a" path="res://assets/icons/GUI_toolbar2.png" id="16_c101d"]
+[ext_resource type="Texture2D" uid="uid://mdqvwq5yydtg" path="res://assets/icons/GUI_toolbar1.png" id="17_p7q70"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqi1v"]
 font_size = 29
@@ -266,36 +270,65 @@ layout_mode = 2
 position = Vector2(100, 101)
 scale = Vector2(2, 2)
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="Toolbar" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -750.0
-offset_bottom = 200.0
+offset_left = -595.0
+offset_bottom = 210.0
 grow_horizontal = 0
 scale = Vector2(1.08, 1.08)
 pivot_offset = Vector2(750, 0)
 theme_override_constants/margin_top = 90
 theme_override_constants/margin_right = 100
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Toolbar"]
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 2
 
-[node name="JournalButton" parent="MarginContainer2/HBoxContainer2" instance=ExtResource("13_gw7b5")]
+[node name="Journal" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="JournalButton" parent="Toolbar/HBoxContainer2/Journal" instance=ExtResource("13_gw7b5")]
 layout_mode = 2
 
-[node name="EncyclopediaButton" parent="MarginContainer2/HBoxContainer2" instance=ExtResource("13_gw7b5")]
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/Journal"]
+layout_mode = 2
+texture = ExtResource("14_c8hko")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="EncyclopediaButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer" instance=ExtResource("13_gw7b5")]
 layout_mode = 2
 
-[node name="InventoryButton" parent="MarginContainer2/HBoxContainer2" instance=ExtResource("13_gw7b5")]
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("15_b5v7v")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
 layout_mode = 2
 
-[node name="MapButton" parent="MarginContainer2/HBoxContainer2" instance=ExtResource("13_gw7b5")]
-custom_minimum_size = Vector2(120, 120)
+[node name="InventoryButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer2" instance=ExtResource("13_gw7b5")]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("16_c101d")
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+
+[node name="InventoryButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer4" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer4"]
+layout_mode = 2
+texture = ExtResource("17_p7q70")
 
 [node name="Left Buttons" type="MarginContainer" parent="."]
 layout_mode = 1

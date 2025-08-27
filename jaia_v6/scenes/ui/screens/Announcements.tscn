@@ -72,12 +72,12 @@ theme_override_constants/margin_right = 200
 [node name="Announcements" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
+[node name="Title" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements"]
 layout_mode = 2
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_bottom = 25
 
-[node name="Announcements" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/MarginContainer"]
+[node name="Announcements" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/Title"]
 layout_mode = 2
 text = "Announcements"
 label_settings = SubResource("LabelSettings_oy8b6")
@@ -105,6 +105,52 @@ vertical_scroll_mode = 2
 [node name="Updates" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
+
+[node name="Udate2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+
+[node name="Update2" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+text = "August 27, 2025"
+label_settings = SubResource("LabelSettings_qpk3n")
+
+[node name="space" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+
+[node name="Update 1" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="Label" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
+layout_mode = 2
+text = "Update 0.0.11:"
+label_settings = SubResource("LabelSettings_c3yx8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates/Udate2/Update 1/Update 1/Update 1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("2_d22a8")
+theme_override_font_sizes/normal_font_size = 28
+text = "GUI improved!
+
+Toolkits are now added as well as a name label on the player's status area. The entire GUI is now resized for a more comfortable feel and button textures are now being slowly filled up."
+fit_content = true
 
 [node name="Udate1" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates"]
 custom_minimum_size = Vector2(1400, 0)

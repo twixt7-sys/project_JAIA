@@ -378,7 +378,7 @@ modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
-text = "v0.0.9"
+text = "v0.0.10"
 
 [node name="low_btn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_64a6e")

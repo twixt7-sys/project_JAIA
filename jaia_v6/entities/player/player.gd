@@ -18,7 +18,6 @@ var joystick_vec: Vector2
 func _physics_process(delta: float) -> void:
 	# input
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	ControlsManager.is_sprinting = Input.is_action_pressed("sprint")
 
 	# joystick input (get it from your joystick node)
 	var joystick_dir = ControlsManager.movement_joystick_vector
@@ -35,12 +34,12 @@ func _physics_process(delta: float) -> void:
 func update_animation() -> void:
 	var v_len = velocity.length()
 	var is_walking = v_len >= walking_threshold
-	var is_sprinting = v_len >= sprinting_threshold and ControlsManager.is_sprinting
+	var is_sprinting = v_len >= sprinting_threshold
 	
 
 	var conditions := {
-		"is_sprinting": is_sprinting,
-		"is_walking": is_walking and not is_sprinting,
+		"is_sprinting": ControlsManager.is_sprinting and is_sprinting,
+		"is_walking": is_walking and not ControlsManager.is_sprinting,
 		"is_idle": not is_walking, 
 		#"is_attacking": attack_component.is_attacking,
 		#"is_rolling": action_component.is_doing("roll"),

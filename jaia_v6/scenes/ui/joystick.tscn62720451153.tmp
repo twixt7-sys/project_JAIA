@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0uryt1jeomv"]
+
+[ext_resource type="Texture2D" uid="uid://bxsy5n2q5fxxr" path="res://assets/images/joystick2/joystick0.png" id="1_b5kbb"]
+[ext_resource type="Texture2D" uid="uid://d1p24kmce85j6" path="res://assets/images/joystick2/joystick3.png" id="2_bo7gq"]
+
+[sub_resource type="GDScript" id="GDScript_b5kbb"]
+script/source = "# MovementJoystick.gd
+extends Node2D
+class_name MovementJoystick
+
+@export var knob_path: NodePath = NodePath(\"Knob\")
+@export var max_length := 60.0
+@export var deadzone := 12.0
+@export var touch_priority := 100
+
+var output_vector := Vector2.ZERO
+var _knob: Sprite2D
+var _finger_id := -1
+
+func _ready() -> void:
+	_knob = get_node_or_null(knob_path)
+	TouchBus.register(self)
+
+func _exit_tree() -> void:
+	TouchBus.unregister(self)
+
+# --- TouchBus API ---------------------------------------------------------
+
+func is_inside_touch(pos: Vector2) -> bool:
+	# only claim if free
+	return _finger_id == -1 and pos.distance_to(global_position) <= max_length * 1.5
+
+func on_touch_down(id: int, pos: Vector2) -> void:
+	if _finger_id == -1:
+		_finger_id = id
+		_update_knob(pos)
+
+func on_touch_move(id: int, pos: Vector2) -> void:
+	if id == _finger_id:
+		_update_knob(pos)
+
+func on_touch_up(id: int, _pos: Vector2) -> void:
+	if id == _finger_id:
+		_finger_id = -1
+		output_vector = Vector2.ZERO
+		if _knob:
+			_knob.global_position = global_position
+		ControlsManager.movement_joystick_vector = output_vector
+
+# --- helpers --------------------------------------------------------------
+
+func _update_knob(pos: Vector2) -> void:
+	var raw := pos - global_position
+	var clamped := raw.limit_length(max_length)
+	if _knob:
+		_knob.global_position = global_position + clamped
+	output_vector = clamped / max_length
+	if output_vector.length() < (deadzone / max_length):
+		output_vector = Vector2.ZERO
+	ControlsManager.movement_joystick_vector = output_vector
+"
+
+[sub_resource type="GDScript" id="GDScript_4gnrm"]
+
+[node name="MovementJoystick" type="Node2D"]
+script = SubResource("GDScript_b5kbb")
+
+[node name="Joyring" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_b5kbb")
+
+[node name="Knob" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_bo7gq")
+script = SubResource("GDScript_4gnrm")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

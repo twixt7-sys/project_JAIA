@@ -62,6 +62,7 @@ sprint={
 
 [input_devices]
 
+buffering/agile_event_flushing=true
 pointing/emulate_touch_from_mouse=true
 
 [rendering]

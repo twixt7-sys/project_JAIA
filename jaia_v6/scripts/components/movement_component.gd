@@ -7,7 +7,6 @@ extends Node
 var sprint := 0.0
 
 func calculate_velocity(current_velocity: Vector2, direction: Vector2, delta: float) -> Vector2:
-	# normalize direction unless zero
 	if direction.length() > 0:
 		direction = direction.normalized()
 

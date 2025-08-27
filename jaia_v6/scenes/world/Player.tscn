@@ -307,7 +307,6 @@ hframes = 9
 vframes = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 
 [node name="Components" type="Node2D" parent="."]

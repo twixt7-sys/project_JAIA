@@ -16,7 +16,7 @@ var sprinting_speed = 500
 var joystick_vec: Vector2
 
 func _physics_process(delta: float) -> void:
-	# input
+	# input (PC)
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	# joystick input (get it from your joystick node)
@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	direction = joystick_dir if joystick_dir != Vector2.ZERO else direction
 
 	# movement
+	if ControlsManager.is_rolling: movement_component.dash(direction)
 	movement_component.sprint = sprinting_speed if ControlsManager.is_sprinting else 0
 	velocity = movement_component.calculate_velocity(velocity, direction, delta)
 	move_and_slide()
@@ -35,14 +36,14 @@ func update_animation() -> void:
 	var v_len = velocity.length()
 	var is_walking = v_len >= walking_threshold
 	var is_sprinting = v_len >= sprinting_threshold
-	
+	var is_rolling = v_len >= walking_threshold
 
 	var conditions := {
 		"is_sprinting": ControlsManager.is_sprinting and is_sprinting,
 		"is_walking": is_walking and not ControlsManager.is_sprinting,
 		"is_idle": not is_walking, 
+		"is_rolling": ControlsManager.is_rolling and is_rolling,
 		#"is_attacking": attack_component.is_attacking,
-		#"is_rolling": action_component.is_doing("roll"),
 		#"is_casting": action_component.is_doing("cast"),
 	}
 
@@ -50,5 +51,5 @@ func update_animation() -> void:
 		animation_tree["parameters/conditions/%s" % cond] = conditions[cond]
 
 	if direction != Vector2.ZERO:
-		for path in ["idle", "walk", "sprint"]:
+		for path in ["idle", "walk", "sprint", "roll/BlendSpace2D"]:
 			animation_tree["parameters/%s/blend_position" % path] = direction

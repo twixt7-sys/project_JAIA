@@ -128,7 +128,7 @@ layout_mode = 2
 theme_override_constants/line_spacing = 0
 theme_override_constants/paragraph_spacing = 0
 theme_override_constants/outline_size = 0
-text = "BETA!"
+text = "ALPHA!"
 label_settings = SubResource("LabelSettings_0v8ca")
 horizontal_alignment = 1
 
@@ -378,7 +378,7 @@ modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
-text = "v0.0.11"
+text = "v0.0.12"
 
 [node name="low_btn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_64a6e")

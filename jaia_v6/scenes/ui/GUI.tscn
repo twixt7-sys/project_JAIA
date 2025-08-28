@@ -439,4 +439,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_pressed"]
 [connection signal="released" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_released"]
+[connection signal="pressed" from="Left Buttons/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]
 [connection signal="pressed" from="MarginContainer5/Exit" to="." method="_on_exit_pressed"]

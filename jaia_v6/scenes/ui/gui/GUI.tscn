@@ -1,0 +1,443 @@
+[gd_scene load_steps=23 format=3 uid="uid://c1b4fs5wgt6xb"]
+
+[ext_resource type="Script" uid="uid://crqi4ho0ds3m5" path="res://scripts/ui/GUI.gd" id="1_6gfri"]
+[ext_resource type="Texture2D" uid="uid://c8dd4tisg3kqh" path="res://assets/images/CharacterFrame.png" id="2_5f1j6"]
+[ext_resource type="PackedScene" uid="uid://b0uryt1jeomv" path="res://scenes/ui/gui/joystick.tscn" id="2_7hruu"]
+[ext_resource type="Texture2D" uid="uid://d1p24kmce85j6" path="res://assets/images/joystick2/joystick3.png" id="2_inv62"]
+[ext_resource type="PackedScene" uid="uid://v4apnft7xm7h" path="res://scenes/ui/gui/left_joystick.tscn" id="3_3vknn"]
+[ext_resource type="Texture2D" uid="uid://5p7fdbktluk7" path="res://icon.png" id="3_d5dtf"]
+[ext_resource type="Texture2D" uid="uid://dvj2eykxyh6pv" path="res://assets/images/bars/bars1.png" id="3_lhke1"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="4_40ujj"]
+[ext_resource type="Texture2D" uid="uid://bi2krvngx2tic" path="res://assets/images/bars/bars2.png" id="4_inv62"]
+[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="5_bu0gq"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="6_b6ld1"]
+[ext_resource type="Texture2D" uid="uid://i1tn8hhl3y3r" path="res://assets/images/elements/elements1.png" id="6_gw7b5"]
+[ext_resource type="Texture2D" uid="uid://dl1s3vjutto82" path="res://assets/images/elements/elements2.png" id="7_jqi1v"]
+[ext_resource type="Texture2D" uid="uid://ceevic2bmnpjo" path="res://assets/images/elements/elements3.png" id="8_c8hko"]
+[ext_resource type="Texture2D" uid="uid://byrj74wym5ny8" path="res://assets/images/elements/elements4.png" id="9_b5v7v"]
+[ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/TouchScreenButton.tscn" id="13_gw7b5"]
+[ext_resource type="Texture2D" uid="uid://tq0edblx41qq" path="res://assets/icons/GUI_toolbar4.png" id="14_c8hko"]
+[ext_resource type="Texture2D" uid="uid://uqu5wqihomj3" path="res://assets/icons/GUI_toolbar3.png" id="15_b5v7v"]
+[ext_resource type="Texture2D" uid="uid://de33kdtuly14a" path="res://assets/icons/GUI_toolbar2.png" id="16_c101d"]
+[ext_resource type="Texture2D" uid="uid://mdqvwq5yydtg" path="res://assets/icons/GUI_toolbar1.png" id="17_p7q70"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqi1v"]
+font_size = 29
+outline_size = 16
+outline_color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c101d"]
+outline_size = 2
+
+[node name="GUI" type="Control"]
+custom_minimum_size = Vector2(2340, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6gfri")
+
+[node name="TopLeft" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Status Indicators" type="AspectRatioContainer" parent="TopLeft"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopLeft/Status Indicators"]
+layout_mode = 2
+
+[node name="PlayerStatus panel" type="Panel" parent="TopLeft/Status Indicators/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStatus panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character
+Icon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frame3" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStatus panel"]
+self_modulate = Color(0.129412, 0.313726, 0.129412, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -90.0
+offset_right = -90.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("2_inv62")
+
+[node name="frame" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStatus panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_d5dtf")
+
+[node name="frame2" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStatus panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5f1j6")
+
+[node name="CenterContainer" type="CenterContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStatus panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerStats" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="SprintLabel" type="Label" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Bloo"
+label_settings = SubResource("LabelSettings_jqi1v")
+
+[node name="HMS bars container" type="Panel" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+
+[node name="HMS bars" type="VBoxContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container"]
+custom_minimum_size = Vector2(0, 75.335)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.076
+anchor_right = 1.595
+anchor_bottom = 1.243
+offset_left = -0.259998
+offset_top = 1.0
+offset_right = -0.174988
+offset_bottom = -0.0100021
+grow_vertical = 2
+
+[node name="HealthContainer" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars"]
+layout_mode = 2
+
+[node name="Health" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars/HealthContainer"]
+custom_minimum_size = Vector2(0, 45.65)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_lhke1")
+expand_mode = 2
+
+[node name="ManaContainer" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Mana" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars/ManaContainer"]
+custom_minimum_size = Vector2(0, 23.17)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_inv62")
+expand_mode = 2
+
+[node name="StaminaContainer" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/margin_right = 145
+
+[node name="Stamina" type="ColorRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/HMS bars container/HMS bars/StaminaContainer"]
+self_modulate = Color(1, 1, 0, 1)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 100
+
+[node name="elements" type="HBoxContainer" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Health" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer/elements"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_gw7b5")
+expand_mode = 2
+
+[node name="Mana" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer/elements"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_jqi1v")
+expand_mode = 2
+
+[node name="Stamina" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer/elements"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_c8hko")
+expand_mode = 2
+
+[node name="Health2" type="TextureRect" parent="TopLeft/Status Indicators/HBoxContainer/PlayerStats/VBoxContainer/MarginContainer/elements"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("9_b5v7v")
+expand_mode = 2
+
+[node name="movement" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -175.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 100
+
+[node name="JoystickContainer" type="Panel" parent="movement"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="Joystick" parent="movement" instance=ExtResource("2_7hruu")]
+position = Vector2(150, 151)
+scale = Vector2(2, 2)
+
+[node name="Left Joysticks" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 115
+theme_override_constants/margin_bottom = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Left Joysticks"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Left Joystick" type="Panel" parent="Left Joysticks/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Joystick" parent="Left Joysticks/HBoxContainer/Left Joystick" instance=ExtResource("3_3vknn")]
+position = Vector2(100, 101)
+scale = Vector2(2, 2)
+
+[node name="Left Joystick2" type="Panel" parent="Left Joysticks/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Joystick" parent="Left Joysticks/HBoxContainer/Left Joystick2" instance=ExtResource("3_3vknn")]
+position = Vector2(100, 101)
+scale = Vector2(2, 2)
+
+[node name="Toolbar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -595.0
+offset_bottom = 210.0
+grow_horizontal = 0
+scale = Vector2(1.08, 1.08)
+pivot_offset = Vector2(750, 0)
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 100
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Toolbar"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Journal" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="JournalButton" parent="Toolbar/HBoxContainer2/Journal" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/Journal"]
+layout_mode = 2
+texture = ExtResource("14_c8hko")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="EncyclopediaButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("15_b5v7v")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+
+[node name="InventoryButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer2" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("16_c101d")
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Toolbar/HBoxContainer2"]
+layout_mode = 2
+
+[node name="InventoryButton" parent="Toolbar/HBoxContainer2/AspectRatioContainer4" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/HBoxContainer2/AspectRatioContainer4"]
+layout_mode = 2
+texture = ExtResource("17_p7q70")
+
+[node name="Left Buttons" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Left Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="SprintButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="SprintLabel" type="Label" parent="Left Buttons/HBoxContainer/SprintButton"]
+layout_mode = 2
+text = "S"
+label_settings = SubResource("LabelSettings_jqi1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RollButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="RollLabel" type="Label" parent="Left Buttons/HBoxContainer/RollButton"]
+layout_mode = 2
+text = "R"
+label_settings = SubResource("LabelSettings_jqi1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StopButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="StopLabel" type="Label" parent="Left Buttons/HBoxContainer/StopButton"]
+layout_mode = 2
+text = "X"
+label_settings = SubResource("LabelSettings_jqi1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 75
+
+[node name="Panel" type="Panel" parent="MarginContainer4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+
+[node name="Exit" type="TextureButton" parent="MarginContainer5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_40ujj")
+texture_pressed = ExtResource("5_bu0gq")
+texture_hover = ExtResource("6_b6ld1")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer5/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ooo"
+label_settings = SubResource("LabelSettings_c101d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_pressed"]
+[connection signal="released" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_released"]
+[connection signal="pressed" from="Left Buttons/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]
+[connection signal="pressed" from="MarginContainer5/Exit" to="." method="_on_exit_pressed"]

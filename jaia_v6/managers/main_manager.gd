@@ -1,7 +1,7 @@
 extends Node
 
-@onready var INTRO_SCENE = preload("res://scenes/menus/IntroScene.tscn")
-@onready var GAME_SCREEN = preload("res://scenes/world/GameScreen.tscn")
+const GAME_SCENE = preload("res://scenes/main scenes/GameScene.tscn")
+const INTRO_SCENE = preload("res://scenes/main scenes/IntroScene.tscn")
 
 func _ready() -> void:
 	show_screen(INTRO_SCENE)
@@ -23,7 +23,7 @@ func connect_signals(node: Node):
 		if has_method(name):
 			node.connect(name, Callable(self, name))
 
-func play_game() -> void: show_screen(GAME_SCREEN)
+func play_game() -> void: show_screen(GAME_SCENE)
 
 func back_to_title_screen() -> void:
 	show_screen(INTRO_SCENE)

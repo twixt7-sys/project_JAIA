@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://hg64k8008coq"]
+
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="1_tf3ju"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/Bsqr1.png" id="2_tf3ju"]
+
+[sub_resource type="GDScript" id="GDScript_tf3ju"]
+script/source = "extends CenterContainer
+
+signal pressed
+signal released
+
+@onready var sprint_button: TouchScreenButton = $\"Sprint Button\"
+@onready var label: Label = $Label
+
+@export var texture_normal: ImageTexture
+@export var texture_pressed: ImageTexture
+@export var texture_size: float
+
+func _on_sprint_button_pressed() -> void: emit_signal(\"pressed\")
+func _on_sprint_button_released() -> void: emit_signal(\"released\")
+"
+
+[node name="TouchscreenButton" type="CenterContainer"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = SubResource("GDScript_tf3ju")
+
+[node name="Sprint Button" type="TouchScreenButton" parent="."]
+scale = Vector2(8.33333, 8.33333)
+texture_normal = ExtResource("1_tf3ju")
+texture_pressed = ExtResource("2_tf3ju")
+
+[connection signal="pressed" from="Sprint Button" to="." method="_on_sprint_button_pressed"]
+[connection signal="released" from="Sprint Button" to="." method="_on_sprint_button_released"]

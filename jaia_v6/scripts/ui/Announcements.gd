@@ -1,6 +1,6 @@
 extends Control
 
-@onready var updates: VBoxContainer = $MarginContainer/Panel/MarginContainer2/Announcements/CenterContainer2/ScrollContainer/Updates
+@onready var updates: VBoxContainer = $"Texture Panel/Window Margin/Announcements Vbox/Updates Margin/Updates ScrollView/Updates"
 
 signal go_back
 
@@ -8,8 +8,8 @@ func _on_back_pressed() -> void: emit_signal("go_back")
 
 func _ready() -> void:
 	var dataFile = load_json_file("res://resources/data/announcements.json")
-	var UpdateContainerScene = preload("res://scenes/ui/components/update_container.tscn")
-	
+	var UpdateContainerScene = preload("res://scenes/ui/components/UpdateContainer.tscn")
+
 	for i in dataFile:
 		var entry: UpdateContainer = UpdateContainerScene.instantiate()
 		entry.set_data(

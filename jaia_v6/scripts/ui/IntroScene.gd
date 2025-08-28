@@ -4,7 +4,6 @@ extends Control
 
 @onready var ABOUT_SCREEN = preload("res://scenes/ui/screens/AboutScreen.tscn")
 @onready var OPTIONS_SCREEN = preload("res://scenes/ui/screens/OptionsScreen.tscn")
-@onready var GAME_SCREEN = preload("res://scenes/world/GameScreen.tscn")
 @onready var ANNOUNCEMENTS_SCREEN = preload("res://scenes/ui/screens/Announcements.tscn")
 @onready var TITLE_SCREEN = preload("res://scenes/ui/screens/TitleScreen.tscn")
 @onready var contents: Control = $contents

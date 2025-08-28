@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpgysr5rwmqwf"]
+
+[sub_resource type="GDScript" id="GDScript_32to6"]
+script/source = "extends VBoxContainer
+
+const UPDATE_CONTAINER = preload(\"res://scenes/ui/components/Updates/UpdateContainer.tscn\")
+
+func _ready() -> void:
+	var dataFile = Utilities.load_json_file(\"res://resources/data/announcements.json\")
+	
+	
+	add_data_entries(dataFile, UpdateContainerScene)
+
+func add_data_entries(dataFile, entry) -> void:
+	for i in dataFile:
+			var entry: UpdateContainer = UpdateContainerScene.instantiate()
+			entry.set_data(
+				dataFile[i][0],
+				dataFile[i][1],
+				dataFile[i][2]
+			)
+			add_child(entry)
+"
+
+[node name="Updates" type="VBoxContainer"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+script = SubResource("GDScript_32to6")

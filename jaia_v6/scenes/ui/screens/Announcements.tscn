@@ -1,15 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvfni10l5kcwq"]
+[gd_scene load_steps=3 format=3 uid="uid://bvfni10l5kcwq"]
 
 [ext_resource type="Script" uid="uid://c7nb5j4dg8jqy" path="res://scripts/ui/Announcements.gd" id="1_d22a8"]
-[ext_resource type="Texture2D" uid="uid://ptuojn3opang" path="res://assets/images/window0.png" id="2_4rokx"]
-[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/images/exit/exit_button1.png" id="5_gokjx"]
-[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/images/exit/exit_button2.png" id="6_86con"]
-[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/images/exit/exit_button3.png" id="7_ic51e"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_oy8b6"]
-font_size = 32
-outline_size = 12
-outline_color = Color(0.1386, 0.42, 0.16674, 1)
+[ext_resource type="PackedScene" uid="uid://nj57tilfvtnv" path="res://scenes/ui/components/JaiaPanel0.tscn" id="2_7bfmg"]
 
 [node name="Announcements" type="Control"]
 layout_mode = 3
@@ -20,87 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d22a8")
 
-[node name="Texture Panel" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(2300, 0)
+[node name="Jaia Panel 0" parent="." instance=ExtResource("2_7bfmg")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_4rokx")
-expand_mode = 5
+title = "Announcements"
+scenePath = "uid://bpgysr5rwmqwf"
 
-[node name="Window Margin" type="MarginContainer" parent="Texture Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 225
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 225
-
-[node name="Announcements Vbox" type="VBoxContainer" parent="Texture Panel/Window Margin"]
-layout_mode = 2
-
-[node name="Title" type="MarginContainer" parent="Texture Panel/Window Margin/Announcements Vbox"]
-layout_mode = 2
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_bottom = 50
-
-[node name="Title" type="Label" parent="Texture Panel/Window Margin/Announcements Vbox/Title"]
-layout_mode = 2
-text = "ANNOUNCEMENTS"
-label_settings = SubResource("LabelSettings_oy8b6")
-horizontal_alignment = 1
-
-[node name="Title Divider" type="ColorRect" parent="Texture Panel/Window Margin/Announcements Vbox"]
-custom_minimum_size = Vector2(1000, 3)
-layout_mode = 2
-color = Color(0.5, 0.5, 0.5, 1)
-
-[node name="Updates Margin" type="MarginContainer" parent="Texture Panel/Window Margin/Announcements Vbox"]
-custom_minimum_size = Vector2(100, 500)
-layout_mode = 2
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_top = 35
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 75
-
-[node name="Updates ScrollView" type="ScrollContainer" parent="Texture Panel/Window Margin/Announcements Vbox/Updates Margin"]
-custom_minimum_size = Vector2(1400, 650)
-layout_mode = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="Updates" type="VBoxContainer" parent="Texture Panel/Window Margin/Announcements Vbox/Updates Margin/Updates ScrollView"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Back Button Container" type="MarginContainer" parent="Texture Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -100.0
-offset_bottom = 100.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 105
-theme_override_constants/margin_right = 105
-
-[node name="Back Button Margin" type="AspectRatioContainer" parent="Texture Panel/Back Button Container"]
-modulate = Color(0.85, 0.85, 0.85, 1)
-layout_mode = 2
-
-[node name="Back Button" type="TextureButton" parent="Texture Panel/Back Button Container/Back Button Margin"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_gokjx")
-texture_pressed = ExtResource("6_86con")
-texture_hover = ExtResource("7_ic51e")
-stretch_mode = 0
-
-[connection signal="pressed" from="Texture Panel/Back Button Container/Back Button Margin/Back Button" to="." method="_on_back_pressed"]
+[connection signal="back" from="Jaia Panel 0" to="." method="_on_back"]

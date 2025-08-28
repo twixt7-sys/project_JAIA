@@ -4,9 +4,9 @@ extends Node
 @export var speed := 500.0
 @export var friction := 0.95
 
-@export var dash_speed := 800.0
-@export var dash_duration := 0.2
-@export var dash_cooldown := 0.5
+@export var dash_speed := 500.0
+@export var dash_duration := 0.05
+@export var dash_cooldown := 0.25
 
 var sprint := 0.0
 var _dash_time_left := 0.0
@@ -37,10 +37,7 @@ func calculate_velocity(current_velocity: Vector2, direction: Vector2, delta: fl
 	
 	return current_velocity * friction
 
-
 func dash(direction: Vector2) -> void:
-	if _cooldown_time_left > 0 or direction == Vector2.ZERO:
-		return
-	
+	if _cooldown_time_left > 0 or direction == Vector2.ZERO: return
 	_dash_direction = direction.normalized()
 	_dash_time_left = dash_duration

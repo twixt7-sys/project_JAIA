@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://nj57tilfvtnv"]
+
+[ext_resource type="Texture2D" uid="uid://ptuojn3opang" path="res://assets/images/window0.png" id="1_lsndh"]
+[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/images/exit/exit_button1.png" id="2_2kcgu"]
+[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/images/exit/exit_button2.png" id="3_5tace"]
+[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/images/exit/exit_button3.png" id="4_cl1mf"]
+
+[sub_resource type="GDScript" id="GDScript_lsndh"]
+script/source = "extends TextureRect
+
+signal back
+
+@export var title := \"Title\"
+@export_file(\"*.tscn\") var scenePath := \"\"
+
+@onready var scroll_view: ScrollContainer = $\"Window Margin/Vbox/Margin/ScrollView\"
+@onready var title_label: Label = $\"Window Margin/Vbox/Title/Title\"
+
+func _ready() -> void:
+	if scenePath != \"\":
+		var scene_res = load(scenePath)
+		if scene_res:
+			var scene = scene_res.instantiate()
+			scroll_view.add_child(scene)
+	title_label.text = title
+
+
+func _on_back_button_pressed() -> void: emit_signal(\"back\")
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_oy8b6"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0.1386, 0.42, 0.16674, 1)
+
+[node name="Jaia Panel 0" type="TextureRect"]
+custom_minimum_size = Vector2(2300, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lsndh")
+expand_mode = 5
+script = SubResource("GDScript_lsndh")
+
+[node name="Back Button Container" type="MarginContainer" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_bottom = 201.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 105
+theme_override_constants/margin_right = 105
+
+[node name="Back Button Margin" type="AspectRatioContainer" parent="Back Button Container"]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+
+[node name="Back Button" type="TextureButton" parent="Back Button Container/Back Button Margin"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_2kcgu")
+texture_pressed = ExtResource("3_5tace")
+texture_hover = ExtResource("4_cl1mf")
+stretch_mode = 0
+
+[node name="Window Margin" type="MarginContainer" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 225
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 225
+
+[node name="Vbox" type="VBoxContainer" parent="Window Margin"]
+layout_mode = 2
+
+[node name="Title" type="MarginContainer" parent="Window Margin/Vbox"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="Title" type="Label" parent="Window Margin/Vbox/Title"]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_oy8b6")
+horizontal_alignment = 1
+
+[node name="Title Divider" type="ColorRect" parent="Window Margin/Vbox"]
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Margin" type="MarginContainer" parent="Window Margin/Vbox"]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 75
+
+[node name="ScrollView" type="ScrollContainer" parent="Window Margin/Vbox/Margin"]
+custom_minimum_size = Vector2(1400, 650)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[connection signal="pressed" from="Back Button Container/Back Button Margin/Back Button" to="." method="_on_back_button_pressed"]

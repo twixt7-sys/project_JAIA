@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MainSettings="*res://managers/main_settings_manager.gd"
 ControlsManager="*res://managers/player_controls_manager.gd"
 ActionComponent="*res://scripts/components/action_component.gd"
+Utilities="*res://managers/utils_manager.gd"
 
 [display]
 

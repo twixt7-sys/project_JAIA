@@ -1,13 +1,14 @@
 class_name UpdateContainer
-extends VBoxContainer
+
+extends MarginContainer
 
 @export var date: String = ""
 @export var header: String = ""
-@export var content: String = ""
+@export_multiline var content: String = ""
 
-@onready var date_label: Label = $dateLabel
-@onready var header_label: Label = $"space/Update 1/Update 1/Update 1/headerLabel"
-@onready var content_label: RichTextLabel = $"space/Update 1/Update 1/Update 1/content/contentLabel"
+@onready var date_label: Label = $"Updates/Date Label Margin/dateLabel"
+@onready var header_label: Label = $"Updates/space/Update 1/Update 1/Update 1/headerLabel"
+@onready var content_label: RichTextLabel = $"Updates/space/Update 1/Update 1/Update 1/content/contentLabel"
 
 func set_data(new_date: String, new_header: String, new_content: String) -> void:
 	date = new_date

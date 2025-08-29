@@ -29,13 +29,7 @@ grow_vertical = 2
 script = SubResource("GDScript_k8pft")
 
 [node name="Jaia Panel 0" parent="." instance=ExtResource("1_k8pft")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 2300.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 title = "Journal"
 
 [connection signal="back" from="Jaia Panel 0" to="." method="_on_jaia_panel_0_back"]

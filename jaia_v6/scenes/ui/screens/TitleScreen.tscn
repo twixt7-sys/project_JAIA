@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="5_ul0q2"]
 [ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/images/B0/B2.png" id="6_dkyyf"]
 [ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="7_f2vxk"]
-[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="8_74nyn"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/images/Bsqr0/Bsqr1.png" id="8_74nyn"]
 [ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="9_4h274"]
 [ext_resource type="Texture2D" uid="uid://rptb58mvmw6y" path="res://assets/icons/sound3.png" id="10_hkado"]
 [ext_resource type="Texture2D" uid="uid://d2xhjixb3slf" path="res://assets/icons/music3.png" id="11_dqvf5"]
@@ -378,7 +378,7 @@ modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
-text = "v0.0.13"
+text = "v0.0.14"
 
 [node name="low_btn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_64a6e")

@@ -7,7 +7,6 @@ const UPDATE_CONTAINER := preload(\"res://scenes/ui/components/Updates/UpdateCon
 
 func _ready() -> void:
 	var dataFile = Utilities.load_json_file(\"res://resources/data/announcements.json\")
-	
 	add_data_entries(dataFile)
 
 func add_data_entries(dataFile) -> void:

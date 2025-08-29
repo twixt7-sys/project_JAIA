@@ -173,7 +173,9 @@ node_data = Array[Dictionary]([{
 "position": Vector2(-620, -400),
 "salt": 4030944212
 }, {
-&"arguments": {},
+&"arguments": {
+&"octaves": 8
+},
 &"enums": [1],
 "name": &"_GraphNode_33225",
 "position": Vector2(-1260, -320),

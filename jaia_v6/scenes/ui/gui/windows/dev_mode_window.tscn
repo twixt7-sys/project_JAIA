@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5d87dsiphyij"]
+
+[ext_resource type="PackedScene" uid="uid://nj57tilfvtnv" path="res://scenes/ui/components/JaiaPanel0.tscn" id="1_bvtq1"]
+
+[sub_resource type="GDScript" id="GDScript_w2tbf"]
+script/source = "extends Control
+
+func _on_jaia_panel_0_back() -> void: queue_free()
+"
+
+[node name="Dev Mode Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_w2tbf")
+
+[node name="Jaia Panel 0" parent="." instance=ExtResource("1_bvtq1")]
+layout_mode = 0
+anchors_preset = 0
+title = "Dev Options"
+
+[connection signal="back" from="Jaia Panel 0" to="." method="_on_jaia_panel_0_back"]

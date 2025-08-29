@@ -93,7 +93,7 @@ grow_vertical = 2
 theme_override_constants/margin_right = 175
 theme_override_constants/margin_bottom = 490
 
-[node name="Panel" type="TextureButton" parent="MarginContainer4"]
+[node name="Dev Mode" type="TextureButton" parent="MarginContainer4"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("7_s1m33")
@@ -101,7 +101,7 @@ texture_pressed = ExtResource("8_64n68")
 texture_hover = ExtResource("9_64n68")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="MarginContainer4/Panel"]
+[node name="Label" type="Label" parent="MarginContainer4/Dev Mode"]
 layout_mode = 2
 offset_top = 32.0
 offset_right = 100.0
@@ -222,6 +222,7 @@ vertical_alignment = 1
 [connection signal="inventory_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_inventory_pressed"]
 [connection signal="journal_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_journal_pressed"]
 [connection signal="map_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_map_pressed"]
+[connection signal="pressed" from="MarginContainer4/Dev Mode" to="." method="_on_dev_mode_pressed"]
 [connection signal="pressed" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_pressed"]
 [connection signal="released" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_released"]
 [connection signal="pressed" from="Left Buttons/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

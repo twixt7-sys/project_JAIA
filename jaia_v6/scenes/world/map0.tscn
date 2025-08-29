@@ -551,17 +551,17 @@ scale = Vector2(4, 4)
 
 [node name="Grass" type="Node2D" parent="."]
 
-[node name="Grass Renderer" type="Node" parent="Grass" node_paths=PackedStringArray("tile_map_layers", "generator")]
-script = ExtResource("4_6qdkb")
-tile_map_layers = [NodePath("../Grass Root Layer/grass0"), NodePath("../Grass Root Layer/grass1"), NodePath("../Grass Root Layer/grass2")]
-generator = NodePath("../Grass Generator")
-metadata/_custom_type_script = "uid://b4x16tyyfihmb"
-
 [node name="Grass Generator" type="Node" parent="Grass"]
 script = ExtResource("5_qawk6")
 data = SubResource("Resource_y4vsg")
 seed = 596446416
 metadata/_custom_type_script = "uid://d4feanreabm81"
+
+[node name="Grass Renderer" type="Node" parent="Grass" node_paths=PackedStringArray("tile_map_layers", "generator")]
+script = ExtResource("4_6qdkb")
+tile_map_layers = [NodePath("../Grass Root Layer/grass0"), NodePath("../Grass Root Layer/grass1"), NodePath("../Grass Root Layer/grass2")]
+generator = NodePath("../Grass Generator")
+metadata/_custom_type_script = "uid://b4x16tyyfihmb"
 
 [node name="Grass Root Layer" type="Node2D" parent="Grass"]
 position = Vector2(-1000, -1000)

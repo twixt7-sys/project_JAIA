@@ -1,4 +1,13 @@
 {
+"4": [
+	"August 29, 2025", 
+	"Update 0.0.15",
+	"Random Map Generation initialized!
+	
+	Terrains can now be generated via gaea's procedural 2D generation mechanics. 
+	
+	Although it's still in its initial stages. This feature will power a massive part of JAIA's adventuring experience as it will be tethered to JAIA's dynamic systems."
+	],
 "3": [
 	"August 29, 2025", 
 	"Update 0.0.14", 

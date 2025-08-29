@@ -131,6 +131,7 @@ autoplay = "fade_in"
 [connection signal="child_entered_tree" from="CanvasLayer/Windows" to="." method="_on_windows_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CanvasLayer/Windows" to="." method="_on_windows_child_exiting_tree"]
 [connection signal="back_to_title_screen" from="CanvasLayer/GUI" to="." method="_on_gui_back_to_title_screen"]
+[connection signal="dev_mode" from="CanvasLayer/GUI" to="." method="_on_gui_dev_mode"]
 [connection signal="encyclopedia_pressed" from="CanvasLayer/GUI" to="." method="_on_gui_encyclopedia_pressed"]
 [connection signal="inventory_pressed" from="CanvasLayer/GUI" to="." method="_on_gui_inventory_pressed"]
 [connection signal="journal_pressed" from="CanvasLayer/GUI" to="." method="_on_gui_journal_pressed"]

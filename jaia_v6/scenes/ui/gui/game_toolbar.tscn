@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://e01i1nskhrad"]
+
+[ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/TouchScreenButton.tscn" id="1_h8kps"]
+[ext_resource type="Texture2D" uid="uid://tq0edblx41qq" path="res://assets/icons/GUI_toolbar4.png" id="2_stoql"]
+[ext_resource type="Texture2D" uid="uid://uqu5wqihomj3" path="res://assets/icons/GUI_toolbar3.png" id="3_mmi2r"]
+[ext_resource type="Texture2D" uid="uid://de33kdtuly14a" path="res://assets/icons/GUI_toolbar2.png" id="4_d4r8s"]
+[ext_resource type="Texture2D" uid="uid://mdqvwq5yydtg" path="res://assets/icons/GUI_toolbar1.png" id="5_6buup"]
+
+[sub_resource type="GDScript" id="GDScript_h8kps"]
+script/source = "extends MarginContainer
+
+signal map_pressed
+signal inventory_pressed
+signal encyclopedia_pressed
+signal journal_pressed
+
+
+func _on_map_button_pressed() -> void: emit_signal(\"map_pressed\")
+func _on_inventory_button_pressed() -> void: emit_signal(\"inventory_pressed\")
+func _on_encyclopedia_button_pressed() -> void: emit_signal(\"encyclopedia_pressed\")
+func _on_journal_button_pressed() -> void: emit_signal(\"journal_pressed\")
+"
+
+[node name="Game Toolbar" type="MarginContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -595.0
+offset_bottom = 210.0
+grow_horizontal = 0
+scale = Vector2(1.08, 1.08)
+pivot_offset = Vector2(750, 0)
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 100
+script = SubResource("GDScript_h8kps")
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Journal" type="AspectRatioContainer" parent="Hbox"]
+layout_mode = 2
+
+[node name="Journal Button" parent="Hbox/Journal" instance=ExtResource("1_h8kps")]
+layout_mode = 2
+
+[node name="Journal Texture" type="TextureRect" parent="Hbox/Journal/Journal Button"]
+layout_mode = 2
+texture = ExtResource("2_stoql")
+
+[node name="Encyclopedia" type="AspectRatioContainer" parent="Hbox"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="EncyclopediaButton" parent="Hbox/Encyclopedia" instance=ExtResource("1_h8kps")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hbox/Encyclopedia/EncyclopediaButton"]
+layout_mode = 2
+texture = ExtResource("3_mmi2r")
+
+[node name="Inventory" type="AspectRatioContainer" parent="Hbox"]
+layout_mode = 2
+
+[node name="InventoryButton" parent="Hbox/Inventory" instance=ExtResource("1_h8kps")]
+layout_mode = 2
+
+[node name="Inventory Texture" type="TextureRect" parent="Hbox/Inventory/InventoryButton"]
+layout_mode = 2
+texture = ExtResource("4_d4r8s")
+
+[node name="Map" type="AspectRatioContainer" parent="Hbox"]
+layout_mode = 2
+
+[node name="Map Button" parent="Hbox/Map" instance=ExtResource("1_h8kps")]
+layout_mode = 2
+
+[node name="Map Texture" type="TextureRect" parent="Hbox/Map/Map Button"]
+layout_mode = 2
+texture = ExtResource("5_6buup")
+
+[connection signal="pressed" from="Hbox/Journal/Journal Button" to="." method="_on_journal_button_pressed"]
+[connection signal="pressed" from="Hbox/Encyclopedia/EncyclopediaButton" to="." method="_on_encyclopedia_button_pressed"]
+[connection signal="pressed" from="Hbox/Inventory/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="Hbox/Map/Map Button" to="." method="_on_map_button_pressed"]

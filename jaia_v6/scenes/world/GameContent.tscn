@@ -10,6 +10,7 @@
 script = SubResource("GDScript_y4f5v")
 
 [node name="Map0" parent="." instance=ExtResource("1_t8qwp")]
+position = Vector2(1170, 540)
 
 [node name="Player" parent="." instance=ExtResource("2_y4f5v")]
 position = Vector2(1184, 545)

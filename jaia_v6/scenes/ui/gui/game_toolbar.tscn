@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://e01i1nskhrad"]
 
-[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/textures/Bcir0/Bcir0.png" id="1_d4r8s"]
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/textures/UI/buttons/Bcir0/Bcir0.png" id="1_d4r8s"]
 [ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/TouchScreenButton.tscn" id="1_h8kps"]
-[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/textures/Bcir0/Bcir1.png" id="2_6buup"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/textures/UI/buttons/Bcir0/Bcir1.png" id="2_6buup"]
 [ext_resource type="Texture2D" uid="uid://tq0edblx41qq" path="res://assets/icons/GUI_toolbar4.png" id="2_stoql"]
-[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/textures/Bcir0/Bcir2.png" id="3_estgc"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/textures/UI/buttons/Bcir0/Bcir2.png" id="3_estgc"]
 [ext_resource type="Texture2D" uid="uid://uqu5wqihomj3" path="res://assets/icons/GUI_toolbar3.png" id="3_mmi2r"]
 [ext_resource type="Texture2D" uid="uid://de33kdtuly14a" path="res://assets/icons/GUI_toolbar2.png" id="4_d4r8s"]
 [ext_resource type="Texture2D" uid="uid://mdqvwq5yydtg" path="res://assets/icons/GUI_toolbar1.png" id="5_6buup"]

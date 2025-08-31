@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8nkv14vl41ff"]
 
-[ext_resource type="Texture2D" uid="uid://das5v2c3lrs3x" path="res://assets/textures/UI/map.png" id="2_55us7"]
-[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/exit/exit_button1.png" id="3_7f4fx"]
-[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/textures/exit/exit_button2.png" id="4_hpfqc"]
-[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/textures/exit/exit_button3.png" id="5_tvih3"]
+[ext_resource type="Texture2D" uid="uid://das5v2c3lrs3x" path="res://assets/textures/UI/icons/map.png" id="2_55us7"]
+[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="3_7f4fx"]
+[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/textures/UI/buttons/exit/exit_button2.png" id="4_hpfqc"]
+[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/textures/UI/buttons/exit/exit_button3.png" id="5_tvih3"]
 
 [sub_resource type="GDScript" id="GDScript_vdm23"]
 script/source = "extends Control

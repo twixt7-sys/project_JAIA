@@ -1,0 +1,141 @@
+{
+	"player": {
+		"name": "String",
+
+		"job": {
+			"current": "adventurer",
+			"ranks": {
+				"adventurer": "Rank",
+				"knight": "Rank",
+				"bandit": "Rank"
+			}
+		},
+
+		"titles": [
+			{
+				"name": "Goblin Slayer",
+				"description": "Increases damage to goblins",
+				"effects": {
+					"attack_bonus_vs_goblins": 5
+				}
+			}
+		],
+
+		"inventory": {
+			"equipment": {
+				"main_hand": "ItemID",
+				"off_hand": "ItemID",
+				"armor": {
+					"head": "ItemID",
+					"chest": "ItemID",
+					"legs": "ItemID",
+					"boots": "ItemID"
+				},
+				"accessories": {
+					"slot_1": "ItemID",
+					"slot_2": "ItemID",
+					"slot_3": "ItemID",
+					"slot_4": "ItemID"
+				}
+			},
+			"storage": {
+				"bag": [],
+				"chest": []
+			}
+		},
+
+		"stats": {
+			"core": {
+				"strength": "float",
+				"agility": "float",
+				"intelligence": "float",
+				"vitality": "float"
+			},
+			"derived": {
+				"health": {
+					"max": "float",
+					"regen": "float"
+				},
+				"mana": {
+					"max": "float",
+					"regen": "float"
+				},
+				"stamina": {
+					"max": "float",
+					"regen": "float"
+				},
+				"attack": {
+					"power": "float",
+					"speed": "float",
+					"crit_chance": "float"
+				},
+				"defense": {
+					"armor": "float",
+					"resistance": "float",
+					"dodge": "float"
+				},
+				"movement": {
+					"weight": "float",
+					"speed": "float",
+					"friction": "float"
+				}
+			}
+		},
+
+		"proficiencies": {
+			"weapons": {
+				"sword": "float",
+				"bow": "float",
+				"dagger": "float"
+			},
+			"magic": {
+				"fire": "float",
+				"water": "float",
+				"unattributed": "float"
+			},
+			"skills": {
+				"stealth": "float",
+				"smithing": "float",
+				"alchemy": "float"
+			}
+		},
+
+		"conditions": [
+			{
+				"type": "poison",
+				"duration": 10,
+				"effects": { "health_regen": -2 }
+			}
+		]
+	},
+
+	"enemy": {
+		"name": "String",
+		"type": "beast",
+
+		"stats": {
+			"core": {
+				"strength": "float",
+				"agility": "float",
+				"intelligence": "float",
+				"vitality": "float"
+			},
+			"derived": {
+				"health": {
+					"max": "float",
+					"regen": "float"
+				},
+				"attack": {
+					"power": "float",
+					"speed": "float"
+				},
+				"movement": {
+					"weight": "float",
+					"speed": "float"
+				}
+			}
+		},
+
+		"conditions": []
+	}
+}

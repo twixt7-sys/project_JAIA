@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://v4apnft7xm7h"]
 
-[ext_resource type="Texture2D" uid="uid://7pmn10rn248x" path="res://assets/textures/joystick2/joystick1.png" id="1_gqtmi"]
-[ext_resource type="Texture2D" uid="uid://yoyn5mlnnrm" path="res://assets/textures/joystick2/joystick2.png" id="2_gwwbo"]
+[ext_resource type="Texture2D" uid="uid://7pmn10rn248x" path="res://assets/textures/UI/buttons/joystick2/joystick1.png" id="1_gqtmi"]
+[ext_resource type="Texture2D" uid="uid://yoyn5mlnnrm" path="res://assets/textures/UI/buttons/joystick2/joystick2.png" id="2_gwwbo"]
 
 [sub_resource type="GDScript" id="GDScript_8wkc1"]
 script/source = "extends Node2D

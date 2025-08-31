@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://cc14pyurieaij"]
 
 [ext_resource type="Texture2D" uid="uid://5p7fdbktluk7" path="res://icon.png" id="2_hoc73"]
-[ext_resource type="Texture2D" uid="uid://c8dd4tisg3kqh" path="res://assets/textures/UI/CharacterFrame.png" id="3_61oeo"]
-[ext_resource type="Texture2D" uid="uid://dvj2eykxyh6pv" path="res://assets/textures/bars/bars1.png" id="4_e6ya3"]
-[ext_resource type="Texture2D" uid="uid://bi2krvngx2tic" path="res://assets/textures/bars/bars2.png" id="5_8a1t7"]
-[ext_resource type="Texture2D" uid="uid://i1tn8hhl3y3r" path="res://assets/textures/elements/elements1.png" id="6_ae2b6"]
-[ext_resource type="Texture2D" uid="uid://dl1s3vjutto82" path="res://assets/textures/elements/elements2.png" id="7_8xfie"]
-[ext_resource type="Texture2D" uid="uid://ceevic2bmnpjo" path="res://assets/textures/elements/elements3.png" id="8_ec60a"]
-[ext_resource type="Texture2D" uid="uid://byrj74wym5ny8" path="res://assets/textures/elements/elements4.png" id="9_kfo16"]
+[ext_resource type="Texture2D" uid="uid://c8dd4tisg3kqh" path="res://assets/textures/UI/icons/CharacterFrame.png" id="3_61oeo"]
+[ext_resource type="Texture2D" uid="uid://dvj2eykxyh6pv" path="res://assets/textures/UI/buttons/bars/bars1.png" id="4_e6ya3"]
+[ext_resource type="Texture2D" uid="uid://bi2krvngx2tic" path="res://assets/textures/UI/buttons/bars/bars2.png" id="5_8a1t7"]
+[ext_resource type="Texture2D" uid="uid://i1tn8hhl3y3r" path="res://assets/textures/UI/elements/elements1.png" id="6_ae2b6"]
+[ext_resource type="Texture2D" uid="uid://dl1s3vjutto82" path="res://assets/textures/UI/elements/elements2.png" id="7_8xfie"]
+[ext_resource type="Texture2D" uid="uid://ceevic2bmnpjo" path="res://assets/textures/UI/elements/elements3.png" id="8_ec60a"]
+[ext_resource type="Texture2D" uid="uid://byrj74wym5ny8" path="res://assets/textures/UI/elements/elements4.png" id="9_kfo16"]
 
 [sub_resource type="GDScript" id="GDScript_2nmak"]
 script/source = "class_name StatusBar

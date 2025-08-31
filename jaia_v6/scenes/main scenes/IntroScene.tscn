@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cob03mi3uj1hv"]
 
 [ext_resource type="Script" uid="uid://dhbnhbjjm85bp" path="res://scripts/ui/IntroScene.gd" id="1_hggjx"]
-[ext_resource type="Texture2D" uid="uid://b5ejdcwoxydv0" path="res://assets/textures/starting_screen_bg.png" id="2_df5k1"]
+[ext_resource type="Texture2D" uid="uid://b5ejdcwoxydv0" path="res://assets/textures/backgrounds/starting_screen_bg.png" id="2_df5k1"]
 [ext_resource type="AudioStream" uid="uid://b5mkmrdvr6v20" path="res://assets/audio/music/All Will Settle - Bloo.mp3" id="3_jnxxg"]
 
 [sub_resource type="Animation" id="Animation_jyhfs"]

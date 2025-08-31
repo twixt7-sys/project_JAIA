@@ -16,10 +16,10 @@ var sprinting_speed = 500
 var joystick_vec: Vector2
 
 func _physics_process(delta: float) -> void:
-	# input (PC)
+	# input (for testing in PC)
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
-	# joystick input (get it from your joystick node)
+	# joystick input
 	var joystick_dir = ControlsManager.movement_joystick_vector
 	direction = joystick_dir if joystick_dir != Vector2.ZERO else direction
 
@@ -28,6 +28,10 @@ func _physics_process(delta: float) -> void:
 	movement_component.sprint = sprinting_speed if ControlsManager.is_sprinting else 0
 	velocity = movement_component.calculate_velocity(velocity, direction, delta)
 	move_and_slide()
+	
+	# consumption
+	if ControlsManager.is_sprinting: stamina_component.consume(0.5)
+	if ControlsManager.is_rolling: action_component.action("roll", func(): stamina_component.consume(20.0), 0.5)
 
 	# animation
 	update_animation()
@@ -35,8 +39,7 @@ func _physics_process(delta: float) -> void:
 	#update stats
 	PlayerStats.stamina = stamina_component.stamina
 
-	if ControlsManager.is_sprinting: stamina_component.consume(0.5)
-	if ControlsManager.is_rolling: action_component.action("roll_deduct", func(): stamina_component.consume(20.0), 0.5)
+
 
 func update_animation() -> void:
 	var v_len = velocity.length()

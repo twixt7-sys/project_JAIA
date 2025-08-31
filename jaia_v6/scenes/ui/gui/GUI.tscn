@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://b0uryt1jeomv" path="res://scenes/ui/gui/joystick.tscn" id="2_7hruu"]
 [ext_resource type="PackedScene" uid="uid://cc14pyurieaij" path="res://scenes/ui/gui/status_bar.tscn" id="2_hpdhh"]
 [ext_resource type="PackedScene" uid="uid://v4apnft7xm7h" path="res://scenes/ui/gui/left_joystick.tscn" id="3_3vknn"]
-[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="4_40ujj"]
-[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/images/Bsqr0/Bsqr1.png" id="5_bu0gq"]
-[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="6_b6ld1"]
-[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="7_s1m33"]
-[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="8_64n68"]
-[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="9_64n68"]
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/textures/Bcir0/Bcir0.png" id="3_64n68"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/textures/Bsqr0/Bsqr0.png" id="4_40ujj"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/textures/Bcir0/Bcir1.png" id="4_ecw7m"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/textures/Bcir0/Bcir2.png" id="5_2q8eu"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/textures/Bsqr0/Bsqr1.png" id="5_bu0gq"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/textures/Bsqr0/Bsqr2.png" id="6_b6ld1"]
 [ext_resource type="PackedScene" uid="uid://e01i1nskhrad" path="res://scenes/ui/gui/game_toolbar.tscn" id="12_jn5u4"]
 [ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/TouchScreenButton.tscn" id="13_gw7b5"]
 
@@ -31,15 +31,47 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6gfri")
 
-[node name="Top" type="MarginContainer" parent="."]
+[node name="TopLeft" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 921.0
+offset_bottom = 321.0
+scale = Vector2(0.845, 0.845)
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
 
-[node name="Status Bar" parent="." instance=ExtResource("2_hpdhh")]
-layout_mode = 0
-theme_override_constants/margin_left = 90
-theme_override_constants/margin_top = 55
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeft"]
+layout_mode = 2
+
+[node name="Status Bar" parent="TopLeft/VBoxContainer" instance=ExtResource("2_hpdhh")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLeft/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+
+[node name="dev mode" type="AspectRatioContainer" parent="TopLeft/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment_horizontal = 0
+
+[node name="Dev Mode" type="TextureButton" parent="TopLeft/VBoxContainer/MarginContainer/dev mode"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_64n68")
+texture_pressed = ExtResource("4_ecw7m")
+texture_hover = ExtResource("5_2q8eu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TopLeft/VBoxContainer/MarginContainer/dev mode/Dev Mode"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 100.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MODE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0.392157)
@@ -75,8 +107,11 @@ vertical_alignment = 1
 
 [node name="Game Toolbar" parent="." instance=ExtResource("12_jn5u4")]
 layout_mode = 1
+offset_left = -838.0
+offset_bottom = 236.0
+scale = Vector2(1, 1)
 pivot_offset = Vector2(595, 0)
-theme_override_constants/margin_top = -10
+theme_override_constants/margin_top = 0
 
 [node name="MarginContainer4" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -93,39 +128,17 @@ grow_vertical = 2
 theme_override_constants/margin_right = 175
 theme_override_constants/margin_bottom = 490
 
-[node name="Dev Mode" type="TextureButton" parent="MarginContainer4"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture_normal = ExtResource("7_s1m33")
-texture_pressed = ExtResource("8_64n68")
-texture_hover = ExtResource("9_64n68")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer4/Dev Mode"]
-layout_mode = 2
-offset_top = 32.0
-offset_right = 100.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "DEV
-MODE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="movement" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -450.0
 offset_top = -400.0
-grow_horizontal = 0
+offset_right = 450.0
 grow_vertical = 0
-theme_override_constants/margin_right = 150
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 100
 
 [node name="JoystickContainer" type="Panel" parent="movement"]
@@ -134,17 +147,20 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 
 [node name="Joystick" parent="movement" instance=ExtResource("2_7hruu")]
-position = Vector2(150, 151)
+position = Vector2(257, 182)
 scale = Vector2(2, 2)
 
 [node name="Left Joysticks" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -565.0
 offset_top = -350.0
-offset_right = 565.0
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_left = 115
 theme_override_constants/margin_bottom = 150
@@ -159,7 +175,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
 [node name="Joystick" parent="Left Joysticks/HBoxContainer/Left Joystick" instance=ExtResource("3_3vknn")]
-position = Vector2(100, 101)
+position = Vector2(-11, 160)
 scale = Vector2(2, 2)
 
 [node name="Left Joystick2" type="Panel" parent="Left Joysticks/HBoxContainer"]
@@ -168,24 +184,37 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
 [node name="Joystick" parent="Left Joysticks/HBoxContainer/Left Joystick2" instance=ExtResource("3_3vknn")]
-position = Vector2(100, 101)
+position = Vector2(-29, 160)
 scale = Vector2(2, 2)
 
 [node name="Left Buttons" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
+offset_left = -500.0
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 175
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Left Buttons"]
 layout_mode = 2
 theme_override_constants/separation = 25
+
+[node name="StopButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
+layout_mode = 2
+
+[node name="StopLabel" type="Label" parent="Left Buttons/HBoxContainer/StopButton"]
+layout_mode = 2
+text = "X"
+label_settings = SubResource("LabelSettings_jqi1v")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SprintButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
 layout_mode = 2
@@ -207,22 +236,12 @@ label_settings = SubResource("LabelSettings_jqi1v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StopButton" parent="Left Buttons/HBoxContainer" instance=ExtResource("13_gw7b5")]
-layout_mode = 2
-
-[node name="StopLabel" type="Label" parent="Left Buttons/HBoxContainer/StopButton"]
-layout_mode = 2
-text = "X"
-label_settings = SubResource("LabelSettings_jqi1v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="pressed" from="MarginContainer5/Exit" to="." method="_on_exit_pressed"]
+[connection signal="dev_mode_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_dev_mode_pressed"]
 [connection signal="encyclopedia_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_encyclopedia_pressed"]
 [connection signal="inventory_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_inventory_pressed"]
 [connection signal="journal_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_journal_pressed"]
 [connection signal="map_pressed" from="Game Toolbar" to="." method="_on_game_toolbar_map_pressed"]
-[connection signal="pressed" from="MarginContainer4/Dev Mode" to="." method="_on_dev_mode_pressed"]
 [connection signal="pressed" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_pressed"]
 [connection signal="released" from="Left Buttons/HBoxContainer/SprintButton" to="." method="_on_sprint_button_released"]
 [connection signal="pressed" from="Left Buttons/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://e01i1nskhrad"]
+[gd_scene load_steps=10 format=3 uid="uid://e01i1nskhrad"]
 
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/textures/Bcir0/Bcir0.png" id="1_d4r8s"]
 [ext_resource type="PackedScene" uid="uid://hg64k8008coq" path="res://scenes/ui/components/TouchScreenButton.tscn" id="1_h8kps"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/textures/Bcir0/Bcir1.png" id="2_6buup"]
 [ext_resource type="Texture2D" uid="uid://tq0edblx41qq" path="res://assets/icons/GUI_toolbar4.png" id="2_stoql"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/textures/Bcir0/Bcir2.png" id="3_estgc"]
 [ext_resource type="Texture2D" uid="uid://uqu5wqihomj3" path="res://assets/icons/GUI_toolbar3.png" id="3_mmi2r"]
 [ext_resource type="Texture2D" uid="uid://de33kdtuly14a" path="res://assets/icons/GUI_toolbar2.png" id="4_d4r8s"]
 [ext_resource type="Texture2D" uid="uid://mdqvwq5yydtg" path="res://assets/icons/GUI_toolbar1.png" id="5_6buup"]
@@ -13,12 +16,15 @@ signal map_pressed
 signal inventory_pressed
 signal encyclopedia_pressed
 signal journal_pressed
+signal dev_mode_pressed
 
 
 func _on_map_button_pressed() -> void: emit_signal(\"map_pressed\")
 func _on_inventory_button_pressed() -> void: emit_signal(\"inventory_pressed\")
 func _on_encyclopedia_button_pressed() -> void: emit_signal(\"encyclopedia_pressed\")
 func _on_journal_button_pressed() -> void: emit_signal(\"journal_pressed\")
+
+func _on_dev_mode_pressed() -> void: emit_signal(\"dev_mode_pressed\")
 "
 
 [node name="Game Toolbar" type="MarginContainer"]
@@ -30,7 +36,7 @@ offset_bottom = 210.0
 grow_horizontal = 0
 scale = Vector2(1.08, 1.08)
 pivot_offset = Vector2(750, 0)
-theme_override_constants/margin_top = 90
+theme_override_constants/margin_top = 75
 theme_override_constants/margin_right = 100
 script = SubResource("GDScript_h8kps")
 
@@ -38,6 +44,33 @@ script = SubResource("GDScript_h8kps")
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 2
+
+[node name="dev mode" type="AspectRatioContainer" parent="Hbox"]
+layout_mode = 2
+
+[node name="Dev Mode" type="TextureButton" parent="Hbox/dev mode"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_d4r8s")
+texture_pressed = ExtResource("2_6buup")
+texture_hover = ExtResource("3_estgc")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Hbox/dev mode/Dev Mode"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 100.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEV"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Hbox"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
 
 [node name="Journal" type="AspectRatioContainer" parent="Hbox"]
 layout_mode = 2
@@ -80,6 +113,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("5_6buup")
 
+[connection signal="pressed" from="Hbox/dev mode/Dev Mode" to="." method="_on_dev_mode_pressed"]
 [connection signal="pressed" from="Hbox/Journal/Journal Button" to="." method="_on_journal_button_pressed"]
 [connection signal="pressed" from="Hbox/Encyclopedia/EncyclopediaButton" to="." method="_on_encyclopedia_button_pressed"]
 [connection signal="pressed" from="Hbox/Inventory/InventoryButton" to="." method="_on_inventory_button_pressed"]

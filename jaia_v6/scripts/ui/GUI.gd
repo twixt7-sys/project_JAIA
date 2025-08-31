@@ -25,5 +25,4 @@ func _on_game_toolbar_inventory_pressed() -> void: emit_signal("inventory_presse
 func _on_game_toolbar_encyclopedia_pressed() -> void: emit_signal("encyclopedia_pressed")
 func _on_game_toolbar_journal_pressed() -> void: emit_signal("journal_pressed")
 
-
-func _on_dev_mode_pressed() -> void: emit_signal("dev_mode")
+func _on_game_toolbar_dev_mode_pressed() -> void: emit_signal("dev_mode")

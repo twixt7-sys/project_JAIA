@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr82qen1dj1ol"]
+
+[ext_resource type="AudioStream" uid="uid://klmmh7728o3e" path="res://assets/audio/sound/button_click_low.mp3" id="1_4w8gy"]
+[ext_resource type="AudioStream" uid="uid://cu56jnrjba56e" path="res://assets/audio/sound/button_click_mid.mp3" id="2_utkxl"]
+
+[node name="UI Audio" type="Node"]
+
+[node name="low_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4w8gy")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="mid_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_utkxl")
+volume_db = 15.0
+bus = &"SFX"

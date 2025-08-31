@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hg64k8008coq"]
 
-[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="1_tf3ju"]
-[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="2_tf3ju"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/textures/Bsqr0/Bsqr0.png" id="1_tf3ju"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/textures/Bsqr0/Bsqr1.png" id="2_tf3ju"]
 
 [sub_resource type="GDScript" id="GDScript_tf3ju"]
 script/source = "extends CenterContainer

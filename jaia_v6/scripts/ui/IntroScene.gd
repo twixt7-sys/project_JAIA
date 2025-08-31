@@ -11,7 +11,7 @@ extends Control
 signal play_game
 
 func _ready() -> void:
-	intro_bgm.play(10.0)
+	intro_bgm.play(11.0)
 	intro_bgm.volume_linear
 	show_screen(TITLE_SCREEN)
 

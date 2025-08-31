@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/ui/TitleScreen.gd" id="1_50bhr"]
 [ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_26dtv"]
-[ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/images/Title.png" id="3_64a6e"]
-[ext_resource type="Texture2D" uid="uid://b4x2h08v7qbjc" path="res://assets/images/B0/B0.png" id="4_w5u7w"]
-[ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/images/B0/B1.png" id="5_ul0q2"]
-[ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/images/B0/B2.png" id="6_dkyyf"]
-[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="7_f2vxk"]
-[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/images/Bsqr0/Bsqr1.png" id="8_74nyn"]
-[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="9_4h274"]
+[ext_resource type="Texture2D" uid="uid://b4nanlwem44wc" path="res://assets/textures/UI/Title.png" id="3_64a6e"]
+[ext_resource type="Texture2D" uid="uid://b4x2h08v7qbjc" path="res://assets/textures/B0/B0.png" id="4_w5u7w"]
+[ext_resource type="Texture2D" uid="uid://bn47qfh6qx5tk" path="res://assets/textures/B0/B1.png" id="5_ul0q2"]
+[ext_resource type="Texture2D" uid="uid://bcdhv01smqbv2" path="res://assets/textures/B0/B2.png" id="6_dkyyf"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/textures/Bsqr0/Bsqr0.png" id="7_f2vxk"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/textures/Bsqr0/Bsqr1.png" id="8_74nyn"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/textures/Bsqr0/Bsqr2.png" id="9_4h274"]
 [ext_resource type="Texture2D" uid="uid://rptb58mvmw6y" path="res://assets/icons/sound3.png" id="10_hkado"]
 [ext_resource type="Texture2D" uid="uid://d2xhjixb3slf" path="res://assets/icons/music3.png" id="11_dqvf5"]
 [ext_resource type="Texture2D" uid="uid://b4wd6csxxvb7h" path="res://assets/icons/game.png" id="12_x48op"]
-[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/images/Bcir0/Bcir0.png" id="13_iskvp"]
-[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/images/Bcir0/Bcir1.png" id="14_j1n6w"]
-[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/images/Bcir0/Bcir2.png" id="15_vmq5q"]
+[ext_resource type="Texture2D" uid="uid://ccr7jjxi71lmo" path="res://assets/textures/Bcir0/Bcir0.png" id="13_iskvp"]
+[ext_resource type="Texture2D" uid="uid://cpqq2nk7hdsno" path="res://assets/textures/Bcir0/Bcir1.png" id="14_j1n6w"]
+[ext_resource type="Texture2D" uid="uid://caufnyg1e5osw" path="res://assets/textures/Bcir0/Bcir2.png" id="15_vmq5q"]
 [ext_resource type="Texture2D" uid="uid://b6hrj5xjfagr5" path="res://assets/icons/announcements.png" id="16_jdae1"]
 [ext_resource type="AudioStream" uid="uid://klmmh7728o3e" path="res://assets/audio/sound/button_click_low.mp3" id="17_64a6e"]
 [ext_resource type="AudioStream" uid="uid://cu56jnrjba56e" path="res://assets/audio/sound/button_click_mid.mp3" id="18_w5u7w"]
@@ -378,15 +378,7 @@ modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
-text = "v0.0.15"
-
-[node name="low_btn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_64a6e")
-volume_db = 24.0
-
-[node name="mid_btn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_w5u7w")
-volume_db = 15.0
+text = "v0.0.16"
 
 [node name="BottomCenter" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -428,6 +420,16 @@ text = "ig"
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 text = "x"
+
+[node name="low_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_64a6e")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="mid_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_w5u7w")
+volume_db = 15.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Center/MarginContainer/VBoxContainer/Buttons/HBoxContainer/Play/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Center/MarginContainer/VBoxContainer/Buttons/HBoxContainer/Options/Options" to="." method="_on_options_pressed"]

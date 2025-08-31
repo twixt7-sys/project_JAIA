@@ -100,6 +100,7 @@ pivot_offset = Vector2(1170, 540)
 script = ExtResource("1_n0hxb")
 
 [node name="GameContent" parent="." instance=ExtResource("1_luian")]
+position = Vector2(0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -112,6 +113,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("1_bo1hi")]
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

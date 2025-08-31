@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgxhawulb3veq"]
 
 [ext_resource type="Script" uid="uid://bi5ai2kde1c8x" path="res://scripts/ui/OptionsScreen.gd" id="1_86m5h"]
-[ext_resource type="Texture2D" uid="uid://c35hn0t3q0x5t" path="res://assets/images/UI.png" id="1_wby6m"]
+[ext_resource type="Texture2D" uid="uid://c35hn0t3q0x5t" path="res://assets/textures/UI/UI.png" id="1_wby6m"]
 [ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_pykmj"]
-[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/images/Bsqr0/Bsqr0.png" id="3_gdfy8"]
-[ext_resource type="Texture2D" uid="uid://bmnc7i84014qc" path="res://assets/images/Bsqr0/Bsqr1.png" id="4_b0jeg"]
-[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/images/Bsqr0/Bsqr2.png" id="5_epl0h"]
+[ext_resource type="Texture2D" uid="uid://2a3alic1o1rk" path="res://assets/textures/Bsqr0/Bsqr0.png" id="3_gdfy8"]
+[ext_resource type="Texture2D" uid="uid://c6qrhvtk8byji" path="res://assets/textures/Bsqr0/Bsqr1.png" id="4_b0jeg"]
+[ext_resource type="Texture2D" uid="uid://cx65pkmpyak47" path="res://assets/textures/Bsqr0/Bsqr2.png" id="5_epl0h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_shnbx"]
 font_size = 32

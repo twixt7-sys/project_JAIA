@@ -31,6 +31,12 @@ func _physics_process(delta: float) -> void:
 
 	# animation
 	update_animation()
+	
+	#update stats
+	PlayerStats.stamina = stamina_component.stamina
+
+	if ControlsManager.is_sprinting: stamina_component.consume(0.5)
+	if ControlsManager.is_rolling: action_component.action("roll_deduct", func(): stamina_component.consume(20.0), 0.5)
 
 func update_animation() -> void:
 	var v_len = velocity.length()

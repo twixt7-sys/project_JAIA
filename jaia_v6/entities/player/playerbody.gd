@@ -12,6 +12,10 @@ var direction: Vector2 = Vector2.ZERO
 const WALK_THRESHOLD := 3.0
 const SPRINT_THRESHOLD := 0.5   # percent of sprint speed
 
+func _ready() -> void:
+	var stamina_stat = Player.stats["derived"]["stamina"]
+	stamina_component.set_val(stamina_stat["max"], stamina_stat["regen"])
+
 func _physics_process(delta: float) -> void:
 	# input (keyboard + joystick)
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -33,14 +37,12 @@ func _physics_process(delta: float) -> void:
 	if ControlsManager.is_rolling:
 		action_component.action("roll", func(): stamina_component.consume(StaminaComponent.ROLL_COST), 0.5)
 
-	# sync global stats
-	print("stats: ", Player.stats)
-	print("stamina: ", Player.stats["derived"].get("stamina"))
-	if "stamina" in Player.stats["derived"]:
-		Player.stats["derived"]["stamina"]["val"] = stamina_component.stamina
-
-	# animations
+	_update_stats()
 	_update_animation()
+
+func _update_stats() -> void:
+	Player.stats["derived"]["stamina"]["val"] = stamina_component.stamina
+
 
 func _update_animation() -> void:
 	var v_len := velocity.length()

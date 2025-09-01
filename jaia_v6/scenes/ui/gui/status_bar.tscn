@@ -16,8 +16,9 @@ extends AspectRatioContainer
 @onready var stamina: ColorRect = $\"HBoxContainer/Nameholder & Status Bars/Status Bars/HMS bars/Stamina/Stamina\"
 
 func _process(delta: float) -> void:
-	var current_stamina := PlayerStats.stamina
-	var max_stamina := PlayerStats.max_stamina 
+	var stamina_stat = Player.stats[\"derived\"][\"stamina\"]
+	var current_stamina: float = stamina_stat[\"val\"]
+	var max_stamina: float = stamina_stat[\"max\"]
 	
 	var t = clamp(current_stamina / max_stamina, 0.0, 1.0)
 	var stamina_width = lerp(0.0, 700.0, t)

@@ -15,7 +15,7 @@ var stats := {
 	"derived": {
 		"health": { "max": 100.0, "val": 100.0, "regen": 0.25 },
 		"mana": { "max": 100.0, "val": 100.0, "regen": 0.1 },
-		"stamina": { "max": 100.0, "val": 100.0, "regen": 0.25 },
+		"stamina": { "max": 100.0, "val": 100.0, "regen": 2.5 },
 		"attack": { "power": 0.0, "speed": 0.0, "crit_chance": 0.0 },
 		"defense": { "armor": 0.0, "resistance": 0.0, "dodge": 0.0 },
 		"movement": {

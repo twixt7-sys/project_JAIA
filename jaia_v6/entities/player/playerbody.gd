@@ -43,7 +43,48 @@ func _physics_process(delta: float) -> void:
 func _update_stats() -> void:
 	Player.stats["derived"]["stamina"]["val"] = stamina_component.stamina
 
+var last_state := ""
 
+func _update_animation() -> void:
+	var v_len := velocity.length()
+	var sprint_speed = Player.stats["derived"]["movement"]["sprint_speed"]
+
+	# decide state
+	var state := "idle"
+	if ControlsManager.is_rolling:
+		state = "roll"
+	elif ControlsManager.is_sprinting and v_len >= sprint_speed * SPRINT_THRESHOLD:
+		state = "sprint"
+	elif v_len >= WALK_THRESHOLD:
+		state = "walk"
+
+	# only run when state changes
+	if state != last_state:
+		# stop old
+		match last_state:
+			"walk": $WalkAudio.stop()
+			"sprint": $RunAudio.stop()
+
+		# start new
+		match state:
+			"walk": $WalkAudio.play()
+			"sprint": $RunAudio.play()
+
+		last_state = state
+
+	# update animation_tree conditions
+	animation_tree["parameters/conditions/is_sprinting"] = (state == "sprint")
+	animation_tree["parameters/conditions/is_walking"] = (state == "walk")
+	animation_tree["parameters/conditions/is_idle"] = (state == "idle")
+	animation_tree["parameters/conditions/is_rolling"] = (state == "roll")
+
+	# update blend dirs
+	if direction != Vector2.ZERO:
+		for path in ["idle", "walk", "sprint", "roll/BlendSpace2D"]:
+			animation_tree["parameters/%s/blend_position" % path] = direction
+
+#old animation algorithm (without sound
+"""
 func _update_animation() -> void:
 	var v_len := velocity.length()
 	var sprint_speed = Player.stats["derived"]["movement"]["sprint_speed"]
@@ -63,3 +104,4 @@ func _update_animation() -> void:
 	if direction != Vector2.ZERO:
 		for path in ["idle", "walk", "sprint", "roll/BlendSpace2D"]:
 			animation_tree["parameters/%s/blend_position" % path] = direction
+"""

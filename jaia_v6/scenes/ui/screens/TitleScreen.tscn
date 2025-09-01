@@ -383,7 +383,7 @@ modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
-text = "v0.0.17"
+text = "v0.0.18"
 
 [node name="BottomCenter" type="MarginContainer" parent="."]
 layout_mode = 1

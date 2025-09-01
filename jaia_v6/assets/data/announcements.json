@@ -1,4 +1,15 @@
 {
+"7": [
+	"September 1, 2025", 
+	"Update 0.0.18", 
+	"Major changes!
+	
+	The entire player stats script is now made completely data-driven and follows the Single Responsibility Principle. This enables a more dynamic and scalable approach in the development of its future features.
+	
+	Moreover, audio for footsteps in running and walking have been added and the initial interface of the GUI inventory have been established.
+	
+	Given the huge refactor, all of the main bugs have now been resolved as this new code architecture enables for a more efficient debugging process."
+	],
 "6": [
 	"August 31, 2025", 
 	"Update 0.0.17", 

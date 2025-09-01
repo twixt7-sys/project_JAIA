@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://2gcgqqf477fb"]
+[gd_scene load_steps=46 format=3 uid="uid://2gcgqqf477fb"]
 
 [ext_resource type="Script" uid="uid://gvpv4wapkxdi" path="res://entities/player/playerbody.gd" id="1_l6olw"]
 [ext_resource type="Texture2D" uid="uid://bjwmtbfcm736f" path="res://assets/textures/effects/shadow.png" id="2_4lb2g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dlxfpvgjgot34" path="res://scenes/components/attack_component.tscn" id="4_7ogec"]
 [ext_resource type="PackedScene" uid="uid://bpj3r1xt416xq" path="res://scenes/components/movement_component.tscn" id="5_eokli"]
 [ext_resource type="PackedScene" uid="uid://k3352ykt1653" path="res://scenes/components/stamina_component.tscn" id="6_a5blu"]
+[ext_resource type="AudioStream" uid="uid://c7lbinabofpkq" path="res://assets/audio/sound/footsteps.mp3" id="8_4lb2g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6olw"]
 radius = 35.0
@@ -457,3 +458,17 @@ parameters/roll/BlendSpace2D/blend_position = Vector2(-0.0016892, 0)
 parameters/roll/TimeScale/scale = 2.0
 parameters/sprint/blend_position = Vector2(-0.000841022, 0)
 parameters/walk/blend_position = Vector2(-0.000841022, 0)
+
+[node name="WalkAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4lb2g")
+volume_db = 4.063
+pitch_scale = 1.28
+bus = &"SFX"
+parameters/looping = true
+
+[node name="RunAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4lb2g")
+volume_db = 8.938
+pitch_scale = 2.0
+bus = &"SFX"
+parameters/looping = true

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwpaoxkoxv3ve"]
+
+[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="1_bvx8a"]
+[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/textures/UI/buttons/exit/exit_button2.png" id="2_4modl"]
+[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/textures/UI/buttons/exit/exit_button3.png" id="3_bp8yp"]
+
+[sub_resource type="GDScript" id="GDScript_bvx8a"]
+script/source = "extends MarginContainer
+
+signal back
+
+
+func _on_back_button_pressed() -> void: emit_signal(\"back\")
+"
+
+[node name="Back Button Container" type="MarginContainer"]
+z_index = 10
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_bottom = 201.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 105
+theme_override_constants/margin_right = 105
+script = SubResource("GDScript_bvx8a")
+
+[node name="Back Button Margin" type="AspectRatioContainer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+
+[node name="Back Button" type="TextureButton" parent="Back Button Margin"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_bvx8a")
+texture_pressed = ExtResource("2_4modl")
+texture_hover = ExtResource("3_bp8yp")
+stretch_mode = 0
+
+[connection signal="pressed" from="Back Button Margin/Back Button" to="." method="_on_back_button_pressed"]

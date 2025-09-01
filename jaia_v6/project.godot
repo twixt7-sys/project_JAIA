@@ -21,7 +21,7 @@ MainSettings="*res://managers/main_settings_manager.gd"
 ControlsManager="*res://managers/player_controls_manager.gd"
 ActionComponent="*res://scripts/components/action_component.gd"
 Utilities="*res://managers/utils_manager.gd"
-PlayerStats="*res://managers/player_stats.gd"
+Player="*res://scripts/types/player.gd"
 
 [display]
 

@@ -1,0 +1,404 @@
+[gd_scene format=3 uid="uid://cv4pyu6dsbfk7"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 75
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Status" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "item
+icon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "item
+metadata1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/Status/MarginContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "item
+metadata2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grid" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel3" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel4" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel5" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel6" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel7" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel8" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel9" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel10" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel11" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel12" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel13" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel14" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel15" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel16" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel17" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel18" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel19" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel20" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel21" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel22" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel23" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel24" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel25" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel26" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel27" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel28" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel29" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel30" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel31" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel32" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel33" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel34" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel35" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel36" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel37" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel38" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel39" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel40" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel41" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel42" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel43" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel44" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel45" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel46" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel47" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel48" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/grid"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "item
+grid
+
+[8x6]"
+horizontal_alignment = 1
+vertical_alignment = 1

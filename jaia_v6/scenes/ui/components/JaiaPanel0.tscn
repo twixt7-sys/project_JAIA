@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://nj57tilfvtnv"]
+[gd_scene load_steps=6 format=3 uid="uid://nj57tilfvtnv"]
 
 [ext_resource type="Texture2D" uid="uid://ptuojn3opang" path="res://assets/textures/UI/windows/window0.png" id="1_lsndh"]
-[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_2kcgu"]
-[ext_resource type="Texture2D" uid="uid://c8w7o7opdu7tm" path="res://assets/textures/UI/buttons/exit/exit_button2.png" id="3_5tace"]
-[ext_resource type="Texture2D" uid="uid://bf76irs8y5f81" path="res://assets/textures/UI/buttons/exit/exit_button3.png" id="4_cl1mf"]
+[ext_resource type="PackedScene" uid="uid://dwpaoxkoxv3ve" path="res://scenes/ui/components/Buttons/back_button.tscn" id="2_10vvg"]
 [ext_resource type="AudioStream" uid="uid://klmmh7728o3e" path="res://assets/audio/sound/button_click_low.mp3" id="5_2kcgu"]
 
 [sub_resource type="GDScript" id="GDScript_lsndh"]
@@ -27,8 +25,7 @@ func _ready() -> void:
 			scroll_view.add_child(scene)
 	title_label.text = title
 
-
-func _on_back_button_pressed() -> void: 
+func _on_back() -> void:
 	low_btn.play()
 	emit_signal(\"back\")
 "
@@ -49,30 +46,8 @@ texture = ExtResource("1_lsndh")
 expand_mode = 5
 script = SubResource("GDScript_lsndh")
 
-[node name="Back Button Container" type="MarginContainer" parent="."]
-z_index = 10
+[node name="Back" parent="." instance=ExtResource("2_10vvg")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -201.0
-offset_bottom = 201.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 105
-theme_override_constants/margin_right = 105
-
-[node name="Back Button Margin" type="AspectRatioContainer" parent="Back Button Container"]
-modulate = Color(0.85, 0.85, 0.85, 1)
-layout_mode = 2
-
-[node name="Back Button" type="TextureButton" parent="Back Button Container/Back Button Margin"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("2_2kcgu")
-texture_pressed = ExtResource("3_5tace")
-texture_hover = ExtResource("4_cl1mf")
-stretch_mode = 0
 
 [node name="Window Margin" type="MarginContainer" parent="."]
 z_index = 5
@@ -125,4 +100,4 @@ stream = ExtResource("5_2kcgu")
 volume_db = 24.0
 bus = &"SFX"
 
-[connection signal="pressed" from="Back Button Container/Back Button Margin/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="back" from="Back" to="." method="_on_back"]

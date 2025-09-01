@@ -14,30 +14,26 @@ var _cooldown_time_left := 0.0
 var _dash_direction := Vector2.ZERO
 
 func calculate_velocity(current_velocity: Vector2, direction: Vector2, delta: float) -> Vector2:
-	# Handle cooldown timers
-	if _cooldown_time_left > 0:
-		_cooldown_time_left -= delta
+	# cooldown timers
+	_cooldown_time_left = max(0.0, _cooldown_time_left - delta)
 
-	# Update dash
-	if _dash_time_left > 0:
+	# dash override
+	if _dash_time_left > 0.0:
 		_dash_time_left -= delta
-		if _dash_time_left <= 0:
+		if _dash_time_left <= 0.0:
 			_cooldown_time_left = dash_cooldown
-
-		# Override velocity with dash
 		return _dash_direction * dash_speed
 
-	# Normal movement
-	if direction.length() > 0:
+	# normal movement
+	if direction != Vector2.ZERO:
 		direction = direction.normalized()
-		var new_velocity = current_velocity
-		new_velocity += direction * (speed + sprint) * delta
-		new_velocity *= friction
-		return new_velocity
+		var new_velocity = current_velocity + direction * (speed + sprint) * delta
+		return new_velocity * friction
 	
 	return current_velocity * friction
 
 func dash(direction: Vector2) -> void:
-	if _cooldown_time_left > 0 or direction == Vector2.ZERO: return
+	if _cooldown_time_left > 0.0 or direction == Vector2.ZERO:
+		return
 	_dash_direction = direction.normalized()
 	_dash_time_left = dash_duration

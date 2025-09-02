@@ -1,36 +1,37 @@
 {
 "7": [
-	"September 1, 2025", 
-	"Update 0.0.18", 
+	"September 1, 2025",
+	"Update 0.0.18",
 	"Major changes!
-	
+
 	The entire player stats script is now made completely data-driven and follows the Single Responsibility Principle. This enables a more dynamic and scalable approach in the development of its future features.
-	
+
 	Moreover, audio for footsteps in running and walking have been added and the initial interface of the GUI inventory have been established.
-	
+
 	Given the huge refactor, all of the main bugs have now been resolved as this new code architecture enables for a more efficient debugging process."
 	],
+
 "6": [
 	"August 31, 2025", 
-	"Update 0.0.17", 
+	"Update 0.0.17",
 	"In this update, the GUI layout has been given major changes. The movement and other buttons are now swapped for convention, the dev options button is now relocated and a new GUI button, modes, have been added.
-	
+
 	Also, asynchronous loading has been implemented."
 	],
 "5": [
 	"August 30, 2025", 
 	"Update 0.0.16", 
 	"The stamina bar is now responsive!
-	
+
 	Not only that. Custom animations on the GUI tookit have also been initialized for prototyping purposes."
 	],
 "4": [
 	"August 29, 2025", 
 	"Update 0.0.15",
 	"Random Map Generation initialized!
-	
+
 	Terrains can now be generated via gaea's procedural 2D generation mechanics. 
-	
+
 	Although it's still in its initial stages. This feature will power a massive part of JAIA's adventuring experience as it will be tethered to JAIA's dynamic systems."
 	],
 "3": [

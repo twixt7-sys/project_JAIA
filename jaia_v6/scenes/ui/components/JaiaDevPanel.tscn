@@ -1,0 +1,493 @@
+[gd_scene load_steps=9 format=3 uid="uid://f2gaqanrryu8"]
+
+[ext_resource type="Texture2D" uid="uid://ptuojn3opang" path="res://assets/textures/UI/windows/window0.png" id="1_6wd62"]
+[ext_resource type="Script" uid="uid://c1pmwtt7eagvc" path="res://scripts/ui/jaia_dev_panel.gd" id="2_5fdru"]
+[ext_resource type="PackedScene" uid="uid://dwpaoxkoxv3ve" path="res://scenes/ui/components/Buttons/back_button.tscn" id="2_berpq"]
+[ext_resource type="AudioStream" uid="uid://klmmh7728o3e" path="res://assets/audio/sound/button_click_low.mp3" id="3_5fdru"]
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="3_berpq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oy8b6"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0.1386, 0.42, 0.16674, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1uxua"]
+font = ExtResource("3_berpq")
+font_size = 32
+outline_size = 8
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdj2u"]
+font = ExtResource("3_berpq")
+font_size = 28
+outline_size = 4
+outline_color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[node name="Jaia Panel 0" type="TextureRect"]
+custom_minimum_size = Vector2(2300, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6wd62")
+expand_mode = 5
+script = ExtResource("2_5fdru")
+
+[node name="Back" parent="." instance=ExtResource("2_berpq")]
+layout_mode = 1
+
+[node name="Window Margin" type="MarginContainer" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 225
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 225
+
+[node name="Vbox" type="VBoxContainer" parent="Window Margin"]
+layout_mode = 2
+
+[node name="Title" type="MarginContainer" parent="Window Margin/Vbox"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="Title" type="Label" parent="Window Margin/Vbox/Title"]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_oy8b6")
+horizontal_alignment = 1
+
+[node name="Title Divider" type="ColorRect" parent="Window Margin/Vbox"]
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Margin" type="MarginContainer" parent="Window Margin/Vbox"]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 75
+
+[node name="ScrollView" type="ScrollContainer" parent="Window Margin/Vbox/Margin"]
+custom_minimum_size = Vector2(1400, 650)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Dev Options" type="Control" parent="Window Margin/Vbox/Margin/ScrollView"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options"]
+layout_mode = 2
+offset_right = 1050.0
+offset_bottom = 931.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Dev Control Panel" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Player Parameters" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel"]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters"]
+layout_mode = 2
+
+[node name="Date Label Margin" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/Header"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="dateLabel" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/Header/Date Label Margin"]
+layout_mode = 2
+text = "Player Parameters"
+label_settings = SubResource("LabelSettings_1uxua")
+
+[node name="ColorRect" type="ColorRect" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/Header"]
+modulate = Color(1, 1, 1, 0.588235)
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="space" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 35
+
+[node name="GridContainer" type="GridContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space"]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="Movement Speed" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Movement Speed:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Movement Speed Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Movement Speed Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Movement Speed Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Movement Speed Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Friction" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Friction:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Friction Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Friction Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Friction Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Friction Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprint Speed" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sprint Speed:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Sprint Speed Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprint Speed Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Sprint Speed Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Sprint Speed Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash Speed" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dash Speed:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Dash Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dash Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash Duration" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dash Duration:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Dash Duration Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dash Duration Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Duration Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Duration Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash Cooldown" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dash Cooldown:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="Dash Cooldown Input" type="TextEdit" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dash Cooldown Current" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="World Parameters" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel"]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters"]
+layout_mode = 2
+
+[node name="Date Label Margin" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/Header"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="dateLabel" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/Header/Date Label Margin"]
+layout_mode = 2
+text = "World Parameters"
+label_settings = SubResource("LabelSettings_1uxua")
+
+[node name="ColorRect" type="ColorRect" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/Header"]
+modulate = Color(1, 1, 1, 0.588235)
+custom_minimum_size = Vector2(1000, 3)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="space" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 35
+
+[node name="Update 1" type="HBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space/Update 1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+
+[node name="Update 1" type="VBoxContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space/Update 1/Update 1"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="headerLabel" type="Label" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space/Update 1/Update 1/Update 1"]
+layout_mode = 2
+text = "Update 0.0.12:"
+label_settings = SubResource("LabelSettings_mdj2u")
+
+[node name="content" type="MarginContainer" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space/Update 1/Update 1/Update 1"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+
+[node name="contentLabel" type="RichTextLabel" parent="Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/World Parameters/space/Update 1/Update 1/Update 1/content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_berpq")
+theme_override_font_sizes/normal_font_size = 28
+text = "Dash skill added!
+
+The game subtitle is switched from BETA to ALPHA as well as expanded a major part of the code's architecture ."
+fit_content = true
+
+[node name="low_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5fdru")
+volume_db = 24.0
+bus = &"SFX"
+
+[connection signal="back" from="Back" to="." method="_on_back"]

@@ -13,6 +13,8 @@
 script/source = "class_name StatusBar
 extends AspectRatioContainer
 
+@onready var health: TextureRect = $\"HBoxContainer/Nameholder & Status Bars/Status Bars/HMS bars/Health/Health\"
+@onready var mana: TextureRect = $\"HBoxContainer/Nameholder & Status Bars/Status Bars/HMS bars/Mana/Mana\"
 @onready var stamina: ColorRect = $\"HBoxContainer/Nameholder & Status Bars/Status Bars/HMS bars/Stamina/Stamina\"
 
 func _process(delta: float) -> void:
@@ -115,7 +117,7 @@ layout_mode = 2
 
 [node name="Stamina" type="ColorRect" parent="HBoxContainer/Nameholder & Status Bars/Status Bars/HMS bars/Stamina"]
 self_modulate = Color(1, 1, 0, 1)
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(700, 10)
 layout_mode = 2
 size_flags_vertical = 3
 

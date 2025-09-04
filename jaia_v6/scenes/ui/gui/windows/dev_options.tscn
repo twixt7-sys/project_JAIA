@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2da5iigmu7oj"]
+[gd_scene load_steps=5 format=3 uid="uid://d2da5iigmu7oj"]
 
 [ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="1_dt3u2"]
+
+[sub_resource type="GDScript" id="GDScript_dt3u2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5wncy"]
 font = ExtResource("1_dt3u2")
@@ -21,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_dt3u2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -73,16 +76,16 @@ size_flags_horizontal = 3
 text = "Movement Speed:"
 label_settings = SubResource("LabelSettings_kdqcw")
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Movement Speed Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Movement Speed Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current"]
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Movement Speed Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -99,7 +102,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current"]
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Movement Speed Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
@@ -115,22 +118,22 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Movement Speed2" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Friction" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Friction:"
 label_settings = SubResource("LabelSettings_kdqcw")
 
-[node name="TextEdit2" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Friction Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Current2" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Friction Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current2"]
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Friction Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -147,7 +150,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current2"]
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Friction Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
@@ -163,22 +166,22 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Movement Speed3" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Sprint Speed" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Movement Speed:"
+text = "Sprint Speed:"
 label_settings = SubResource("LabelSettings_kdqcw")
 
-[node name="TextEdit3" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Sprint Speed Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Current3" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Sprint Speed Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current3"]
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Sprint Speed Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -195,7 +198,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current3"]
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Sprint Speed Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
@@ -211,22 +214,22 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Movement Speed4" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Dash Speed" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Movement Speed:"
+text = "Dash Speed:"
 label_settings = SubResource("LabelSettings_kdqcw")
 
-[node name="TextEdit4" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Dash Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Current4" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+[node name="Dash Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current4"]
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -243,7 +246,103 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Current4"]
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("1_dt3u2")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash Duration" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dash Duration:"
+label_settings = SubResource("LabelSettings_kdqcw")
+
+[node name="Dash Duration Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dash Duration Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Duration Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("1_dt3u2")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Duration Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("1_dt3u2")
+theme_override_font_sizes/normal_font_size = 24
+text = "X"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash Cooldown" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dash Cooldown:"
+label_settings = SubResource("LabelSettings_kdqcw")
+
+[node name="Dash Cooldown Input" type="TextEdit" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dash Cooldown Current" type="HBoxContainer" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="contentLabel2" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Current"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("1_dt3u2")
+theme_override_font_sizes/normal_font_size = 24
+text = "current:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="contentLabel3" type="RichTextLabel" parent="MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Current"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2

@@ -30,7 +30,7 @@ signal back
 @onready var dash_cooldown_input: TextEdit = $"Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Input"
 @onready var dash_cooldown_current: RichTextLabel = $"Window Margin/Vbox/Margin/ScrollView/Dev Options/MarginContainer/Dev Control Panel/Player Parameters/space/GridContainer/Dash Cooldown Current/contentLabel3"
 
-var inputs = [
+@onready var inputs = [
 		[movement_speed_input, 	"speed", 		movement_speed_current],
 		[friction_input, 		"friction", 	friction_current],
 		[sprint_speed_input, 	"sprint_speed", sprint_current],
@@ -48,19 +48,7 @@ func _ready() -> void:
 	title_label.text = title
 	
 	for input_data in inputs:
-		var input = input_data[0]
-		var attribute = input_data[1]
-		var current = input_data[2]
-
-		var value = Player.stats["derived"]["movement"][attribute]
-		input.text = str(value)
-		current.text = str(value)
-
-		# Optional: allow Enter to commit changes immediately
-		input.text_submitted.connect(
-			func(new_text: String):
-				save_player_movement_stat(input, attribute, current)
-		)
+		init_player_movement_stat(input_data[0], input_data[1], input_data[2])
 
 func _on_back() -> void:
 	low_btn.play()
@@ -74,3 +62,8 @@ func save_player_movement_stat(input: TextEdit, attribute: String, current: Rich
 	var p_ms = float(ms_txt)  
 	Player.stats["derived"]["movement"][attribute] = p_ms
 	current.text = str(p_ms)
+
+func init_player_movement_stat(input: TextEdit, attribute: String, current: RichTextLabel) -> void:
+	var ms_txt = input.text
+	ms_txt = Player.stats["derived"]["movement"][attribute]
+	current.text = str(input.text)

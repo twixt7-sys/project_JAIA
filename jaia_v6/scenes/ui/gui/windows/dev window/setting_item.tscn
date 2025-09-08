@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs5x8duat5w5r"]
+
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="1_1csui"]
+
+[sub_resource type="GDScript" id="GDScript_1csui"]
+script/source = "@tool
+
+extends Panel
+
+@onready var setting_name: Label = $\"Sub-items/Sub-item1/Setting Name\"
+@onready var setting: Label = $\"Sub-items/Sub-item2/Setting\"
+@onready var current: Label = $\"Sub-items/Sub-item3/Current\"
+
+@onready var center: CenterContainer = $\"Sub-items/Sub-item2/Center\"
+
+@export var settingName: String
+@export var settingNode: Control
+@export var currentValue: String
+
+
+func _ready() -> void:
+	pass
+
+
+func _process(delta: float) -> void:
+	setting_name.text = settingName
+	#if center.get_child_count() < 1: center.add_child(settingNode)
+	current.text = currentValue
+"
+
+[node name="Setting" type="Panel"]
+custom_minimum_size = Vector2(600, 100)
+offset_right = 1300.0
+offset_bottom = 100.0
+script = SubResource("GDScript_1csui")
+settingName = "Setting 1"
+
+[node name="Sub-items" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Sub-item1" type="Panel" parent="Sub-items"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="Setting Name" type="Label" parent="Sub-items/Sub-item1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1csui")
+text = "Setting 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="Panel" parent="Sub-items"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.85
+
+[node name="Sub-item3" type="Panel" parent="Sub-items"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="Current" type="Label" parent="Sub-items/Sub-item3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1csui")
+horizontal_alignment = 1
+vertical_alignment = 1

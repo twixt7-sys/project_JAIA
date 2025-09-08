@@ -51,8 +51,9 @@ theme_override_constants/margin_bottom = 25
 
 [node name="dateLabel" type="Label" parent="MarginContainer/Dev Control Panel/Player Parameters/Header/Date Label Margin"]
 layout_mode = 2
-text = "Player Parameters"
+text = "MOVEMENT"
 label_settings = SubResource("LabelSettings_5wncy")
+horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Dev Control Panel/Player Parameters/Header"]
 modulate = Color(1, 1, 1, 0.588235)
@@ -359,6 +360,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="World Parameters" type="VBoxContainer" parent="MarginContainer/Dev Control Panel"]
+visible = false
 layout_mode = 2
 
 [node name="Header" type="VBoxContainer" parent="MarginContainer/Dev Control Panel/World Parameters"]

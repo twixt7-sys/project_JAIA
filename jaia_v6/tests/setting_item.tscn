@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://skpb6oof5m6g"]
+
+[sub_resource type="GDScript" id="GDScript_lsehv"]
+script/source = "@tool
+extends Panel
+
+# toggle to true while debugging to see prints in the Editor output
+const DEBUG := false
+
+# backing storage (avoid assigning to the exported property inside its own setter)
+var _setting_name: String = \"SETTING\"
+@export var setting_name: String = \"SETTING\":
+	get:
+		return _setting_name
+	set(value):
+		_setting_name = value
+		if DEBUG: print(\"setting_name ->\", value)
+		_update_labels()
+
+var _setting_value: String = \"MODES / SLIDERS\"
+@export var setting_value: String = \"MODES / SLIDERS\":
+	get:
+		return _setting_value
+	set(value):
+		_setting_value = value
+		if DEBUG: print(\"setting_value ->\", value)
+		_update_labels()
+
+var _setting_current: String = \"X\"
+@export var setting_current: String = \"X\":
+	get:
+		return _setting_current
+	set(value):
+		_setting_current = value
+		if DEBUG: print(\"setting_current ->\", value)
+		_update_labels()
+
+
+# fix these paths to match your scene tree (spaces are allowed if quoted)
+@onready var setting_name_label: Label = $\"Sub-items/Sub-item1/Setting Name\"
+@onready var setting_label: Label = $\"Sub-items/Sub-item2/Setting\"
+@onready var current_label: Label = $\"Sub-items/Sub-item3/Current\"
+
+func _ready():
+	_update_labels()
+
+func _update_labels():
+	# Defer the actual label writes to avoid editor timing/ordering problems
+	call_deferred(\"_apply_labels\")
+
+func _apply_labels():
+	if setting_name_label:
+		setting_name_label.text = _setting_name
+	if setting_label:
+		setting_label.text = _setting_value
+	if current_label:
+		current_label.text = _setting_current
+"
+
+[node name="SettingItem" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_lsehv")
+setting_name = "test"
+setting_value = "adf"
+
+[node name="SettingName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ASDFASDFASDFADSFASDF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingValue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "sadfSDFASDF"
+horizontal_alignment = 2

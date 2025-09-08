@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://biq6fvr1wsxga"]
 
 [ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
+[ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
 [ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_w88k3"]
-[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="3_ccabk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w88k3"]
 font = ExtResource("1_rvkq0")
@@ -76,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w88k3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -301,31 +302,11 @@ theme_override_constants/margin_bottom = 15
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer"]
+[node name="Setting Items" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
-
-[node name="Setting Item2" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_ccabk")]
-layout_mode = 2
-settingName = "Movement Speed"
-currentValue = "500"
-
-[node name="Setting Item3" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_ccabk")]
-layout_mode = 2
-settingName = "Friction"
-currentValue = "0.95"
-
-[node name="Setting Item4" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_ccabk")]
-layout_mode = 2
-settingName = "Sprint Speed"
-currentValue = "500"
-
-[node name="Setting Item5" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_ccabk")]
-layout_mode = 2
-settingName = "Dash Speed"
-currentValue = "0.5"
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2

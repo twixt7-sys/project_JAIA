@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://biq6fvr1wsxga"]
+[gd_scene load_steps=9 format=3 uid="uid://biq6fvr1wsxga"]
 
 [ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
 [ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
 [ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_w88k3"]
+[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="4_e8wiu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w88k3"]
 font = ExtResource("1_rvkq0")
@@ -307,6 +308,32 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
+
+[node name="@Panel@23846" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "speed"
+max = 1000.0
+
+[node name="@Panel@23847" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "sprint speed"
+max = 1000.0
+
+[node name="@Panel@23848" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "friction"
+
+[node name="@Panel@23849" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_speed"
+
+[node name="@Panel@23850" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_duration"
+
+[node name="@Panel@23851" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_cooldown"
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2

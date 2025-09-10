@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 			s_item.currentValue = str(value)
 			setting_items.add_child(s_item)
 			if Engine.is_editor_hint():
-					s_item.set_owner(get_tree().edited_scene_root)
+				s_item.set_owner(get_tree().edited_scene_root)

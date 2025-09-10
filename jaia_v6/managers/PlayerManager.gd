@@ -1,3 +1,4 @@
+@tool
 # global Player.gd
 extends Node
 
@@ -26,6 +27,7 @@ var stats := {
 			"dash_speed": 500.0,
 			"dash_duration": 0.25,
 			"dash_cooldown": 0.25,
+			"test_attribute": 100.0
 		},
 	},
 }

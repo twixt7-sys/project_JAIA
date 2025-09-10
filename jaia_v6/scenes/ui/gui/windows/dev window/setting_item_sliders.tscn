@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://3txh18va6pg4"]
+
+[ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="1_jxcmv"]
+[ext_resource type="Script" uid="uid://dr8tp4apxm4c1" path="res://scripts/ui/setting_item_sliders.gd" id="1_kco1y"]
+
+[node name="Slider" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_kco1y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MinMax" type="VBoxContainer" parent="HBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MinMax"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_jxcmv")
+text = "min: x"
+
+[node name="Divider" type="ReferenceRect" parent="HBoxContainer/MinMax"]
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 2.5
+
+[node name="Label2" type="Label" parent="HBoxContainer/MinMax"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_jxcmv")
+text = "max: x"
+
+[node name="Divider" type="ReferenceRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 0.392157)
+border_width = 2.5
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Current" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0.0"

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://y0omdnoob80x" path="res://scenes/ui/gui/windows/dev window/setting_item.gd" id="1_fq2qi"]
 [ext_resource type="PackedScene" uid="uid://3txh18va6pg4" path="res://scenes/ui/gui/windows/dev window/setting_item_sliders.tscn" id="3_d0i0x"]
 
-[node name="Setting Item" type="Panel"]
+[node name="Setting" type="Panel"]
 custom_minimum_size = Vector2(600, 100)
 offset_right = 1300.0
 offset_bottom = 100.0
@@ -63,5 +63,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_1csui")
+text = "0.0"
 horizontal_alignment = 1
 vertical_alignment = 1

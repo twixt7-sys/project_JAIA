@@ -309,31 +309,39 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="@Panel@23846" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+[node name="_Panel_23846" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "speed"
+slider_value = 500.0
 max = 1000.0
+initial_current = "500"
 
-[node name="@Panel@23847" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+[node name="_Panel_23847" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "sprint speed"
+slider_value = 300.0
 max = 1000.0
 
 [node name="@Panel@23848" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "friction"
+slider_value = 5.0
 
 [node name="@Panel@23849" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "dash_speed"
+slider_value = 700.0
+max = 5000.0
 
 [node name="@Panel@23850" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "dash_duration"
+slider_value = 0.5
 
 [node name="@Panel@23851" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
 settingName = "dash_cooldown"
+slider_value = 0.5
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2

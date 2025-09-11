@@ -11,6 +11,7 @@ offset_bottom = 100.0
 script = ExtResource("1_fq2qi")
 settingName = "test"
 max = 100.0
+initial_current = "0"
 
 [node name="Sub-items" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -47,7 +48,6 @@ size_flags_stretch_ratio = 1.85
 
 [node name="Slider" parent="Sub-items/Center" instance=ExtResource("3_d0i0x")]
 layout_mode = 1
-val = 0.0
 
 [node name="Sub-item3" type="Panel" parent="Sub-items"]
 modulate = Color(0.75, 0.75, 0.75, 1)

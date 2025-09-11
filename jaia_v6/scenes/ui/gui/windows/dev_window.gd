@@ -8,18 +8,17 @@ extends Control
 @onready var player_d_attr: Dictionary = player_settings["derived"]
 @onready var player_movement: Dictionary = player_d_attr["movement"]
 
-func _process(delta: float) -> void:
+func _ready() -> void:
 	if setting_items.get_child_count() == 0:
-		for key in player_movement.keys():
-			var value = player_movement[key]
-			var s_item: SettingItem = preload("res://scenes/ui/gui/windows/dev window/setting_item.tscn").instantiate()
-			s_item.settingName = key
-			s_item.currentValue = str(value)
-			s_item.initial_current = str(value)
-			setting_items.add_child(s_item)
+		_populate_settings()
 
-			if Engine.is_editor_hint(): s_item.set_owner(get_tree().edited_scene_root)
-
-		for child in setting_items.get_children():
-			var x: SettingItem = child
-			# x.initial_current = (player initial data values)
+func _populate_settings() -> void:
+	for key in player_movement.keys():
+		var value = player_movement[key]
+		var s_item: SettingItem = preload("res://scenes/ui/gui/windows/dev window/setting_item.tscn").instantiate()
+		s_item.settingName = key
+		s_item.currentValue = str(value)
+		s_item.initial_current = str(value)
+		setting_items.add_child(s_item)
+		if Engine.is_editor_hint():
+			s_item.set_owner(get_tree().edited_scene_root)

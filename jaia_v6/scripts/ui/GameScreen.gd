@@ -9,7 +9,7 @@ const ENCYCLOPEDIA_WINDOW = preload("res://scenes/ui/gui/windows/encyclopedia_wi
 const INVENTORY_WINDOW = preload("res://scenes/ui/gui/windows/inventory_window.tscn")
 const JOURNAL_WINDOW = preload("res://scenes/ui/gui/windows/journal_window.tscn")
 const MAP_WINDOW = preload("res://scenes/ui/gui/windows/map_window.tscn")
-const DEV_MODE_WINDOW = preload("res://scenes/ui/gui/windows/dev_mode_window.tscn")
+const DEV_WINDOW = preload("res://scenes/ui/gui/windows/dev_window.tscn")
 
 @onready var gui: Control = $CanvasLayer/GUI
 
@@ -43,4 +43,4 @@ func _on_windows_child_exiting_tree(node: Node) -> void: gui.visible = true
 func _on_windows_child_entered_tree(node: Node) -> void: gui.visible = false
 
 
-func _on_gui_dev_mode() -> void: show_screen(DEV_MODE_WINDOW)
+func _on_gui_dev_mode() -> void: show_screen(DEV_WINDOW)

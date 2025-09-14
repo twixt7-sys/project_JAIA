@@ -332,6 +332,7 @@ layout_mode = 2
 settingName = "dash_speed"
 slider_value = 700.0
 max = 5000.0
+initial_current = "test"
 
 [node name="@Panel@23850" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
 layout_mode = 2
@@ -402,3 +403,5 @@ libraries = {
 }
 autoplay = "warp_in"
 speed_scale = 2.5
+
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer/Button3" to="." method="_on_exit_pressed"]

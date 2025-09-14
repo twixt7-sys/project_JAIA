@@ -9,6 +9,7 @@ extends Control
 @onready var player_movement: Dictionary = player_d_attr["movement"]
 
 func _ready() -> void:
+	for x in setting_items: x.free_queue()
 	if setting_items.get_child_count() == 0:
 		_populate_settings()
 
@@ -20,5 +21,9 @@ func _populate_settings() -> void:
 		s_item.currentValue = str(value)
 		s_item.initial_current = str(value)
 		setting_items.add_child(s_item)
+		print(value)
 		if Engine.is_editor_hint():
 			s_item.set_owner(get_tree().edited_scene_root)
+
+
+func _on_exit_pressed() -> void: queue_free()

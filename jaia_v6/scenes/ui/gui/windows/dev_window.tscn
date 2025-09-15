@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://biq6fvr1wsxga"]
+[gd_scene load_steps=11 format=3 uid="uid://biq6fvr1wsxga"]
 
 [ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
 [ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
@@ -65,10 +65,39 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_e8wiu"]
+resource_name = "warp_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvkq0"]
 _data = {
 &"RESET": SubResource("Animation_edftp"),
-&"warp_in": SubResource("Animation_jceep")
+&"warp_in": SubResource("Animation_jceep"),
+&"warp_out": SubResource("Animation_e8wiu")
 }
 
 [node name="Dev Window" type="Control"]
@@ -434,7 +463,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_rvkq0")
 }
 autoplay = "warp_in"
-speed_scale = 2.5
+speed_scale = 4.0
 
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]

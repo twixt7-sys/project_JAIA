@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkf4you84e0df"]
+[gd_scene load_steps=27 format=3 uid="uid://dkf4you84e0df"]
 
 [ext_resource type="Script" uid="uid://deospso1iy6am" path="res://scripts/ui/TitleScreen.gd" id="1_50bhr"]
 [ext_resource type="FontFile" uid="uid://bewp2mh0kpltv" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="2_26dtv"]
@@ -91,6 +91,13 @@ outline_size = 12
 outline_color = Color(0.34902, 0.34902, 0.34902, 1)
 shadow_size = 12
 shadow_color = Color(0, 0, 0, 0.196078)
+
+[sub_resource type="GDScript" id="GDScript_64a6e"]
+script/source = "extends Label
+
+
+func _ready() -> void: text = VersionManager.version
+"
 
 [node name="TitleScreen" type="Control"]
 clip_contents = true
@@ -384,6 +391,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_26dtv")
 theme_override_font_sizes/font_size = 28
 text = "v0.0.18"
+script = SubResource("GDScript_64a6e")
 
 [node name="BottomCenter" type="MarginContainer" parent="."]
 layout_mode = 1

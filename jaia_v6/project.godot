@@ -23,6 +23,7 @@ ActionComponent="*res://scripts/components/action_component.gd"
 Utilities="*res://managers/utils_manager.gd"
 Player="*res://managers/PlayerManager.gd"
 DevSettingsManager="*res://managers/dev_settings_manager.gd"
+VersionManager="*res://managers/version_manager.gd"
 
 [display]
 

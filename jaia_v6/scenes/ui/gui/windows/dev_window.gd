@@ -8,6 +8,8 @@ extends Control
 @onready var player_d_attr: Dictionary = player_settings["derived"]
 @onready var player_movement: Dictionary = player_d_attr["movement"]
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 const SETTING_ITEM_SCENE := preload("res://scenes/ui/gui/windows/dev window/setting_item.tscn")
 
 func _ready() -> void:
@@ -31,9 +33,15 @@ func _populate_settings() -> void:
 			s_item.set_owner(get_tree().edited_scene_root)
 
 func _on_exit_pressed() -> void:
+	animation_player.play("warp_out")
+	await animation_player.animation_finished
 	queue_free()
-
 
 func _on_save_pressed() -> void:
 	for x in setting_items.get_children():
 		x.save()
+	var keys := player_movement.keys()
+	for i in keys.size():
+		var child: SettingItem = setting_items.get_child(i)
+		player_movement[keys[i]] = child.slider_value
+		print("global variable ", keys[i], " set to ", child.slider_value)

@@ -23,7 +23,7 @@ extends Node
 				"dash_speed": 500.0,
 				"dash_duration": 0.25,
 				"dash_cooldown": 0.25,
-				
+				"test": 0.0
 			},
 		},
 	},

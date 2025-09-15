@@ -1,0 +1,407 @@
+[gd_scene load_steps=9 format=3 uid="uid://biq6fvr1wsxga"]
+
+[ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
+[ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
+[ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_w88k3"]
+[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="4_e8wiu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w88k3"]
+font = ExtResource("1_rvkq0")
+font_size = 22
+
+[sub_resource type="Animation" id="Animation_edftp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jceep"]
+resource_name = "warp_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvkq0"]
+_data = {
+&"RESET": SubResource("Animation_edftp"),
+&"warp_in": SubResource("Animation_jceep")
+}
+
+[node name="Dev Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w88k3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1170, 540)
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Title"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rvkq0")
+theme_override_font_sizes/font_size = 28
+text = "D E V   P A N E L"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.588235)
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 28
+icon = ExtResource("2_w88k3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Left Navbar" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Left Sidebar Margin" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 25
+
+[node name="Dev Sidebar List" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Sidebar Options" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Player" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer/Sidebar Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "PLAYER"
+
+[node name="World" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer/Sidebar Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "WORLD
+"
+
+[node name="Dev Setting" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer/Sidebar Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "USER INTERFACE"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer/Sidebar Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Dev Setting2" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Left Sidebar Margin/Dev Sidebar List/MarginContainer/Sidebar Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25, 0.25, 1)
+theme_override_font_sizes/font_size = 18
+text = "RESET ALL"
+
+[node name="Settings Body" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Header Panel"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Header Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Header Panel/Panel/CenterContainer"]
+layout_mode = 2
+text = "PLAYER"
+label_settings = SubResource("LabelSettings_w88k3")
+
+[node name="Body Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MOVEMENT"
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Setting Items" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="_Panel_23846" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "speed"
+slider_value = 500.0
+max = 1000.0
+initial_current = "500"
+
+[node name="_Panel_23847" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "sprint speed"
+slider_value = 300.0
+max = 1000.0
+
+[node name="@Panel@23848" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "friction"
+slider_value = 5.0
+
+[node name="@Panel@23849" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_speed"
+slider_value = 700.0
+max = 5000.0
+initial_current = "test"
+
+[node name="@Panel@23850" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_duration"
+slider_value = 0.5
+
+[node name="@Panel@23851" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
+layout_mode = 2
+settingName = "dash_cooldown"
+slider_value = 0.5
+
+[node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "<"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+text = "RESET"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.65, 1, 0.65, 1)
+text = "SAVE"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = ">"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rvkq0")
+}
+autoplay = "warp_in"
+speed_scale = 2.5
+
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer/Button3" to="." method="_on_exit_pressed"]

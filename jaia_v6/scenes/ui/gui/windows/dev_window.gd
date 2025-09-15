@@ -32,3 +32,8 @@ func _populate_settings() -> void:
 
 func _on_exit_pressed() -> void:
 	queue_free()
+
+
+func _on_save_pressed() -> void:
+	for x in setting_items.get_children():
+		x.save()

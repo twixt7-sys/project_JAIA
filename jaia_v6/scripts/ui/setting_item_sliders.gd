@@ -2,6 +2,8 @@
 class_name SettingItemSlider
 extends MarginContainer
 
+signal value_changed(new_val: float)
+
 @onready var h_slider: HSlider = $HBoxContainer/HSlider
 @onready var current: Label = $HBoxContainer/Current
 
@@ -32,4 +34,5 @@ func _ready() -> void:
 	h_slider.value_changed.connect(func(value: float) -> void:
 		val = value
 		current.text = str(value)
+		emit_signal("value_changed", value)
 	)

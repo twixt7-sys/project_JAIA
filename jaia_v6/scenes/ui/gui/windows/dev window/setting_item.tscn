@@ -66,3 +66,5 @@ theme_override_fonts/font = ExtResource("1_1csui")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="value_changed" from="Sub-items/Center/Slider" to="." method="_on_slider_value_changed"]

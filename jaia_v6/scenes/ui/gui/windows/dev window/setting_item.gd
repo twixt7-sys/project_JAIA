@@ -51,3 +51,6 @@ func _ready() -> void:
 
 func save() -> void:
 	label.text = str(slider.val)
+
+func _on_slider_value_changed(new_val: float) -> void:
+	slider_value = new_val

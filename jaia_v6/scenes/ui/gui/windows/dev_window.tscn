@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://biq6fvr1wsxga"]
+[gd_scene load_steps=10 format=3 uid="uid://biq6fvr1wsxga"]
 
 [ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
 [ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
 [ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_w88k3"]
-[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="4_e8wiu"]
-[ext_resource type="Script" uid="uid://y0omdnoob80x" path="res://scenes/ui/gui/windows/dev window/setting_item.gd" id="5_e8wiu"]
+[ext_resource type="PackedScene" uid="uid://0x8ht3mesomw" path="res://scenes/ui/gui/windows/dev window/sub_setting.tscn" id="4_ccabk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w88k3"]
 font = ExtResource("1_rvkq0")
@@ -277,133 +276,9 @@ theme_override_constants/margin_bottom = 5
 [node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
-
-[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel"]
-modulate = Color(1, 1, 1, 0.784314)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -8.0
-offset_right = 20.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "MOVEMENT"
-
-[node name="Panel2" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer"]
-layout_mode = 2
-
-[node name="Setting Items" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="Setting Item" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "weight"
-max = 100.0
-initial_current = "0.0"
-
-[node name="@Panel@32099" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "speed"
-text_value = "100.0"
-slider_value = 100.0
-max = 100.0
-initial_current = "500.0"
-
-[node name="@Panel@32100" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "sprint speed"
-text_value = "100.0"
-slider_value = 100.0
-max = 100.0
-initial_current = "500.0"
-
-[node name="@Panel@32101" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "friction"
-text_value = "1.0"
-slider_value = 1.0
-max = 100.0
-initial_current = "0.95"
-
-[node name="@Panel@32102" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "dash_speed"
-text_value = "100.0"
-slider_value = 100.0
-max = 100.0
-initial_current = "500.0"
-
-[node name="@Panel@32103" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "dash_duration"
-slider_value = 0.25
-max = 100.0
-initial_current = "0.25"
-
-[node name="@Panel@32104" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("4_e8wiu")]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 2
-script = ExtResource("5_e8wiu")
-settingName = "dash_cooldown"
-slider_value = 0.25
-max = 100.0
-initial_current = "0.25"
+[node name="Sub-setting" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel" instance=ExtResource("4_ccabk")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2

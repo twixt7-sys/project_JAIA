@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://0x8ht3mesomw"]
+
+[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="1_0irop"]
+
+[node name="Sub-setting" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Label" type="Label" parent="VBoxContainer/Header"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MOVEMENT"
+
+[node name="Body" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Body/MarginContainer"]
+layout_mode = 2
+
+[node name="Setting Items" type="VBoxContainer" parent="VBoxContainer/Body/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Setting Item" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "weight"
+initial_current = "0.0"
+
+[node name="_Panel_32099" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "speed"
+text_value = "100.0"
+slider_value = 100.0
+initial_current = "500.0"
+
+[node name="_Panel_32100" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "sprint speed"
+text_value = "100.0"
+slider_value = 100.0
+initial_current = "500.0"
+
+[node name="_Panel_32101" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "friction"
+text_value = "1.0"
+slider_value = 1.0
+initial_current = "0.95"
+
+[node name="_Panel_32102" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "dash_speed"
+text_value = "100.0"
+slider_value = 100.0
+initial_current = "500.0"
+
+[node name="_Panel_32103" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "dash_duration"
+slider_value = 0.25
+initial_current = "0.25"
+
+[node name="_Panel_32104" parent="VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" instance=ExtResource("1_0irop")]
+layout_mode = 2
+settingName = "dash_cooldown"
+slider_value = 0.25
+initial_current = "0.25"

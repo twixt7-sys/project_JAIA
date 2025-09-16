@@ -277,8 +277,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Sub-setting" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel" instance=ExtResource("4_ccabk")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2
@@ -342,3 +341,5 @@ speed_scale = 4.0
 
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Title/HBoxContainer/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Bottom Panel/Panel/MarginContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+
+[editable path="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting"]

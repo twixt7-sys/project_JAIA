@@ -1,7 +1,7 @@
 @tool
 extends Control
 
-@onready var setting_items: VBoxContainer = $"MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/MarginContainer/VBoxContainer/Panel2/MarginContainer/ScrollContainer/Setting Items"
+@onready var setting_items: VBoxContainer = $"MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items"
 
 @onready var settings: Dictionary = DevSettingsManager.settings
 @onready var player_settings: Dictionary = settings["Player"]
@@ -22,10 +22,10 @@ func _refresh_settings() -> void:
 
 func _populate_settings() -> void:
 	for key in player_movement.keys():
-		var value = player_movement[key]
+		var value = player_movement[key]["current"]
 		var s_item: SettingItem = SETTING_ITEM_SCENE.instantiate()
 		s_item.settingName = key
-		s_item.slider_value = float(value)
+		s_item.slider_value = value
 		s_item.initial_current = str(value)
 		setting_items.add_child(s_item)
 		print(value)
@@ -43,5 +43,15 @@ func _on_save_pressed() -> void:
 	var keys := player_movement.keys()
 	for i in keys.size():
 		var child: SettingItem = setting_items.get_child(i)
-		player_movement[keys[i]] = child.slider_value
+		player_movement[keys[i]]["current"] = child.slider_value
 		print("global variable ", keys[i], " set to ", child.slider_value)
+
+
+func _on_reset_pressed() -> void:
+	var i = 0
+	for key in player_movement.keys():
+		var value = player_movement[key]["default"]
+		var s: SettingItem = setting_items.get_children()[i]
+		i += 1
+		s.slider_value = value
+		s.text_value = str(s.slider_value)

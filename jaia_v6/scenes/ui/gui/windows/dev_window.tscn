@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://biq6fvr1wsxga"]
+[gd_scene load_steps=13 format=3 uid="uid://biq6fvr1wsxga"]
 
 [ext_resource type="FontFile" uid="uid://bsuhtppl0kvcd" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_rvkq0"]
 [ext_resource type="Script" uid="uid://j54wso0wambr" path="res://scenes/ui/gui/windows/dev_window.gd" id="1_w88k3"]
 [ext_resource type="Texture2D" uid="uid://bsr03lbevsc2w" path="res://assets/textures/UI/buttons/exit/exit_button1.png" id="2_w88k3"]
 [ext_resource type="PackedScene" uid="uid://0x8ht3mesomw" path="res://scenes/ui/gui/windows/dev window/sub_setting.tscn" id="4_ccabk"]
+[ext_resource type="PackedScene" uid="uid://bs5x8duat5w5r" path="res://scenes/ui/gui/windows/dev window/setting_item.tscn" id="5_pqkt5"]
+[ext_resource type="Script" uid="uid://y0omdnoob80x" path="res://scenes/ui/gui/windows/dev window/setting_item.gd" id="6_iog2v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w88k3"]
 font = ExtResource("1_rvkq0")
@@ -293,6 +295,68 @@ layout_mode = 2
 [node name="Sub-setting" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel" instance=ExtResource("4_ccabk")]
 layout_mode = 1
 script = SubResource("GDScript_32tsk")
+
+[node name="@Panel@22154" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="0" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "weight"
+max = 100.0
+initial_current = "0.0"
+
+[node name="@Panel@22155" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="1" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "speed"
+slider_value = 100.0
+max = 100.0
+initial_current = "500.0"
+
+[node name="@Panel@22156" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="2" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "sprint speed"
+slider_value = 100.0
+max = 100.0
+initial_current = "500.0"
+
+[node name="@Panel@22157" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="3" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "friction"
+slider_value = 1.0
+max = 100.0
+initial_current = "0.95"
+
+[node name="@Panel@22158" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="4" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "dash_speed"
+slider_value = 100.0
+max = 100.0
+initial_current = "500.0"
+
+[node name="@Panel@22159" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="5" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "dash_duration"
+slider_value = 0.25
+max = 100.0
+initial_current = "0.25"
+
+[node name="@Panel@22160" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="6" instance=ExtResource("5_pqkt5")]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+script = ExtResource("6_iog2v")
+settingName = "dash_cooldown"
+slider_value = 0.25
+max = 100.0
+initial_current = "0.25"
 
 [node name="Bottom Panel" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body"]
 layout_mode = 2

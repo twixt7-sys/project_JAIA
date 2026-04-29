@@ -37,6 +37,17 @@ func _physics_process(delta: float) -> void:
 	if ControlsManager.is_rolling:
 		action_component.action("roll", func(): stamina_component.consume(StaminaComponent.ROLL_COST), 0.5)
 
+	#ideal:
+	'''
+	Entity._update_stats(
+		Player.stats["derived"]["stamina"]["val"] = stamina_component.stamina
+		etc.
+	)
+	
+	Entity._update_animation(
+		# animation system to be developed
+	)
+	'''
 	_update_stats()
 	_update_animation()
 
@@ -46,10 +57,11 @@ func _update_stats() -> void:
 var last_state := ""
 
 func _update_animation() -> void:
+	# INITIALIZATION
 	var v_len := velocity.length()
 	var sprint_speed = Player.stats["derived"]["movement"]["sprint_speed"]
 
-	# decide state
+	# STATE LOGIC
 	var state := "idle"
 	if ControlsManager.is_rolling:
 		state = "roll"
@@ -58,7 +70,7 @@ func _update_animation() -> void:
 	elif v_len >= WALK_THRESHOLD:
 		state = "walk"
 
-	# only run when state changes
+	# STATE CHANGE LOGIC: only run when state changes
 	if state != last_state:
 		# stop old
 		match last_state:

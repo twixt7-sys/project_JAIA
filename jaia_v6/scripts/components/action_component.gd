@@ -11,7 +11,7 @@ func action(
 	at_end: Callable = func(): null
 ) -> void:
 	if cooldowns.has(action_name) or not is_active:
-		print(action_name, " failed.")
+		print(action_name, " on cooldown.")
 		return
 	logic.call()
 	start_cooldown(action_name, cooldown, at_end)

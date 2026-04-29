@@ -10,7 +10,7 @@ signal pressed
 signal released
 
 @onready var sprint_button: TouchScreenButton = $\"Sprint Button\"
-@onready var label: Label = $Label
+#@onready var label: Label = $Label
 
 @export var texture_normal: ImageTexture
 @export var texture_pressed: ImageTexture

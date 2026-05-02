@@ -296,7 +296,7 @@ layout_mode = 2
 layout_mode = 1
 script = SubResource("GDScript_32tsk")
 
-[node name="@Panel@25408" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="0" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22154" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="0" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -304,7 +304,7 @@ settingName = "weight"
 max = 100.0
 initial_current = "0.0"
 
-[node name="@Panel@25409" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="1" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22155" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="1" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -313,7 +313,7 @@ slider_value = 100.0
 max = 100.0
 initial_current = "500.0"
 
-[node name="@Panel@25410" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="2" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22156" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="2" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -322,7 +322,7 @@ slider_value = 100.0
 max = 100.0
 initial_current = "500.0"
 
-[node name="@Panel@25411" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="3" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22157" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="3" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -331,7 +331,7 @@ slider_value = 1.0
 max = 100.0
 initial_current = "0.95"
 
-[node name="@Panel@25412" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="4" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22158" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="4" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -340,7 +340,7 @@ slider_value = 100.0
 max = 100.0
 initial_current = "500.0"
 
-[node name="@Panel@25413" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="5" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22159" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="5" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")
@@ -349,7 +349,7 @@ slider_value = 0.25
 max = 100.0
 initial_current = "0.25"
 
-[node name="@Panel@25414" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="6" instance=ExtResource("5_pqkt5")]
+[node name="@Panel@22160" type="Panel" parent="MarginContainer/Panel/VBoxContainer/Left Navbar/Settings Body/Body Panel/Panel/Sub-setting/VBoxContainer/Body/MarginContainer/ScrollContainer/Setting Items" index="6" instance=ExtResource("5_pqkt5")]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 script = ExtResource("6_iog2v")

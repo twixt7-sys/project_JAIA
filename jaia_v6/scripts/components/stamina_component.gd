@@ -4,8 +4,11 @@ extends Node2D
 @export var MAX_VALUE := 100.0
 @export var REGEN := 0.25  # per second
 
+# this does not belong here and has to be under the the parameters of the player
+# it HAS TO BE as dynamic as possible
 const SPRINT_COST := 5.0   # per second
 const ROLL_COST := 20.0    # one-time
+const SLASH_COST := 50.0	# one-time
 
 var stamina: float = 0.0  # optional, keeps it from being null
 

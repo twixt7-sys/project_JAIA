@@ -1,17 +1,17 @@
 extends Node2D
 
-var cooldowns: Dictionary = {}
+var active_actions: Dictionary = {}
 
-# dynamically names, calls and sets a cooldown for a Callable
+## Dynamically calls an action and applies a cooldown.
 func action(
 	action_name: String,
 	logic: Callable,
-	cooldown: float = 0.00001,
+	cooldown: float = 0.0,
 	is_active: bool = true,
 	at_end: Callable = func(): null
 ) -> void:
-	if cooldowns.has(action_name) or not is_active:
-		print(action_name, " on cooldown.")
+	if active_actions.has(action_name) or not is_active:
+		push_warning("%s is on cooldown" % action_name)
 		return
 	logic.call()
 	start_cooldown(action_name, cooldown, at_end)
@@ -25,9 +25,9 @@ func start_cooldown(action_name: String, duration: float, at_end: Callable) -> v
 	timer.start()
 	
 	timer.timeout.connect(func():
-		cooldowns.erase(action_name)
+		active_actions.erase(action_name)
 		timer.queue_free()
 		at_end.call()  # now this triggers AFTER cooldown
 	)
 	
-	cooldowns[action_name] = timer
+	active_actions[action_name] = timer

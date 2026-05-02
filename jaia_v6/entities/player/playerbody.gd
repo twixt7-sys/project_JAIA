@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var attack_component: AttackComponent = $"Components/Attack Component"
 @onready var stamina_component: StaminaComponent = $"Components/Stamina Component"
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var states: States = $States
 
 var direction: Vector2 = Vector2.ZERO
 
@@ -23,7 +24,10 @@ func _physics_process(delta: float) -> void:
 	direction = joystick_dir if joystick_dir != Vector2.ZERO else input_dir
 
 	# movement
-	if ControlsManager.is_rolling:
+	if states.is_rolling:
+		movement_component.dash(direction)
+	
+	if states.is_slashing:
 		movement_component.dash(direction)
 	
 	movement_component.sprint = Player.stats["derived"]["movement"]["sprint_speed"] if ControlsManager.is_sprinting else 0.0
@@ -32,10 +36,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# stamina usage
-	if ControlsManager.is_sprinting:
-		stamina_component.consume(StaminaComponent.SPRINT_COST * delta)
-	if ControlsManager.is_rolling:
-		action_component.action("roll", func(): stamina_component.consume(StaminaComponent.ROLL_COST), 0.5)
+	if states.is_sprinting:
+		stamina_component.decrease(StaminaComponent.SPRINT_COST * delta)
+	if states.is_rolling:
+		action_component.action("roll", func(): stamina_component.decrease(StaminaComponent.ROLL_COST), 0.5)
+	if states.is_slashing:
+		action_component.action("slash", func(): stamina_component.decrease(StaminaComponent.SLASH_COST), 0.5)
 
 	#ideal:
 	'''
@@ -61,11 +67,14 @@ func _update_animation() -> void:
 	var v_len := velocity.length()
 	var sprint_speed = Player.stats["derived"]["movement"]["sprint_speed"]
 
-	# STATE LOGIC
+	# STATE LOGIC (top gets more priority) (needs dynamacity)
 	var state := "idle"
-	if ControlsManager.is_rolling:
+	
+	if states.is_rolling:
 		state = "roll"
-	elif ControlsManager.is_sprinting and v_len >= sprint_speed * SPRINT_THRESHOLD:
+	elif states.is_slashing:
+		state = "slash"
+	elif states.is_sprinting and v_len >= sprint_speed * SPRINT_THRESHOLD:
 		state = "sprint"
 	elif v_len >= WALK_THRESHOLD:
 		state = "walk"
@@ -85,14 +94,13 @@ func _update_animation() -> void:
 		last_state = state
 
 	# update animation_tree conditions
-	animation_tree["parameters/conditions/is_sprinting"] = (state == "sprint")
-	animation_tree["parameters/conditions/is_walking"] = (state == "walk")
-	animation_tree["parameters/conditions/is_idle"] = (state == "idle")
-	animation_tree["parameters/conditions/is_rolling"] = (state == "roll")
+	var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+	playback.travel(state)
+	print(playback.get_current_node(), " -> ", state)
 
 	# update blend dirs
 	if direction != Vector2.ZERO:
-		for path in ["idle", "walk", "sprint", "roll/BlendSpace2D"]:
+		for path in ["idle", "walk", "sprint", "roll/BlendSpace2D", "slash/BlendSpace2D"]:
 			animation_tree["parameters/%s/blend_position" % path] = direction
 
 #old animation algorithm (without sound
